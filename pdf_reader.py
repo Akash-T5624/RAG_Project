@@ -39,7 +39,7 @@ def pdf_to_vectors(pdf_path):
     chunk_metadata = []
 
     chunk_size = 500
-    chunk_overlap = 50
+    chunk_overlap = 100
 
     for page in page_texts:
 

@@ -1,11 +1,32 @@
 import faiss
 import pickle
 import numpy as np
+import os
 import requests
 from sentence_transformers import SentenceTransformer
 
-OLLAMA_URL = "http://localhost:11434/api/generate"
-OLLAMA_MODEL = "llama3.2"
+
+def load_env_file(env_path=".env"):
+    """Load key/value settings from a local .env file without extra packages."""
+    if not os.path.exists(env_path):
+        return
+
+    with open(env_path, "r", encoding="utf-8") as env_file:
+        for line in env_file:
+            line = line.strip()
+
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+
+            key, value = line.split("=", 1)
+            os.environ.setdefault(key.strip(), value.strip().strip('"').strip("'"))
+
+
+load_env_file()
+
+GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
+GROQ_MODEL = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
 print("Loading embedding model...")
 
@@ -119,31 +140,46 @@ User question:
 Answer:
 """
 
-    print("\nSending context to Llama 3.2...")
+    if not GROQ_API_KEY or GROQ_API_KEY == "paste_your_groq_api_key_here":
+        return (
+            "Groq API key is not configured.\n\n"
+            "Add your key to the GROQ_API_KEY setting in the .env file."
+        )
+
+    print(f"\nSending context to Groq ({GROQ_MODEL})...")
 
     try:
 
         response = requests.post(
-            OLLAMA_URL,
-            json={
-                "model": OLLAMA_MODEL,
-                "prompt": prompt,
-                "stream": False
+            GROQ_API_URL,
+            headers={
+                "Authorization": f"Bearer {GROQ_API_KEY}",
+                "Content-Type": "application/json"
             },
-            timeout=300
+            json={
+                "model": GROQ_MODEL,
+                "messages": [
+                    {
+                        "role": "user",
+                        "content": prompt
+                    }
+                ],
+                "temperature": 0.5
+            },
+            timeout=60
         )
 
         response.raise_for_status()
 
         data = response.json()
 
-        return data["response"]
+        return data["choices"][0]["message"]["content"]
 
     except requests.exceptions.ConnectionError:
 
         return (
-            "Could not connect to Ollama.\n\n"
-            "Make sure Ollama is installed and running."
+            "Could not connect to the Groq API.\n\n"
+            "Check your internet connection and try again."
         )
 
     except requests.exceptions.RequestException as e:
@@ -162,7 +198,7 @@ if __name__ == "__main__":
 
     print(
         "LLM: "
-        "Llama 3.2"
+        f"Groq / {GROQ_MODEL}"
     )
 
     print("========================================")

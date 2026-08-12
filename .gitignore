@@ -1,0 +1,10 @@
+# Secrets
+.env
+
+# Python-generated files
+__pycache__/
+*.py[cod]
+
+# Generated vector database files
+chunks.pkl
+vectors.index
