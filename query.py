@@ -5,6 +5,8 @@ import os
 import requests
 from sentence_transformers import SentenceTransformer
 
+import retrieval
+
 
 def load_env_file(env_path=".env"):
     """Load key/value settings from a local .env file without extra packages."""
@@ -75,28 +77,14 @@ def query_to_vector(query):
 
 def search_database(query, top_k=5):
 
-    query_vector = query_to_vector(query)
-
     print("Searching FAISS database...")
 
-    distances, indices = index.search(
-        query_vector,
-        top_k
-    )
-
-    results = []
-
-    for rank, index_id in enumerate(indices[0]):
-
-        if index_id == -1:
-            continue
-
-        results.append({
-            "rank": rank + 1,
-            "chunk": chunks[index_id],
-            "metadata": metadata[index_id],
-            "score": float(distances[0][rank])
-        })
+    # ONE retrieval change:
+    #   BEFORE: FAISS semantic retrieval (semantic_search)
+    #   AFTER:  FAISS semantic retrieval + BM25 keyword retrieval
+    #           fused with Reciprocal Rank Fusion (RRF, k=60).
+    # LLM, prompt, chunks, embeddings, and corpus are unchanged.
+    results = retrieval.hybrid_search(query, final_top_k=top_k)
 
     return results
 

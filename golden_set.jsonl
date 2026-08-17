@@ -1,0 +1,12 @@
+{"id": "q01", "question": "Which countries formed the Allies?", "expected_chunk_id": "chunk_1", "category": "alliances"}
+{"id": "q02", "question": "Why did American sympathy for the Allies increase?", "expected_chunk_id": "chunk_30", "category": "us-involvement"}
+{"id": "q03", "question": "What did President Wilson declare at the start of the fighting in Europe?", "expected_chunk_id": "chunk_27", "category": "us-involvement"}
+{"id": "q04", "question": "Under what condition would Germany consider renewing unrestricted submarine warfare?", "expected_chunk_id": "chunk_44", "category": "naval-warfare"}
+{"id": "q05", "question": "What did peace without victory mean to Wilson?", "expected_chunk_id": "chunk_48", "category": "diplomacy"}
+{"id": "q06", "question": "What were the trenches like by the spring of 1915?", "expected_chunk_id": "chunk_20", "category": "trench-warfare"}
+{"id": "q07", "question": "How many American lives were lost in the sinking of the Lusitania?", "expected_chunk_id": "chunk_40", "category": "naval-warfare"}
+{"id": "q08", "question": "How many German civilians starved to death because of the British blockade?", "expected_chunk_id": "chunk_38", "category": "naval-warfare"}
+{"id": "q09", "question": "When did the kaiser announce that U-boats would sink all ships in British waters on sight?", "expected_chunk_id": "chunk_45", "category": "naval-warfare"}
+{"id": "q10", "question": "Who were the two generals shown marching with German emperor Wilhelm II?", "expected_chunk_id": "chunk_17", "category": "key-figures"}
+{"id": "q11", "question": "How many casualties had Russia suffered by the end of 1915?", "expected_chunk_id": "chunk_51", "category": "effects"}
+{"id": "q12", "question": "What did the Schlieffen Plan call for?", "expected_chunk_id": "chunk_18", "category": "strategy"}
