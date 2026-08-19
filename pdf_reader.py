@@ -153,7 +153,7 @@ def pdf_to_vectors(pdf_path):
 
 if __name__ == "__main__":
 
-    pdf_file = "documents/first_world_war.pdf"
+    pdf_file = "documents/LIC_Insurance.pdf"
 
     embeddings, chunks, metadata = pdf_to_vectors(
         pdf_file
