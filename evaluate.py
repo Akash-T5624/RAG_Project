@@ -1,7 +1,7 @@
 """Evaluation driver for the Week 4 Practical.
 
-Runs the 12-question golden set through:
-  --stage baseline  -> the CURRENT retriever (query.search_database, FAISS only)
+Runs the golden set through:
+  --stage baseline  -> pure FAISS semantic search (retrieval.semantic_search)
   --stage after     -> FAISS + BM25 + RRF(k=60) (retrieval.hybrid_search)
 
 Records per-question: top-3 chunk_ids, scores, hit@3, retrieval latency, and
@@ -32,8 +32,6 @@ def main():
     args = parser.parse_args()
 
     with suppress_stdout():
-        if args.stage == "baseline":
-            import query  # current retriever: FAISS semantic search only
         import retrieval
 
     with open("golden_set.jsonl", encoding="utf-8") as f:
@@ -54,8 +52,7 @@ def main():
     # corpus load, BM25 index build).
     warmup = questions[0]
     if args.stage == "baseline":
-        with suppress_stdout():
-            query.search_database(warmup["question"], top_k=5)
+        retrieval.semantic_search(warmup["question"], top_k=5)
     else:
         retrieval.hybrid_search(warmup["question"], final_top_k=5)
 
@@ -65,8 +62,7 @@ def main():
         t0 = time.perf_counter()
 
         if args.stage == "baseline":
-            with suppress_stdout():
-                hits = query.search_database(q["question"], top_k=5)
+            hits = retrieval.semantic_search(q["question"], top_k=5)
         else:
             hits = retrieval.hybrid_search(q["question"], final_top_k=5)
 

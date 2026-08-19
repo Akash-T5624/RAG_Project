@@ -10,3 +10,4 @@
 {"id": "q10", "question": "Under the joint life annuity option, what happens to the annuity payment on the first death after the Deferment Period?", "expected_chunk_id": "chunk_50", "category": "benefits"}
 {"id": "q11", "question": "What is the minimum vesting age for a policy purchased as a QROPS?", "expected_chunk_id": "chunk_87", "category": "qrops"}
 {"id": "q12", "question": "Within how many years from the date of issuance can a life insurance policy be called in question on the ground of fraud?", "expected_chunk_id": "chunk_152", "category": "statutory-provisions"}
+{"id": "q13", "question": "What does QROPS stand for?", "expected_chunk_id": "chunk_41", "category": "qrops"}
