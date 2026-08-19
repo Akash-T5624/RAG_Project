@@ -1,12 +1,12 @@
-{"id": "q01", "question": "Which countries formed the Allies?", "expected_chunk_id": "chunk_1", "category": "alliances"}
-{"id": "q02", "question": "Why did American sympathy for the Allies increase?", "expected_chunk_id": "chunk_30", "category": "us-involvement"}
-{"id": "q03", "question": "What did President Wilson declare at the start of the fighting in Europe?", "expected_chunk_id": "chunk_27", "category": "us-involvement"}
-{"id": "q04", "question": "Under what condition would Germany consider renewing unrestricted submarine warfare?", "expected_chunk_id": "chunk_44", "category": "naval-warfare"}
-{"id": "q05", "question": "What did peace without victory mean to Wilson?", "expected_chunk_id": "chunk_48", "category": "diplomacy"}
-{"id": "q06", "question": "What were the trenches like by the spring of 1915?", "expected_chunk_id": "chunk_20", "category": "trench-warfare"}
-{"id": "q07", "question": "How many American lives were lost in the sinking of the Lusitania?", "expected_chunk_id": "chunk_40", "category": "naval-warfare"}
-{"id": "q08", "question": "How many German civilians starved to death because of the British blockade?", "expected_chunk_id": "chunk_38", "category": "naval-warfare"}
-{"id": "q09", "question": "When did the kaiser announce that U-boats would sink all ships in British waters on sight?", "expected_chunk_id": "chunk_45", "category": "naval-warfare"}
-{"id": "q10", "question": "Who were the two generals shown marching with German emperor Wilhelm II?", "expected_chunk_id": "chunk_17", "category": "key-figures"}
-{"id": "q11", "question": "How many casualties had Russia suffered by the end of 1915?", "expected_chunk_id": "chunk_51", "category": "effects"}
-{"id": "q12", "question": "What did the Schlieffen Plan call for?", "expected_chunk_id": "chunk_18", "category": "strategy"}
+{"id": "q01", "question": "What is the Free Look Period if this policy is purchased online?", "expected_chunk_id": "chunk_3", "category": "free-look"}
+{"id": "q02", "question": "Within how many days from the date of death must intimation of death be notified in writing to the Corporation?", "expected_chunk_id": "chunk_10", "category": "claims"}
+{"id": "q03", "question": "What is the Date of Vesting as defined in the policy?", "expected_chunk_id": "chunk_30", "category": "definitions"}
+{"id": "q04", "question": "Who is considered a Minor under this policy?", "expected_chunk_id": "chunk_35", "category": "definitions"}
+{"id": "q05", "question": "What is the formula for calculating the Additional Benefit on Death per month?", "expected_chunk_id": "chunk_53", "category": "benefits"}
+{"id": "q06", "question": "What is the Guaranteed Surrender Value (GSV) Factor for policy year 4?", "expected_chunk_id": "chunk_72", "category": "surrender"}
+{"id": "q07", "question": "How is the loan interest recovered after the Deferment Period?", "expected_chunk_id": "chunk_81", "category": "loan"}
+{"id": "q08", "question": "What is the minimum installment amount for monthly installment payment of the death benefit?", "expected_chunk_id": "chunk_67", "category": "death-benefit"}
+{"id": "q09", "question": "Which regulation currently applies to the minimum limits for annuities?", "expected_chunk_id": "chunk_64", "category": "regulations"}
+{"id": "q10", "question": "Under the joint life annuity option, what happens to the annuity payment on the first death after the Deferment Period?", "expected_chunk_id": "chunk_50", "category": "benefits"}
+{"id": "q11", "question": "What is the minimum vesting age for a policy purchased as a QROPS?", "expected_chunk_id": "chunk_87", "category": "qrops"}
+{"id": "q12", "question": "Within how many years from the date of issuance can a life insurance policy be called in question on the ground of fraud?", "expected_chunk_id": "chunk_152", "category": "statutory-provisions"}

@@ -3,421 +3,421 @@
   "results": [
     {
       "question_id": "q01",
-      "question": "Which countries formed the Allies?",
-      "expected_chunk_id": "chunk_1",
-      "category": "alliances",
+      "question": "What is the Free Look Period if this policy is purchased online?",
+      "expected_chunk_id": "chunk_3",
+      "category": "free-look",
       "top3_chunk_ids": [
-        "chunk_2",
-        "chunk_66",
-        "chunk_36"
+        "chunk_3",
+        "chunk_32",
+        "chunk_83"
       ],
       "top5_chunk_ids": [
-        "chunk_2",
-        "chunk_66",
-        "chunk_36",
-        "chunk_1",
-        "chunk_17"
+        "chunk_3",
+        "chunk_32",
+        "chunk_83",
+        "chunk_84",
+        "chunk_4"
       ],
       "scores": [
-        0.6149111986160278,
-        0.5533926486968994,
-        0.4982970356941223,
-        0.49533963203430176,
-        0.49418967962265015
+        0.032266458495966696,
+        0.03225806451612903,
+        0.031544957774465976,
+        0.03149801587301587,
+        0.030309988518943745
       ],
-      "hit_at_3": 0,
-      "retrieval_latency_ms": 29.919,
+      "hit_at_3": 1,
+      "retrieval_latency_ms": 12.759,
       "retrieved_chunk_texts": [
-        "l powers of Europe \nformed alliances. Germany, Aus tria-Hungary, and Italy formed the Triple Alliance. Great \nBritain, France, and Russia formed the Triple Entente. Tensions grew between Austria -\nHungary and Serbia as Serbian nationalists attempted to unite all Slavic peoples living in the \nBalkan region into  a single state, including South Slavs of Austria -Hungary. German success \nin the Franco -German War established the German Empire. Germany’s takeover of Alsace -\nLorraine created a desir",
-        " and separate alliances and quest for a balance of power. You are aware of the \npeculiarities of the international situatio n in Europe in 1914. It has been described as ",
-        "y \ndepended upon an Allied victory.  \n \n8. The War Hits Home   \nAlthough the majority of Americans favored victory for the Allies rather than the Central \npowers, they did not wa nt to join the Allies’ fight. By 1917, however, America had mobilized \nfor war against the Central powers in order to ensure Allied repayment of debts to the United \nStates and to prevent the Germans from threatening U.S. shipping.  ",
-        "r                           DoI:https://doi.org/10.5281/zenodo.7258954                       \n \nAbstract  \n \nFirst World War is considered as one of the largest wars in history. The world’s great powers \nassembled in two opposing alliances the Allies (British Empire, France and the Russian \nEmpire) versus the Central Powers (Germany and Austria -Hungary). WWI lasted from 28 \nJuly 1914 to 11 November 1918. Over the course of the 19th century, rival powers of Europe \nformed alliances. Germany, Aus",
-        "is. On July 28 Austria -Hungary declared w hat was expected to be a short war \nagainst Serbia. German emperor Wilhelm II (center) marches with two of his generals  \nHindenburg (left) and Ludendorff, during World War I. 316 Module 7 The alliance system \npulled one nation after another into the conflict.  On August 1 Germany, obligated by treaty to \nsupport Austria -Hungary, declared war on Russia. On August 3 Germany declared war on \nRussia’s ally France. After Germany invaded Belgium, Britain de"
+        "to note that such \noption, if available and mentioned in the document of this Plan has to be ex ercised in the right manner \nand during the stipulated time limit as prescribed herein.  \n \nFree Look Period  \n \nWe would request you to go through the terms and conditions of the Policy and in case you disagree \nwith any of the terms and conditions, you may retur n the Policy within a period of 15 days (30 days if this \npolicy is purchased online) from the date of receipt of Policy Document stating t",
+        "th \nbenefit under the policy.  \n16. Due Date  means a fixed date on which the annuity is due and payable.  \n17. Endorsement means conditions attached/ affixed to this Policy incorporating any ame ndments or \nmodifications agreed to or issued by the Corporation.  \n18. Free Look Period  is the period of 15 days (30 days if this policy is purchased online) from the \ndate of receipt of the Policy Document by the Policyholder to review the terms and conditions of \nthis policy and where the Policyhold",
+        " April, \n2021, the applicable interest rate is 9.50% p.a. compounding half -yearly for entire term of the loan.  \n \nAny change in basis of determination of interest rate for policy loan shall be subject to prior approval \nof IRDAI.  \n \nIn case of QROPS, above policy loan provisions shall be subject to Rules and Regulations of HMRC \nin this regard.  \n \n6. Free  Look period:  \nDuring the Free Look period of 15 days (30 days if this policy is purchased online) from the date of \nreceipt of the Polic",
+        "eriod of 15 days (30 days if this policy is purchased online) from the date of \nreceipt of the Policy Document by the Policyholder, if the Policyholder is not satisfied with the Terms \nand Conditions of the policy, he/she may return the  policy to the Corporation stating the reason of \nobjections. On receipt of the same the Corporation shall cancel the Policy and return the Premium  \npaid after deducting the charges for stamp duty and annuity paid, if any.  However, this condition of \nFree Loo k",
+        " (30 days if this \npolicy is purchased online) from the date of receipt of Policy Document stating the reasons of your \nobjections and disagreement. On receipt of the policy , we shall cancel the same and the amount of \npremium deposited by you shall be refunded to you after deducting the charges for stamp duty and \nAnnuity paid (if any).  In case of QROPS, these  provisions shall be further subject to any specific \nprovisions regar ding procedures as per Rules and Regulations of the HMRC in thi"
       ],
       "answer": null
     },
     {
       "question_id": "q02",
-      "question": "Why did American sympathy for the Allies increase?",
-      "expected_chunk_id": "chunk_30",
-      "category": "us-involvement",
+      "question": "Within how many days from the date of death must intimation of death be notified in writing to the Corporation?",
+      "expected_chunk_id": "chunk_10",
+      "category": "claims",
       "top3_chunk_ids": [
-        "chunk_36",
-        "chunk_33",
-        "chunk_44"
+        "chunk_102",
+        "chunk_11",
+        "chunk_10"
       ],
       "top5_chunk_ids": [
-        "chunk_36",
-        "chunk_33",
-        "chunk_44",
-        "chunk_27",
-        "chunk_29"
+        "chunk_102",
+        "chunk_11",
+        "chunk_10",
+        "chunk_101",
+        "chunk_152"
       ],
       "scores": [
-        0.6245143413543701,
-        0.5581167340278625,
-        0.5463449954986572,
-        0.5300626754760742,
-        0.5279291868209839
+        0.03278688524590164,
+        0.03200204813108039,
+        0.03200204813108039,
+        0.029513888888888888,
+        0.029236022193768675
       ],
-      "hit_at_3": 0,
-      "retrieval_latency_ms": 7.372,
+      "hit_at_3": 1,
+      "retrieval_latency_ms": 16.912,
       "retrieved_chunk_texts": [
-        "y \ndepended upon an Allied victory.  \n \n8. The War Hits Home   \nAlthough the majority of Americans favored victory for the Allies rather than the Central \npowers, they did not wa nt to join the Allies’ fight. By 1917, however, America had mobilized \nfor war against the Central powers in order to ensure Allied repayment of debts to the United \nStates and to prevent the Germans from threatening U.S. shipping.  ",
-        "r American businesses. America’s economic ties with the Allies were far stronger \nthan its ties with the Central powers. Before the war, American trade with Britain and France \nwas more than double its trade with Germany. With the start of the war, America’s \ntransatlantic trade became even more lopsided. The Allies flooded American manufacturers \nwith orders for all sorts of war supplies. These included dynamite, cannon powder, \nsubmarines, copper wire and tubing, and armed cars. The United Sta",
-        "ot persuad e Britain to lift its blockade against food and fertilizers, Germany would \nconsider renewing unrestricted submarine warfare.  \n \n11. The United States Declares War   \nDespite Wilson’s efforts on behalf of peace, hope seemed lost. The Allies were angered by \nWilson’s request for “peace without victory.” They blamed the Central powers for starting the \nwar and wanted them to pay for wartime damage and destruction. Germany, too, ignored \nWilson’s call for peace.  \n \n12. German Provocati",
-        "d remain neutral. His statement reflected a longstanding American commitment to \nisolationism. Most Americans agreed that there was no reason to join a struggle 3,000 miles \naway. The war did not threaten American lives or property. This did no t mean, however, that \ncertain groups and individuals in the United States were indifferent to who would win the war. \nPublic opinion was strong  but divided. Divided loyalties Socialists criticized the war as a \ncapitalist and imperialist struggle betwee",
-        "ed U.S. citizens \nfollowed the war closely because they still had ties to the nations from which they had \nemigrated. For exa mple, many Americans of German descent sympathized with Germany. \nAmericans of Irish descent remembered the centuries of British oppression in Ireland. They \nsaw the war as a chance for Ireland to gain its independence. Pressure from some of these \nethnic gro ups in the United States contributed to American neutrality. Some immigrants \ncreated organizations to help the ca"
+        "ant / Secondary Annuitant  shall also be submitted.  \n \nWithin 90 days from the date of death, intimation of death along with death certificate must be \nnotified in writing to the office of the Corporation where the policy is serviced for any claim to be \nadmissible. However, delay in intimation of the genuine claim by the claimant, may be condoned \nby the Corporation, on merit and where delay is proved to be for reasons beyond  his/her control.  \n \nOn Surrender :  \nIn case of surrender of a pol",
+        " death along with death certificate must be \nnotified in writing to the office of the Corporation where the policy is serviced for any claims to be \nadmissible. However, delay in intimation of the genuine claim by the claimant may be condoned by \nthe Corporation on merit and where delay is proved to be for the reasons beyond his /her control.  \n \n6) Section 45 of Insurance Act, 1938  as amended from time to time : The current provisions of the \nsame are enclosed in Annexure -III. \n \n7) The appro",
+        ", as amended from time to time. The current provisions of Section 38 are \nenclosed as Annexure - I for reference.  \n \n4) Nomination: Nomination should be in accordance with provision s of Section 39 of the Insurance \nAct, 1938, as amended from time to time. The current provisions of Section 39 are enclosed in \nAnnexure -II for reference.  \n \n5) Within  90 days from the date of death, intimation of death along with death certificate must be \nnotified in writing to the office of the Corporation wh",
+        " Annuitant/Secondary Annuitant shall be the claim form, \nas prescribed by the Corporation, accompanied with original policy document, NEFT mandate \nfrom the claimant for direct credit of the claim amount to the bank account, proof of title, proof of \ndeath, whichever is applicable, to the satisfaction of the  Corporation. If the age is not admitted \nunder the policy, the proof of age of the Annuitant / Secondary Annuitant  shall also be submitted.  \n \nWithin 90 days from the date of death, intim",
+        "or the date of \ncommencement of risk or the date of revival of the pol icy or the date of the rider to the policy, \nwhichever is later.  \n \n2. A policy of life insurance may be called in question at any time within three years from the date of \nissuance of the policy or the date of commencement of risk or the date of revival of the policy or the \ndate of the rider to the policy, whichever is later on the ground of fraud:  \n \nProvided that the insurer shall have to communicate in writing to the i"
       ],
       "answer": null
     },
     {
       "question_id": "q03",
-      "question": "What did President Wilson declare at the start of the fighting in Europe?",
-      "expected_chunk_id": "chunk_27",
-      "category": "us-involvement",
+      "question": "What is the Date of Vesting as defined in the policy?",
+      "expected_chunk_id": "chunk_30",
+      "category": "definitions",
       "top3_chunk_ids": [
-        "chunk_46",
-        "chunk_45",
-        "chunk_44"
+        "chunk_30",
+        "chunk_19",
+        "chunk_31"
       ],
       "top5_chunk_ids": [
-        "chunk_46",
-        "chunk_45",
-        "chunk_44",
-        "chunk_54",
-        "chunk_49"
+        "chunk_30",
+        "chunk_19",
+        "chunk_31",
+        "chunk_87",
+        "chunk_151"
       ],
       "scores": [
-        0.6573565006256104,
-        0.6072651743888855,
-        0.5417692065238953,
-        0.5396896600723267,
-        0.516556978225708
+        0.03278688524590164,
+        0.03200204813108039,
+        0.03200204813108039,
+        0.027912386121341344,
+        0.027745885954841176
       ],
-      "hit_at_3": 0,
-      "retrieval_latency_ms": 9.025,
+      "hit_at_3": 1,
+      "retrieval_latency_ms": 12.663,
       "retrieved_chunk_texts": [
-        "declaring war. Document -Based Investigation Historical Source \n“Peace Without Victory” After the 1916 election, President Wilson tried to mediate between \nthe warring alliances in Europe. The attempt failed. In a later speech, the president asked the ",
-        "\nWilson’s call for peace.  \n \n12. German Provocation  \nGermany’s leaders hoped to defea t Britain by resuming unrestricted submarine warfare. On \nJanuary 31 the kaiser announced that U -boats would sink all ships in British waters  hostile or \nneutral  on sight. Wilson was stunned. The German decision meant that the United States \nwould have to go to war. However, the president held back, saying that he would wait for \n“actual overt acts” before declaring war. Document -Based Investigation Histo",
-        "ot persuad e Britain to lift its blockade against food and fertilizers, Germany would \nconsider renewing unrestricted submarine warfare.  \n \n11. The United States Declares War   \nDespite Wilson’s efforts on behalf of peace, hope seemed lost. The Allies were angered by \nWilson’s request for “peace without victory.” They blamed the Central powers for starting the \nwar and wanted them to pay for wartime damage and destruction. Germany, too, ignored \nWilson’s call for peace.  \n \n12. German Provocati",
-        "es against brutal monarchies.  \n \n17. America Acts  \nA light drizzle fell on Washington on April 2, 1917, as senators, representatives, ambassadors, \nmembers of the Supreme Court, and other guests crowded into the Capitol to hear President \nWilson deliver h is war resolution. Congress passed the resolution a few days later. With the \nhope of neutrality finally shattered, U.S. troops would follow the stream of American money \nand munitions that had been heading to the Allies throughout the war. B",
-        "manently, \nbut only as upon quicksand. Only a peace between equals can last.” President Woodrow \nWilson, from an address to the Senate, January 22, 1917 Analyze Historical Sources How \ndoes this speech reflect  Wilson’s ideas about equality in a postwar world? Reading Check \nAnalyze Effects How did the German U -boat campaign affect U.S. public opinion?  The overt \nacts came. First was the Zimmermann note, a secret telegram from the German foreign \nminister to the G erman ambassador in Mexico th"
+        "ce (cover) as evidenced in the schedule of the Policy.  \n11. Date  of issuance of policy  is a date when a proposal after underwriting is accepted as a Policy \nand this contract get s effected.  \n12. Date of Vesting means the date specified in Policy Schedule on whic h Deferment Period expires \nand t he annuity becomes payable in arrears as per the mode chosen for annuity payment.  \n13. Death Benefit  means the benefit, which is payable on death, as specified in Condition 1 of Part C \nof this Po",
+        "Sample Policy Document - LIC’s New Jeevan Shanti  (UIN: 512N338V01)                                                                   Page 4 of 21 SCHEDULE  \nDIVISIONAL OFFICE:        BRANCH OFFICE:  \n \nPolicy No.:  \nDate of Commencement of Policy:  \nDate of Commencement of Risk:  \n \n \nDeferment Period:  \nDate of Vesting:  Plan No.:  \nUIN:   \nPurchase Price: (Rs.)  \nPremium: (Rs.)  \nAdditional Benefit on Death  per month:  (Rs) \nAmount of Annuity payment: (Rs.)  \nMode of payment of Annuity:  \nDa",
+        "fit  means the benefit, which is payable on death, as specified in Condition 1 of Part C \nof this Policy Document.  \n14. Deferment Period is the period, in years, as chosen by the policyholder and as specified in the \nSchedule, commencing from the Date of commencement of policy  to the date of Vesting.  \n15. Discharge form  is the form to be filled by Annuitant /Claimant to claim the Surrender/Death \nbenefit under the policy.  \n16. Due Date  means a fixed date on which the annuity is due and pay",
+        "rding procedures as per Rules and Regulations of the HMRC in this regard.  \n \n7. If this policy is purchase d as QROPS (Qualifying Recognized Overseas Pension Scheme), \nthrough transfer of UK tax relieved assets  the following terms and conditions prescribed by \nHMRC (Her Majesty Revenue & Customs)  shall apply : \ni. Minimum Vesting Age  shall be 55 ye ars.  \nii. If the policy is cancelled during the Free  Look period, the proceeds from cancellation shall only \nbe transferred back to the fund ho",
+        "Sample Policy Document - LIC’s New Jeevan Shanti  (UIN: 512N338V01)                                                                   Page 20 of 21 Annexure -III \n \nSection - 45 as per Insurance Act, 1938  \n \n1. No policy of life insurance shall be called in question on any ground whatsoever after the expiry of \nthree years from the date of the policy, i.e. from the date of issuance of the policy or the date of \ncommencement of risk or the date of revival of the pol icy or the date of the rider "
       ],
       "answer": null
     },
     {
       "question_id": "q04",
-      "question": "Under what condition would Germany consider renewing unrestricted submarine warfare?",
-      "expected_chunk_id": "chunk_44",
-      "category": "naval-warfare",
+      "question": "Who is considered a Minor under this policy?",
+      "expected_chunk_id": "chunk_35",
+      "category": "definitions",
       "top3_chunk_ids": [
-        "chunk_44",
-        "chunk_39",
-        "chunk_45"
+        "chunk_35",
+        "chunk_38",
+        "chunk_39"
       ],
       "top5_chunk_ids": [
-        "chunk_44",
+        "chunk_35",
+        "chunk_38",
         "chunk_39",
-        "chunk_45",
-        "chunk_37",
-        "chunk_63"
+        "chunk_24",
+        "chunk_136"
       ],
       "scores": [
-        0.49981358647346497,
-        0.4919252097606659,
-        0.4482501149177551,
-        0.38056766986846924,
-        0.37180113792419434
+        0.031754032258064516,
+        0.031099324975891997,
+        0.031024531024531024,
+        0.029386529386529386,
+        0.02938045560996381
       ],
       "hit_at_3": 1,
-      "retrieval_latency_ms": 8.065,
+      "retrieval_latency_ms": 11.139,
       "retrieved_chunk_texts": [
-        "ot persuad e Britain to lift its blockade against food and fertilizers, Germany would \nconsider renewing unrestricted submarine warfare.  \n \n11. The United States Declares War   \nDespite Wilson’s efforts on behalf of peace, hope seemed lost. The Allies were angered by \nWilson’s request for “peace without victory.” They blamed the Central powers for starting the \nwar and wanted them to pay for wartime damage and destruction. Germany, too, ignored \nWilson’s call for peace.  \n \n12. German Provocati",
-        "e. Americans had been \nangry at Britain’s blockade. It threatened free dom of the seas and prevented American goods \nfrom reaching German ports. However, Germany’s response to the blockade soon outraged \nAmericans.  \n \n10. German U -Boat Response  \nGermany responded to the British blockade with a counterblockade by U -boats (from \nUnte rseeboot, the German word for submarine). Any British or Allied ship found in the waters \naround Britain would be sunk  and it would not always be possible to war",
-        "\nWilson’s call for peace.  \n \n12. German Provocation  \nGermany’s leaders hoped to defea t Britain by resuming unrestricted submarine warfare. On \nJanuary 31 the kaiser announced that U -boats would sink all ships in British waters  hostile or \nneutral  on sight. Wilson was stunned. The German decision meant that the United States \nwould have to go to war. However, the president held back, saying that he would wait for \n“actual overt acts” before declaring war. Document -Based Investigation Histo",
-        "Baljit S ingh et al                                                                 IJMRT: Volume ( 4), Issue 11, 2022\n \nCopyrights@IJMRT  www.ijmrt.in   Page | 8  \n9. The British Blockade  \nAs fighting on land continued, Britain began to  make more use of its naval strength. It \nblockaded the German coast to prevent weapons and other military supplies from getting \nthrough. However, the British expanded the definition of contraband to include fo od. They \nalso extended the blockade to neutral p",
-        "ddle East are divvied up among the victorious Allied \npowers at the Conference of San Remo.  \n The League of Nations is established, but its effectiveness is hamp ered by the non -\nparticipation of the United States.  \n20. Conclusion  \nOur aim here was to put forward before you the main causes and consequences of the First \nWorld War. You must have noticed that the only common and agreed objective of the Allies i \nin 1914 w as to crush Germany and diminish its hegemony in Europe. They did not g"
+        "Sample Policy Document - LIC’s New Jeevan Shanti  (UIN: 512N338V01)                                                                   Page 6 of 21 value payable to the policyholder.  \n22. Minor  is a person who has not completed 18 years of age.  \n23. Mode refers to the frequency of Annuity payment as chosen by the Annuitant  from the available \nmodes of annuity i.e. yearly, half -yearly, quarterly, and monthly. The Annuity shall be payable in \narrears i.e. the annuity payment shall commence aft",
+        "ime.  \n26. Nominee(s)  means the person(s) nominated under this policy and who is (are) authorized to \nreceive the benefit/s under this policy, on the death of the Annuitant/ P rimary Annuitant/Secondary \nAnnuitant, wherever applicable as per the annuity option chosen  and to give a valid discharge to \nthe Corporation on settlement of the claim . \n27. Person with disability (Divyangjan) defined under Condition 8 of Part D of this Policy d ocument,  \nwho is the beneficiary under this policy and a",
+        "der Condition 8 of Part D of this Policy d ocument,  \nwho is the beneficiary under this policy and a relative of the Annuitant/ Primary annuitant . \n28. Polic y/ Policy Document  means this document a long with endorsements , if any, issued by the \nCorporation which is a legal contract between the Policyholder and the Corporation.  \n29. Policyholder is the legal owner of this policy.  \n30. Premium  is the amount paid by the Policyholder as mentioned in the Schedule of this Policy \nDocument (excl",
+        "Sample Policy Document - LIC’s New Jeevan Shanti  (UIN: 512N338V01)                                                                   Page 5 of 21 PART – B: DEFINITIONS  \n \nThe definitions of terms/words used in the Policy Document are as under:  \n \n1. Age is the age last birthday of the Annuitant (s) on the date of commencement of the policy.  \n2. Annuitant(s)  being  person(s) on whose life this policy has been taken and who become entitled \nto receive the annuity benefits as stated in Policy ",
+        "sons to whom the money secured \nby the policy shall be paid in the event of his death:  \n \nProvided that, where any nominee is a minor, it shall be lawful for the policy holder to appoint any \nperson in the manner laid down by the insurer, to receive the money secured by policy in the event \nof his death during the minority of the nominee.  \n \n2. Any such nomination in order to be effectual shall, unless it is incorporated in the text of the policy \nitself, be made by an endorsement on the polic"
       ],
       "answer": null
     },
     {
       "question_id": "q05",
-      "question": "What did peace without victory mean to Wilson?",
-      "expected_chunk_id": "chunk_48",
-      "category": "diplomacy",
+      "question": "What is the formula for calculating the Additional Benefit on Death per month?",
+      "expected_chunk_id": "chunk_53",
+      "category": "benefits",
       "top3_chunk_ids": [
-        "chunk_46",
-        "chunk_44",
-        "chunk_45"
+        "chunk_53",
+        "chunk_52",
+        "chunk_36"
       ],
       "top5_chunk_ids": [
-        "chunk_46",
-        "chunk_44",
-        "chunk_45",
-        "chunk_55",
-        "chunk_48"
+        "chunk_53",
+        "chunk_52",
+        "chunk_36",
+        "chunk_66",
+        "chunk_45"
       ],
       "scores": [
-        0.6761491894721985,
-        0.6013270616531372,
-        0.5810834169387817,
-        0.5791712999343872,
-        0.5738144516944885
+        0.032266458495966696,
+        0.032266458495966696,
+        0.03225806451612903,
+        0.030330882352941176,
+        0.02964426877470356
       ],
-      "hit_at_3": 0,
-      "retrieval_latency_ms": 9.846,
+      "hit_at_3": 1,
+      "retrieval_latency_ms": 46.914,
       "retrieved_chunk_texts": [
-        "declaring war. Document -Based Investigation Historical Source \n“Peace Without Victory” After the 1916 election, President Wilson tried to mediate between \nthe warring alliances in Europe. The attempt failed. In a later speech, the president asked the ",
-        "ot persuad e Britain to lift its blockade against food and fertilizers, Germany would \nconsider renewing unrestricted submarine warfare.  \n \n11. The United States Declares War   \nDespite Wilson’s efforts on behalf of peace, hope seemed lost. The Allies were angered by \nWilson’s request for “peace without victory.” They blamed the Central powers for starting the \nwar and wanted them to pay for wartime damage and destruction. Germany, too, ignored \nWilson’s call for peace.  \n \n12. German Provocati",
-        "\nWilson’s call for peace.  \n \n12. German Provocation  \nGermany’s leaders hoped to defea t Britain by resuming unrestricted submarine warfare. On \nJanuary 31 the kaiser announced that U -boats would sink all ships in British waters  hostile or \nneutral  on sight. Wilson was stunned. The German decision meant that the United States \nwould have to go to war. However, the president held back, saying that he would wait for \n“actual overt acts” before declaring war. Document -Based Investigation Histo",
-        "d been heading to the Allies throughout the war. But Wilson’s plea  to \nmake the world “safe for democracy” wasn’t just political posturing. Indeed, Wilson and \nmany Americans truly believed that the United States had to join the war to pave the way for a \nfuture order of peace and freedom. A resolved but anxious nation held  its breath as the United \nStates prepared for war.  \n \n18. World War And India  \nAlthough not a direct participant, India could not, however, escape the effect of the war. ",
-        "at will win the approval of mankind, not merely a peace that will serve the several \ninterests and immediate aims of the nations engaged. .  . . it must be a peace without victory \nwould mean peace forced upon the loser, a victor’s terms imposed upon the vanquished. It \nwould be accepted in humiliation, under duress, at an intolerable sacrifice, and would leave a \nsting, a resentment, a bitter me mory upon which terms of peace would rest, not permanently, \nbut only as upon quicksand. Only a peac"
+        " Benefit on Death  per month  (as specified in the \nSchedule)  during the Deferment Period shall be as under:  \n \nAdditional Benefit on Death  per month  = (Purchase Price * Annuity rate p.a. payable monthly) / \n12 \n \nWhere Annuity rate p.a. payable monthly shall be equal to Monthly tabular annuity rate and shall \ndepend on the Option chosen, Age at entry of the annuitant(s) and the Deferment Period opted for.  \n \nIn case of death of the annuitant or surrender of the policy during the Deferment ",
+        "Sample Policy Document - LIC’s New Jeevan Shanti  (UIN: 512N338V01)                                                                   Page 8 of 21  \n2. Maturity Benefit:  There is no maturity benefit under this policy.  \n \n3. Additional Benefit on Death : \n \nThe Additional Benefit on Death  shall accrue at the end of each policy month, till the end of \nDeferment Period only. The rate of Additional Benefit on Death  per month  (as specified in the \nSchedule)  during the Deferment Period shall be ",
+        "y, and monthly. The Annuity shall be payable in \narrears i.e. the annuity payment shall commence after 1 year, 6 months, 3 months and 1 month \nfrom the Date of Vesting of Policy  depending on whether the mode of annuity payment is Yearly, \nHalf yearly, Quarterly and Monthly respectively.  \n24. Monthly tabular annuity rate for the purpose of calculating Additional Benefit on Death  means \nthe annuity rate per Unit Purchase Price applicable for monthly mode without applying any \nincentive in annui",
+        ": \nUnder this option the benefit amount payable on death can be received in installments over \nthe chosen period of 5 or 10 or 15 years instead of lumpsum amount. This option ca n be \nexercised for full or part of the Death Benefit payable under the policy. The amount opted by \nthe Annuitant (i.e. net claim amount) can be either in absolute value or as a percentage of the \ntotal claim proceeds payable.  \n \nThe installments shall be paid  in advance at yearly or half -yearly or quarterly or month",
+        "n Death  \n1 Deferred \nannuity for \nSingle Life  During deferment \nperiod: Nothing is \npayable during the \ndeferment period.  \n \n \nAfter deferment \nperiod : A nnuity \npayments will be \nmade in arrears as \nlong as the Annuitant \nis alive, as per the \nchosen mode of \nannuity payment.  Death Benefit shall be  \nHigher of :  \n Purchase Price plus Accrued Additional \nBenefit on Death  (as specified in Condition 3 of \nPart C of this policy document ) minus Total \nannuity amount payable till date of dea"
       ],
       "answer": null
     },
     {
       "question_id": "q06",
-      "question": "What were the trenches like by the spring of 1915?",
-      "expected_chunk_id": "chunk_20",
-      "category": "trench-warfare",
+      "question": "What is the Guaranteed Surrender Value (GSV) Factor for policy year 4?",
+      "expected_chunk_id": "chunk_72",
+      "category": "surrender",
       "top3_chunk_ids": [
-        "chunk_23",
-        "chunk_22",
-        "chunk_21"
+        "chunk_72",
+        "chunk_71",
+        "chunk_70"
       ],
       "top5_chunk_ids": [
-        "chunk_23",
-        "chunk_22",
-        "chunk_21",
-        "chunk_20",
-        "chunk_7"
+        "chunk_72",
+        "chunk_71",
+        "chunk_70",
+        "chunk_54",
+        "chunk_43"
       ],
       "scores": [
-        0.5684384107589722,
-        0.5543540716171265,
-        0.5033223032951355,
-        0.48613741993904114,
-        0.4673205018043518
+        0.03278688524590164,
+        0.03225806451612903,
+        0.031746031746031744,
+        0.02946912242686891,
+        0.02900988017658188
       ],
-      "hit_at_3": 0,
-      "retrieval_latency_ms": 9.209,
+      "hit_at_3": 1,
+      "retrieval_latency_ms": 28.749,
       "retrieved_chunk_texts": [
-        " “no man’s land.” This was a barren expanse of mud pockmarked with shell \ncraters and filled with barbed wire. Periodically, the soldie rs charged enemy lines, only to be \nmowed down by machine -gun fire. Life in the trenches was miserable. The soldiers were \nsurrounded by filth, lice, rats, and polluted water that caused dysentery. Many soldiers \nsuffered trench foot. This condition was cause d by standing in cold, wet trenches for long \nperiods of time without changing into dry socks or boots.",
-        "as just as devastating and \ninconclusive.  \n \n6. In The Trenches   \nThe stalemate was mainly an effect of trench warfare, in which armies fought for mere yards \nof ground. On the battlefields of Europe, there were three main kinds of trenches front line, \nsupport, and reserve. Soldiers spent a period of time in each kind of trench. Dugouts, or \nunderground rooms, were used as officers’ quarters and command posts. Between the trench \ncomplexes lay “no man’s land.” This was a barren expanse of mud",
-        "man soldiers occupied one set of trenches, Allied soldiers the other. The scale of slaughter \nwas horrific. During the First Battle of the Somme  which began on July 1, 1916, and lasted \nuntil mid -November  the British suffered 60,000 casualties the fir st day alone. Final casualties \ntotalled about 1.2 million, yet only about seven miles of ground changed hands. This virtual \nstalemate lasted for more than three years. Elsewhere, the fighting was just as devastating and \ninconclusive.  \n \n6. I",
-        "Baljit S ingh et al                                                                 IJMRT: Volume ( 4), Issue 11, 2022\n \nCopyrights@IJMRT  www.ijmrt.in   Page | 5 the German advance in September 1914. After struggling to outflank each other’s armies, both \nsides dug in for a long siege. By the spring of 1915, two parallel systems of deep  rat-infested \ntrenches crossed France. The trenches stretched from the Belgian coast to the Swiss Al ps. \nGerman soldiers occupied one set of trenches, Allied ",
-        " in the trenches of war. The first world \nwar, you should remember, was the outcome of a chain  of events taking place in Europe, as \nwell as in other parts of the world during the last two or three decades of the nineteenth \ncentury. You will find out in these pages that it was not merely a war but an event which made \na tremendous impact on the world  scene. It dismantled quite a number of the existing socio -\neconomic and political structures. Our main objective here is to fa miliarise you bo"
+        "e date of surrender  \n \nThe applicable Guaranteed Surrender Value  (GSV)  Factors shall be:  \n \nPolicy Year  1 2 3 4 5 and above  \nGSV Factor  75% 75% 75% 90% 90% \n \nNote: If reduced annuity amount is paid under a policy on account of loan taken, the gross \nannuity amount originally payable shall be deducted for the calculation of Surrender Value.  \n \nSpecial Surrender Value:  \n \nThe Special Surrender Value is reviewable and shall be determined by the Corporation from \ntime to time subject to pr",
+        "Sample Policy Document - LIC’s New Jeevan Shanti  (UIN: 512N338V01)                                                                   Page 10 of 21  \nThe Surrender Value payable shall be higher of Guaranteed Surrender Value or Special Surrender \nValue.  \n \nGuaranteed Surrender Value (GSV):  \n \nGuaranteed Surrender Value = ( GSV  Factor * Purchase Price) minus total annuity amount \npayable up to the date of surrender  \n \nThe applicable Guaranteed Surrender Value  (GSV)  Factors shall be:  \n \nPoli",
+        "terest rate for the calculation of installment amount shall be 4.71% p.a. effective.  \n \n4. Surrender:  \nThe policy can be surrendered at anytime during the policy term.  \n \nOn the payment of the surrender value, the policy shall terminate and all other benefits shall cease.  ",
+        "od opted for.  \n \nIn case of death of the annuitant or surrender of the policy during the Deferment Period , Additional \nBenefit on Death  for the policy year in which the death /surrender  has occurred shall accrue till the \ncompleted policy month as on the date of death /surrender . \n \n \n \nPART - D: CONDITIONS RELATED TO SERVICING ASPECTS  \n \n1. Proof of Age:  \nThe purchase price having been  calculated on the age of the Annuitant(s) as declared in the \nProposal Form, in case the age is found ",
+        "rrender  means \ncomplete withdrawal / termination of the entire Policy.  \n36. Surrender Value  means an amount, if any, that becomes payable in case of surrender in \naccordance with the terms and conditions of this policy.  \n37. UIN means the Unique Identification Number allotted to this Plan by the IRDAI.  \n \n \n  "
       ],
       "answer": null
     },
     {
       "question_id": "q07",
-      "question": "How many American lives were lost in the sinking of the Lusitania?",
-      "expected_chunk_id": "chunk_40",
-      "category": "naval-warfare",
+      "question": "How is the loan interest recovered after the Deferment Period?",
+      "expected_chunk_id": "chunk_81",
+      "category": "loan",
       "top3_chunk_ids": [
-        "chunk_40",
-        "chunk_51",
-        "chunk_42"
+        "chunk_77",
+        "chunk_78",
+        "chunk_80"
       ],
       "top5_chunk_ids": [
-        "chunk_40",
-        "chunk_51",
-        "chunk_42",
-        "chunk_54",
-        "chunk_41"
+        "chunk_77",
+        "chunk_78",
+        "chunk_80",
+        "chunk_81",
+        "chunk_76"
       ],
       "scores": [
-        0.6492818593978882,
-        0.5387840270996094,
-        0.43213990330696106,
-        0.3837060034275055,
-        0.36948275566101074
+        0.03252247488101534,
+        0.03252247488101534,
+        0.031746031746031744,
+        0.03125,
+        0.03076923076923077
       ],
-      "hit_at_3": 1,
-      "retrieval_latency_ms": 11.025,
+      "hit_at_3": 0,
+      "retrieval_latency_ms": 19.844,
       "retrieved_chunk_texts": [
-        "e sunk  and it would not always be possible to warn crews and \npassengers of an attack. One of the worst disasters occurred on May 7, 1915, when a U- boat \nsank the British liner Lusitania off the Irish coast. Of the 1,198 persons lost, 128 were \nAmericans. The Germans defended their action on the grounds that the liner carried \nammunition. Despite Germany’s explanation, Americans became outraged with G ermany \nbecause of the loss of life. American public opinion turned against Germany and the C",
-        " \nwere printed in newspapers. The American public was outraged. On top of this, the Germa ns \nsank four unarmed American merchant ships, with a loss of 36 lives, further angering \nAmericans.  \n \n16. A Revolution In Russia  \nMeanwhile, events in Russia also troubled the United States. By the end of 1915 Russia had \nsuffered about 2.5 million casualties in the fight against the Central powers and was ",
-        "Baljit S ingh et al                                                                 IJMRT: Volume ( 4), Issue 11, 2022\n \nCopyrights@IJMRT  www.ijmrt.in   Page | 9 liner, the Arabic, drowning two Americans. Again the United States protested, and this time \nGermany agreed not to sink any more passenger ships. But in March 1916 Germany broke its \npromise and torpedoed an unarmed French pass enger steamer, the Sussex. The Sussex sank, \nand about 80 passengers, including Americans, were killed or inj",
-        "es against brutal monarchies.  \n \n17. America Acts  \nA light drizzle fell on Washington on April 2, 1917, as senators, representatives, ambassadors, \nmembers of the Supreme Court, and other guests crowded into the Capitol to hear President \nWilson deliver h is war resolution. Congress passed the resolution a few days later. With the \nhope of neutrality finally shattered, U.S. troops would follow the stream of American money \nand munitions that had been heading to the Allies throughout the war. B",
-        "an public opinion turned against Germany and the Central \npowers. Despite this provocation, President Wilson ruled out a military response in favo ur of a \nsharp protest to Germany. Three months later, in August 1915,  a U-boat sank another British "
+        "an. \nThe first payment of interest is to be made on the next policy anniver sary or on the date six \nmonth before the next policy anniversary which ever immediately follows the date on which \nthe loan is sanctioned and every half year thereafter.  \n \nii) In case if the loan is not repaid during the Deferment Period and if there is no defa ult in the \ninterest payment as of the end of Deferment Period, then Interest on the loan shall be \nrecovered from annuity amount payable after the Deferment P",
+        "iod, then Interest on the loan shall be \nrecovered from annuity amount payable after the Deferment Period . \n \niii) In case if the loan is not repaid during the Deferment Period and if there is a default in the \ninterest payment as of the end of the Deferment Period, the difference of Surrender Value ",
+        "nt on the \ndue dates and when the outstanding loan amount along with interest is to exceed the \nSurrender Value, the policy shall be forfeited  to the Corporation. The difference of Surrender \nValue and the loan outstanding amount along with interest, if any, shall be payable to the \nAnnuitant / Secondary Annuitant and the policy shall be terminated.  \n \nAfter Deferment period : \nLoan interest will be recovered from annuity amount payable under the policy. The Loan \ninterest will accrue as per t",
+        "l be recovered from annuity amount payable under the policy. The Loan \ninterest will accrue as per the frequency of annuity payment under the policy and it will be \ndue on the due date of annuity. The loan outstanding shall be recovered from  the claim \nproceeds at the time of exit.  \n \nThe loan interest rate for all the loans commencing during the 12 months’ period from 1st May to \n30th April, shall be compounding half -yearly  rate not exceeding 10 year G -Sec Base/Par yield p.a. \ncompounding ",
+        "e annual annuity amount payable \nunder the po licy subject to maximum of 80% of Surrender Value.  \n \nDuring Deferment Period : \nThe policy loan will be available subject to the following terms and conditions:  \n \ni) Interest on Loan during the deferment period shall be paid on compounding half -yearly basis \nto the Corporation at the rate to be specified by the Corporation at the time of taking loan. \nThe first payment of interest is to be made on the next policy anniver sary or on the date six "
       ],
       "answer": null
     },
     {
       "question_id": "q08",
-      "question": "How many German civilians starved to death because of the British blockade?",
-      "expected_chunk_id": "chunk_38",
-      "category": "naval-warfare",
+      "question": "What is the minimum installment amount for monthly installment payment of the death benefit?",
+      "expected_chunk_id": "chunk_67",
+      "category": "death-benefit",
       "top3_chunk_ids": [
-        "chunk_38",
-        "chunk_39",
-        "chunk_43"
+        "chunk_65",
+        "chunk_36",
+        "chunk_53"
       ],
       "top5_chunk_ids": [
-        "chunk_38",
-        "chunk_39",
-        "chunk_43",
-        "chunk_42",
-        "chunk_44"
+        "chunk_65",
+        "chunk_36",
+        "chunk_53",
+        "chunk_68",
+        "chunk_64"
       ],
       "scores": [
-        0.7269202470779419,
-        0.5288510918617249,
-        0.46702349185943604,
-        0.44198736548423767,
-        0.43823903799057007
+        0.03200204813108039,
+        0.03128054740957967,
+        0.03125763125763126,
+        0.03125,
+        0.03007688828584351
       ],
-      "hit_at_3": 1,
-      "retrieval_latency_ms": 13.233,
+      "hit_at_3": 0,
+      "retrieval_latency_ms": 20.828,
       "retrieved_chunk_texts": [
-        " od. They \nalso extended the blockade to neutral ports and mined the entire North Sea. The results were \ntwofold. First, American ships carrying goods for Germany refused to challenge the blockade \nand seldom reached their destination. Second, Germany found it  increasingly difficult to \nimport foodstuff and fertilizers for crops. By 1917 famine stalked the country. An estimated \n750,000 Germans starved to death as a result of the British blockade. Americans had been \nangry at Britain’s blockade",
-        "e. Americans had been \nangry at Britain’s blockade. It threatened free dom of the seas and prevented American goods \nfrom reaching German ports. However, Germany’s response to the blockade soon outraged \nAmericans.  \n \n10. German U -Boat Response  \nGermany responded to the British blockade with a counterblockade by U -boats (from \nUnte rseeboot, the German word for submarine). Any British or Allied ship found in the waters \naround Britain would be sunk  and it would not always be possible to war",
-        "assengers, including Americans, were killed or injured. After this attack, \nWilson threatened to end diplomatic relations with Germany unless it stopped killing innocent \ncivilians. German officials f eared that the United States might enter the war, so Germany \nissued the Sussex pledge, which included a promise not to sink merchant vessels “without \nwarning and without saving human lives.” But there was a condition: if the United States \ncould not persuad e Britain to lift its blockade against ",
-        "Baljit S ingh et al                                                                 IJMRT: Volume ( 4), Issue 11, 2022\n \nCopyrights@IJMRT  www.ijmrt.in   Page | 9 liner, the Arabic, drowning two Americans. Again the United States protested, and this time \nGermany agreed not to sink any more passenger ships. But in March 1916 Germany broke its \npromise and torpedoed an unarmed French pass enger steamer, the Sussex. The Sussex sank, \nand about 80 passengers, including Americans, were killed or inj",
-        "ot persuad e Britain to lift its blockade against food and fertilizers, Germany would \nconsider renewing unrestricted submarine warfare.  \n \n11. The United States Declares War   \nDespite Wilson’s efforts on behalf of peace, hope seemed lost. The Allies were angered by \nWilson’s request for “peace without victory.” They blamed the Central powers for starting the \nwar and wanted them to pay for wartime damage and destruction. Germany, too, ignored \nWilson’s call for peace.  \n \n12. German Provocati"
+        " In case the eligibility conditions of the annuity plan available at \nthat time are not met or the benefit amount payable on death is insufficient to purchase the \nminimum amount of annuity, then the said amount shall be paid as a lump sum to the \nnominee(s). Any benefits payable to the nominee shall be as pe r Section 39 of Insurance Act, \n1938  as amended from time to time . \n \n In Installment : \nUnder this option the benefit amount payable on death can be received in installments over \nthe c",
+        "y, and monthly. The Annuity shall be payable in \narrears i.e. the annuity payment shall commence after 1 year, 6 months, 3 months and 1 month \nfrom the Date of Vesting of Policy  depending on whether the mode of annuity payment is Yearly, \nHalf yearly, Quarterly and Monthly respectively.  \n24. Monthly tabular annuity rate for the purpose of calculating Additional Benefit on Death  means \nthe annuity rate per Unit Purchase Price applicable for monthly mode without applying any \nincentive in annui",
+        " Benefit on Death  per month  (as specified in the \nSchedule)  during the Deferment Period shall be as under:  \n \nAdditional Benefit on Death  per month  = (Purchase Price * Annuity rate p.a. payable monthly) / \n12 \n \nWhere Annuity rate p.a. payable monthly shall be equal to Monthly tabular annuity rate and shall \ndepend on the Option chosen, Age at entry of the annuitant(s) and the Deferment Period opted for.  \n \nIn case of death of the annuitant or surrender of the policy during the Deferment ",
+        " is less than the required amount to provide the minimum installment \namount as per the option exercised by the Annuitant (s), the claim proceed shall be paid in \nlumpsum only.  \n \nFor all the installment  payment options commencing during the 12 months’ period from 1st \nMay to 30th April, t he interest rate applicable for arriving at the instalment amount shall be \nannual effective rate equal to the 10 year G -Sec Base/Par yield p.a. compounding half -yearly \nminus  200 basis points; where, the",
+        " be opted for full or part of the benefit amount payable on death. However, the annuity \npayments for each nominee(s) shall be subject to the eligibility conditions of the annuity plan \navaila ble at that time and then prevailing Regulatory provisions on the minimum limits for \nannuities. Currently applicable regulation is IRDAI (Minimum limits for Annuities and other \nBenefits) Regulations, 2015. In case the eligibility conditions of the annuity plan available at \nthat time are not met or the b"
       ],
       "answer": null
     },
     {
       "question_id": "q09",
-      "question": "When did the kaiser announce that U-boats would sink all ships in British waters on sight?",
-      "expected_chunk_id": "chunk_45",
-      "category": "naval-warfare",
+      "question": "Which regulation currently applies to the minimum limits for annuities?",
+      "expected_chunk_id": "chunk_64",
+      "category": "regulations",
       "top3_chunk_ids": [
-        "chunk_39",
-        "chunk_45",
-        "chunk_41"
+        "chunk_64",
+        "chunk_99",
+        "chunk_68"
       ],
       "top5_chunk_ids": [
-        "chunk_39",
-        "chunk_45",
-        "chunk_41",
-        "chunk_40",
-        "chunk_42"
+        "chunk_64",
+        "chunk_99",
+        "chunk_68",
+        "chunk_57",
+        "chunk_65"
       ],
       "scores": [
-        0.5752964019775391,
-        0.5153112411499023,
-        0.46032631397247314,
-        0.44784486293792725,
-        0.4353421628475189
+        0.03278688524590164,
+        0.03149801587301587,
+        0.030309988518943745,
+        0.02964426877470356,
+        0.027783137179239824
       ],
       "hit_at_3": 1,
-      "retrieval_latency_ms": 10.813,
+      "retrieval_latency_ms": 19.5,
       "retrieved_chunk_texts": [
-        "e. Americans had been \nangry at Britain’s blockade. It threatened free dom of the seas and prevented American goods \nfrom reaching German ports. However, Germany’s response to the blockade soon outraged \nAmericans.  \n \n10. German U -Boat Response  \nGermany responded to the British blockade with a counterblockade by U -boats (from \nUnte rseeboot, the German word for submarine). Any British or Allied ship found in the waters \naround Britain would be sunk  and it would not always be possible to war",
-        "\nWilson’s call for peace.  \n \n12. German Provocation  \nGermany’s leaders hoped to defea t Britain by resuming unrestricted submarine warfare. On \nJanuary 31 the kaiser announced that U -boats would sink all ships in British waters  hostile or \nneutral  on sight. Wilson was stunned. The German decision meant that the United States \nwould have to go to war. However, the president held back, saying that he would wait for \n“actual overt acts” before declaring war. Document -Based Investigation Histo",
-        "an public opinion turned against Germany and the Central \npowers. Despite this provocation, President Wilson ruled out a military response in favo ur of a \nsharp protest to Germany. Three months later, in August 1915,  a U-boat sank another British ",
-        "e sunk  and it would not always be possible to warn crews and \npassengers of an attack. One of the worst disasters occurred on May 7, 1915, when a U- boat \nsank the British liner Lusitania off the Irish coast. Of the 1,198 persons lost, 128 were \nAmericans. The Germans defended their action on the grounds that the liner carried \nammunition. Despite Germany’s explanation, Americans became outraged with G ermany \nbecause of the loss of life. American public opinion turned against Germany and the C",
-        "Baljit S ingh et al                                                                 IJMRT: Volume ( 4), Issue 11, 2022\n \nCopyrights@IJMRT  www.ijmrt.in   Page | 9 liner, the Arabic, drowning two Americans. Again the United States protested, and this time \nGermany agreed not to sink any more passenger ships. But in March 1916 Germany broke its \npromise and torpedoed an unarmed French pass enger steamer, the Sussex. The Sussex sank, \nand about 80 passengers, including Americans, were killed or inj"
+        " be opted for full or part of the benefit amount payable on death. However, the annuity \npayments for each nominee(s) shall be subject to the eligibility conditions of the annuity plan \navaila ble at that time and then prevailing Regulatory provisions on the minimum limits for \nannuities. Currently applicable regulation is IRDAI (Minimum limits for Annuities and other \nBenefits) Regulations, 2015. In case the eligibility conditions of the annuity plan available at \nthat time are not met or the b",
+        "Sample Policy Document - LIC’s New Jeevan Shanti  (UIN: 512N338V01)                                                                   Page 13 of 21  \n4. Normal requirements for benefit payable:  \nFor annuities in payment : \nThe Existence Certificate in the format prescribed by the Corporation is to be submitted by the \nAnnuit ant/ Primary Annuitant  as and when required by the Corporation. In case of Option 2 (as \ndefined in Condition 1of Part C), after the death of the Primary Annuitant, the Ex",
+        " is less than the required amount to provide the minimum installment \namount as per the option exercised by the Annuitant (s), the claim proceed shall be paid in \nlumpsum only.  \n \nFor all the installment  payment options commencing during the 12 months’ period from 1st \nMay to 30th April, t he interest rate applicable for arriving at the instalment amount shall be \nannual effective rate equal to the 10 year G -Sec Base/Par yield p.a. compounding half -yearly \nminus  200 basis points; where, the",
+        "oration with interest at such rate as fixed by the Corporation from time to time. The \ndifference arising out of incorrect annuities paid in the past along with interest shall be collected \nfrom the Annuitant or would be adjusted from the f ollowing Annuity payments.  \n(ii) If the correct age is such as would have made the Annuitant uninsurable under this Policy, then \nthis policy shall be cancelled and the Premium  paid may be refunded after deducting the \ncharges for stamp duty, taxes and Annu",
+        " In case the eligibility conditions of the annuity plan available at \nthat time are not met or the benefit amount payable on death is insufficient to purchase the \nminimum amount of annuity, then the said amount shall be paid as a lump sum to the \nnominee(s). Any benefits payable to the nominee shall be as pe r Section 39 of Insurance Act, \n1938  as amended from time to time . \n \n In Installment : \nUnder this option the benefit amount payable on death can be received in installments over \nthe c"
       ],
       "answer": null
     },
     {
       "question_id": "q10",
-      "question": "Who were the two generals shown marching with German emperor Wilhelm II?",
-      "expected_chunk_id": "chunk_17",
-      "category": "key-figures",
+      "question": "Under the joint life annuity option, what happens to the annuity payment on the first death after the Deferment Period?",
+      "expected_chunk_id": "chunk_50",
+      "category": "benefits",
       "top3_chunk_ids": [
-        "chunk_17",
-        "chunk_18",
-        "chunk_61"
+        "chunk_47",
+        "chunk_49",
+        "chunk_45"
       ],
       "top5_chunk_ids": [
-        "chunk_17",
-        "chunk_18",
-        "chunk_61",
-        "chunk_19",
-        "chunk_20"
+        "chunk_47",
+        "chunk_49",
+        "chunk_45",
+        "chunk_50",
+        "chunk_48"
       ],
       "scores": [
-        0.5353198051452637,
-        0.3927077651023865,
-        0.37934064865112305,
-        0.3177911043167114,
-        0.29878461360931396
+        0.03278688524590164,
+        0.0315136476426799,
+        0.03149801587301587,
+        0.03149801587301587,
+        0.030621785881252923
       ],
-      "hit_at_3": 1,
-      "retrieval_latency_ms": 8.576,
+      "hit_at_3": 0,
+      "retrieval_latency_ms": 26.387,
       "retrieved_chunk_texts": [
-        "is. On July 28 Austria -Hungary declared w hat was expected to be a short war \nagainst Serbia. German emperor Wilhelm II (center) marches with two of his generals  \nHindenburg (left) and Ludendorff, during World War I. 316 Module 7 The alliance system \npulled one nation after another into the conflict.  On August 1 Germany, obligated by treaty to \nsupport Austria -Hungary, declared war on Russia. On August 3 Germany declared war on \nRussia’s ally France. After Germany invaded Belgium, Britain de",
-        " France. After Germany invaded Belgium, Britain declared war on Germany and \nAustria -Hungary. The Great War had be gun. \n \n5. The Fighting Starts  \nOn August 3, 1914, Germany invaded Belgium, following a strategy known as the Schlieffen \nPlan. This plan called for a holding action against Russia, combined with a quick drive \nthrough Belgium to Paris. After France had fallen,  the two German armies would defeat \nRussia. European leaders were confident of a short war. Kaiser Wilhelm II even promi",
-        "s leads to the armed occupation of the Ruhr \nRiver valley region by French and Belgian troops.  \n German militarists perpetuate the myth that the German Army was undefeated  in \nbattle, undermining faith in the civilian government of the Weimar Republic.  ",
-        "ident of a short war. Kaiser Wilhelm II even promised \nGerman soldiers that they would be home “before the leaves had fallen.” As German troops \nswept across Belgium, thousands of civilian s fled in terror. In Brussels, the Belgian capital, an \nAmerican war correspondent described the first major refugee crisis of the 20th century. \nUnable to save Belgium, the Allies retreated to the Marne River in France. There they halted ",
-        "Baljit S ingh et al                                                                 IJMRT: Volume ( 4), Issue 11, 2022\n \nCopyrights@IJMRT  www.ijmrt.in   Page | 5 the German advance in September 1914. After struggling to outflank each other’s armies, both \nsides dug in for a long siege. By the spring of 1915, two parallel systems of deep  rat-infested \ntrenches crossed France. The trenches stretched from the Belgian coast to the Swiss Al ps. \nGerman soldiers occupied one set of trenches, Allied "
+        "er the deferment \nperiod : The annuity payments shall cea se \nimmediately and Death Benefit as defined above \nshall be payable to nominee(s)  as per the option \nexercised by the Annuitant as specified in Condition 3 \nof Part D of this policy document.  \n2 Deferred \nannuity for \nJoint life  During deferment \nperiod:  On the \nsurvival of the \nPrimary Annuitant \nand/or Secondary \nAnnuitant during the \ndeferment period, \nnothing is payable.  \n \nAfter deferment \nperiod:    Annuity \npayments will be \n",
+        "inus Total \nannuity amount payable till date of death or  \n 105% of Purchase Price.  \n \nDuring the Deferment Period:  \nOn first death (of either of the covered lives) : \nNothing shall be payable.  \n \nOn death of the last survivor: Death Benefit as \ndefined above shall be payable to nominee(s) as per \nthe option exercised by th e Annuitant(s) as specified \nin Condition 3 of Part D of this policy document.  \n \nAfter the Deferment Period:  \nOn first death (of either of the covered lives) : \n100% o",
+        "n Death  \n1 Deferred \nannuity for \nSingle Life  During deferment \nperiod: Nothing is \npayable during the \ndeferment period.  \n \n \nAfter deferment \nperiod : A nnuity \npayments will be \nmade in arrears as \nlong as the Annuitant \nis alive, as per the \nchosen mode of \nannuity payment.  Death Benefit shall be  \nHigher of :  \n Purchase Price plus Accrued Additional \nBenefit on Death  (as specified in Condition 3 of \nPart C of this policy document ) minus Total \nannuity amount payable till date of dea",
+        "ocument.  \n \nAfter the Deferment Period:  \nOn first death (of either of the covered lives) : \n100% of the annuity amount shall continue to be paid \nas long as one of the Annuitant is alive.  \n \nOn death of the last survivor: Annuity payment \nshall cease immediately and  Death Benefit as \ndefined above shall be payable to nominee(s) as per \nthe option exercised by the Annuitant(s) as specified \nin Condition 3 of Part D of this policy document.  \n ",
+        " \ndeferment period, \nnothing is payable.  \n \nAfter deferment \nperiod:    Annuity \npayments will be \nmade in arrears as \nlong as the Primary \nAnnuitant and/or \nSecondary Annuitant \nis alive, as per the \nchosen mode of \nannuity payment.  Death Benefit shall be  \nHigher of  \n Purchase Price plus Accrued Additional \nBenefit on Death  (as specified in Condition 3 of \nPart C of this policy document ) minus Total \nannuity amount payable till date of death or  \n 105% of Purchase Price.  \n \nDuring the "
       ],
       "answer": null
     },
     {
       "question_id": "q11",
-      "question": "How many casualties had Russia suffered by the end of 1915?",
-      "expected_chunk_id": "chunk_51",
-      "category": "effects",
+      "question": "What is the minimum vesting age for a policy purchased as a QROPS?",
+      "expected_chunk_id": "chunk_87",
+      "category": "qrops",
       "top3_chunk_ids": [
-        "chunk_51",
-        "chunk_62",
-        "chunk_3"
+        "chunk_87",
+        "chunk_4",
+        "chunk_83"
       ],
       "top5_chunk_ids": [
-        "chunk_51",
-        "chunk_62",
-        "chunk_3",
+        "chunk_87",
         "chunk_4",
-        "chunk_21"
+        "chunk_83",
+        "chunk_30",
+        "chunk_41"
       ],
       "scores": [
-        0.6201469302177429,
-        0.4398723840713501,
-        0.4279460310935974,
-        0.3942062556743622,
-        0.38599786162376404
+        0.03278688524590164,
+        0.031754032258064516,
+        0.03149801587301587,
+        0.03007688828584351,
+        0.028991596638655463
       ],
       "hit_at_3": 1,
-      "retrieval_latency_ms": 7.953,
+      "retrieval_latency_ms": 29.164,
       "retrieved_chunk_texts": [
-        " \nwere printed in newspapers. The American public was outraged. On top of this, the Germa ns \nsank four unarmed American merchant ships, with a loss of 36 lives, further angering \nAmericans.  \n \n16. A Revolution In Russia  \nMeanwhile, events in Russia also troubled the United States. By the end of 1915 Russia had \nsuffered about 2.5 million casualties in the fight against the Central powers and was ",
-        "Baljit S ingh et al                                                                 IJMRT: Volume ( 4), Issue 11, 2022\n \nCopyrights@IJMRT  www.ijmrt.in   Page | 13  Imperial dynasties in Austria -Hungary, Germany, the Ottoman Empire, and Russia \ncollapsed.  \n Mass movement of troops and refugees helped spread the Spanish flu, a devastating \ninfluenza pandemic that claimed as many as 50 million lives in 1918 -19. \n Ottoman territories in the Middle East are divvied up among the victorious Alli",
-        "ny’s takeover of Alsace -\nLorraine created a desire for revenge by the French. The assassination of Austrian Archduke \nFranz  Ferdinand and his wife by Bosnian Serb nationalist Gavrilo Princip on June 28, 1914, \nsuddenly stirred up brewing conflicts in the region. Austria - Hungary used the assassination as \nan excuse to settle its dispute with Serbia. In anticipation of Russia’s s upport of Serbia, \nAustria -Hungary gained support from William II of Germany before presenting a warlike \nultimatu",
-        "I of Germany before presenting a warlike \nultimatum to Serbia. Serbia accepted most of Austria -Hungary’s demands but sought \ninternational arbitration on some issues. Convinced that Austria -Hunga ry was ready for war, \nSerbia appealed to Russia for support. Austria - Hungary severed diplomatic relations with \nSerbia, and, on July 28, 1914, declared war on Serbia. Within a week most of Europe was at \nwar. \n",
-        "man soldiers occupied one set of trenches, Allied soldiers the other. The scale of slaughter \nwas horrific. During the First Battle of the Somme  which began on July 1, 1916, and lasted \nuntil mid -November  the British suffered 60,000 casualties the fir st day alone. Final casualties \ntotalled about 1.2 million, yet only about seven miles of ground changed hands. This virtual \nstalemate lasted for more than three years. Elsewhere, the fighting was just as devastating and \ninconclusive.  \n \n6. I"
+        "rding procedures as per Rules and Regulations of the HMRC in this regard.  \n \n7. If this policy is purchase d as QROPS (Qualifying Recognized Overseas Pension Scheme), \nthrough transfer of UK tax relieved assets  the following terms and conditions prescribed by \nHMRC (Her Majesty Revenue & Customs)  shall apply : \ni. Minimum Vesting Age  shall be 55 ye ars.  \nii. If the policy is cancelled during the Free  Look period, the proceeds from cancellation shall only \nbe transferred back to the fund ho",
+        " (30 days if this \npolicy is purchased online) from the date of receipt of Policy Document stating the reasons of your \nobjections and disagreement. On receipt of the policy , we shall cancel the same and the amount of \npremium deposited by you shall be refunded to you after deducting the charges for stamp duty and \nAnnuity paid (if any).  In case of QROPS, these  provisions shall be further subject to any specific \nprovisions regar ding procedures as per Rules and Regulations of the HMRC in thi",
+        " April, \n2021, the applicable interest rate is 9.50% p.a. compounding half -yearly for entire term of the loan.  \n \nAny change in basis of determination of interest rate for policy loan shall be subject to prior approval \nof IRDAI.  \n \nIn case of QROPS, above policy loan provisions shall be subject to Rules and Regulations of HMRC \nin this regard.  \n \n6. Free  Look period:  \nDuring the Free Look period of 15 days (30 days if this policy is purchased online) from the date of \nreceipt of the Polic",
+        "ce (cover) as evidenced in the schedule of the Policy.  \n11. Date  of issuance of policy  is a date when a proposal after underwriting is accepted as a Policy \nand this contract get s effected.  \n12. Date of Vesting means the date specified in Policy Schedule on whic h Deferment Period expires \nand t he annuity becomes payable in arrears as per the mode chosen for annuity payment.  \n13. Death Benefit  means the benefit, which is payable on death, as specified in Condition 1 of Part C \nof this Po",
+        "hedule.  For joint life annuity option under this policy, word “Annuitant” is used for “Primary \nAnnuitant”.  \n32. Purchase Price  is an amount mentioned in the Schedule of this Policy Document as opted by the \npolicyholder which is considered to determine the benefits under the policy.  \n33. Qualifying Recognised  Overseas  Pension Scheme (QROPS)  is a pension scheme which is \nadministered out side U nited Kingdom  and is registered with and hence  meets the requirements \nset by Her Majesty’s R"
       ],
       "answer": null
     },
     {
       "question_id": "q12",
-      "question": "What did the Schlieffen Plan call for?",
-      "expected_chunk_id": "chunk_18",
-      "category": "strategy",
+      "question": "Within how many years from the date of issuance can a life insurance policy be called in question on the ground of fraud?",
+      "expected_chunk_id": "chunk_152",
+      "category": "statutory-provisions",
       "top3_chunk_ids": [
-        "chunk_18",
-        "chunk_45",
-        "chunk_43"
+        "chunk_157",
+        "chunk_152",
+        "chunk_151"
       ],
       "top5_chunk_ids": [
-        "chunk_18",
-        "chunk_45",
-        "chunk_43",
-        "chunk_44",
-        "chunk_54"
+        "chunk_157",
+        "chunk_152",
+        "chunk_151",
+        "chunk_156",
+        "chunk_163"
       ],
       "scores": [
-        0.46940818428993225,
-        0.34504812955856323,
-        0.31597596406936646,
-        0.30138689279556274,
-        0.29200389981269836
+        0.03252247488101534,
+        0.03252247488101534,
+        0.031746031746031744,
+        0.031009615384615385,
+        0.03007688828584351
       ],
       "hit_at_3": 1,
-      "retrieval_latency_ms": 10.192,
+      "retrieval_latency_ms": 24.412,
       "retrieved_chunk_texts": [
-        " France. After Germany invaded Belgium, Britain declared war on Germany and \nAustria -Hungary. The Great War had be gun. \n \n5. The Fighting Starts  \nOn August 3, 1914, Germany invaded Belgium, following a strategy known as the Schlieffen \nPlan. This plan called for a holding action against Russia, combined with a quick drive \nthrough Belgium to Paris. After France had fallen,  the two German armies would defeat \nRussia. European leaders were confident of a short war. Kaiser Wilhelm II even promi",
-        "\nWilson’s call for peace.  \n \n12. German Provocation  \nGermany’s leaders hoped to defea t Britain by resuming unrestricted submarine warfare. On \nJanuary 31 the kaiser announced that U -boats would sink all ships in British waters  hostile or \nneutral  on sight. Wilson was stunned. The German decision meant that the United States \nwould have to go to war. However, the president held back, saying that he would wait for \n“actual overt acts” before declaring war. Document -Based Investigation Histo",
-        "assengers, including Americans, were killed or injured. After this attack, \nWilson threatened to end diplomatic relations with Germany unless it stopped killing innocent \ncivilians. German officials f eared that the United States might enter the war, so Germany \nissued the Sussex pledge, which included a promise not to sink merchant vessels “without \nwarning and without saving human lives.” But there was a condition: if the United States \ncould not persuad e Britain to lift its blockade against ",
-        "ot persuad e Britain to lift its blockade against food and fertilizers, Germany would \nconsider renewing unrestricted submarine warfare.  \n \n11. The United States Declares War   \nDespite Wilson’s efforts on behalf of peace, hope seemed lost. The Allies were angered by \nWilson’s request for “peace without victory.” They blamed the Central powers for starting the \nwar and wanted them to pay for wartime damage and destruction. Germany, too, ignored \nWilson’s call for peace.  \n \n12. German Provocati",
-        "es against brutal monarchies.  \n \n17. America Acts  \nA light drizzle fell on Washington on April 2, 1917, as senators, representatives, ambassadors, \nmembers of the Supreme Court, and other guests crowded into the Capitol to hear President \nWilson deliver h is war resolution. Congress passed the resolution a few days later. With the \nhope of neutrality finally shattered, U.S. troops would follow the stream of American money \nand munitions that had been heading to the Allies throughout the war. B"
+        "d that in case of fraud, the onus of disproving lies upon the beneficiaries, in case the \npolicyholder is not alive.  \n \nExplanation – A person who solicits and negotiates a contract of insurance shall be deemed for the \npurpose of the formation of the contract, to be the agent of the insurer.  \n \n4. A policy of life insurance may be called in question at any time within three years from the date of \nissuance of the policy or the date of commencement of risk or the date of revival of the policy ",
+        "or the date of \ncommencement of risk or the date of revival of the pol icy or the date of the rider to the policy, \nwhichever is later.  \n \n2. A policy of life insurance may be called in question at any time within three years from the date of \nissuance of the policy or the date of commencement of risk or the date of revival of the policy or the \ndate of the rider to the policy, whichever is later on the ground of fraud:  \n \nProvided that the insurer shall have to communicate in writing to the i",
+        "Sample Policy Document - LIC’s New Jeevan Shanti  (UIN: 512N338V01)                                                                   Page 20 of 21 Annexure -III \n \nSection - 45 as per Insurance Act, 1938  \n \n1. No policy of life insurance shall be called in question on any ground whatsoever after the expiry of \nthree years from the date of the policy, i.e. from the date of issuance of the policy or the date of \ncommencement of risk or the date of revival of the pol icy or the date of the rider ",
+        "ion (2), no insurer shall repudiate a life insurance \npolicy o n the ground of fraud if the insured can prove that the misstatement of or suppression of a \nmaterial fact was true to the best of his knowledge and belief or that there was no deliberate \nintention to suppress the fact or that such misstatement of or suppre ssion of a material fact are \nwithin the knowledge of the insurer:  \n \nProvided that in case of fraud, the onus of disproving lies upon the beneficiaries, in case the \npolicyhold",
+        " he is \nentitled to do so, and no policy shall be deemed to be called in question merely because the terms of \nthe policy are adjusted on subsequent proof that the age of the life insured was incorrectly stated in \nthe proposal.  \n "
       ],
       "answer": null
     }
