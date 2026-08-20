@@ -7,32 +7,32 @@
       "expected_chunk_id": "chunk_3",
       "category": "free-look",
       "top3_chunk_ids": [
-        "chunk_3",
         "chunk_32",
+        "chunk_3",
         "chunk_83"
       ],
       "top5_chunk_ids": [
-        "chunk_3",
         "chunk_32",
+        "chunk_3",
         "chunk_83",
         "chunk_84",
-        "chunk_4"
+        "chunk_74"
       ],
       "scores": [
-        0.032266458495966696,
-        0.03225806451612903,
-        0.031544957774465976,
-        0.03149801587301587,
-        0.030309988518943745
+        0.9979462027549744,
+        0.9852649569511414,
+        0.9839767217636108,
+        0.8262370824813843,
+        0.3791516125202179
       ],
       "hit_at_3": 1,
-      "retrieval_latency_ms": 8.392,
+      "retrieval_latency_ms": 1581.74,
       "retrieved_chunk_texts": [
-        "to note that such \noption, if available and mentioned in the document of this Plan has to be ex ercised in the right manner \nand during the stipulated time limit as prescribed herein.  \n \nFree Look Period  \n \nWe would request you to go through the terms and conditions of the Policy and in case you disagree \nwith any of the terms and conditions, you may retur n the Policy within a period of 15 days (30 days if this \npolicy is purchased online) from the date of receipt of Policy Document stating t",
         "th \nbenefit under the policy.  \n16. Due Date  means a fixed date on which the annuity is due and payable.  \n17. Endorsement means conditions attached/ affixed to this Policy incorporating any ame ndments or \nmodifications agreed to or issued by the Corporation.  \n18. Free Look Period  is the period of 15 days (30 days if this policy is purchased online) from the \ndate of receipt of the Policy Document by the Policyholder to review the terms and conditions of \nthis policy and where the Policyhold",
+        "to note that such \noption, if available and mentioned in the document of this Plan has to be ex ercised in the right manner \nand during the stipulated time limit as prescribed herein.  \n \nFree Look Period  \n \nWe would request you to go through the terms and conditions of the Policy and in case you disagree \nwith any of the terms and conditions, you may retur n the Policy within a period of 15 days (30 days if this \npolicy is purchased online) from the date of receipt of Policy Document stating t",
         " April, \n2021, the applicable interest rate is 9.50% p.a. compounding half -yearly for entire term of the loan.  \n \nAny change in basis of determination of interest rate for policy loan shall be subject to prior approval \nof IRDAI.  \n \nIn case of QROPS, above policy loan provisions shall be subject to Rules and Regulations of HMRC \nin this regard.  \n \n6. Free  Look period:  \nDuring the Free Look period of 15 days (30 days if this policy is purchased online) from the date of \nreceipt of the Polic",
         "eriod of 15 days (30 days if this policy is purchased online) from the date of \nreceipt of the Policy Document by the Policyholder, if the Policyholder is not satisfied with the Terms \nand Conditions of the policy, he/she may return the  policy to the Corporation stating the reason of \nobjections. On receipt of the same the Corporation shall cancel the Policy and return the Premium  \npaid after deducting the charges for stamp duty and annuity paid, if any.  However, this condition of \nFree Loo k",
-        " (30 days if this \npolicy is purchased online) from the date of receipt of Policy Document stating the reasons of your \nobjections and disagreement. On receipt of the policy , we shall cancel the same and the amount of \npremium deposited by you shall be refunded to you after deducting the charges for stamp duty and \nAnnuity paid (if any).  In case of QROPS, these  provisions shall be further subject to any specific \nprovisions regar ding procedures as per Rules and Regulations of the HMRC in thi"
+        " as per Rules and Regulations of the HMRC.  \n \n5. Policy Loan:  \nLoan facility shall be available at any time after three months from the completion of policy (i.e. 3 \nmonths from the date of issuance of policy) or after expiry of the free -look period, whichever is later , \nsubject to the following terms and conditions, wi thin the surrender value of the policy for such \namounts and on such further terms and conditions as the Corporation may fix from time to time.  \n \nUnder joint life the loan "
       ],
       "answer": null
     },
@@ -43,31 +43,31 @@
       "category": "claims",
       "top3_chunk_ids": [
         "chunk_102",
-        "chunk_11",
-        "chunk_10"
+        "chunk_10",
+        "chunk_101"
       ],
       "top5_chunk_ids": [
         "chunk_102",
-        "chunk_11",
         "chunk_10",
         "chunk_101",
-        "chunk_152"
+        "chunk_11",
+        "chunk_17"
       ],
       "scores": [
-        0.03278688524590164,
-        0.03200204813108039,
-        0.03200204813108039,
-        0.029513888888888888,
-        0.029236022193768675
+        0.9998242259025574,
+        0.9992932081222534,
+        0.9895308017730713,
+        0.8587602376937866,
+        0.28194352984428406
       ],
       "hit_at_3": 1,
-      "retrieval_latency_ms": 8.001,
+      "retrieval_latency_ms": 1776.815,
       "retrieved_chunk_texts": [
         "ant / Secondary Annuitant  shall also be submitted.  \n \nWithin 90 days from the date of death, intimation of death along with death certificate must be \nnotified in writing to the office of the Corporation where the policy is serviced for any claim to be \nadmissible. However, delay in intimation of the genuine claim by the claimant, may be condoned \nby the Corporation, on merit and where delay is proved to be for reasons beyond  his/her control.  \n \nOn Surrender :  \nIn case of surrender of a pol",
-        " death along with death certificate must be \nnotified in writing to the office of the Corporation where the policy is serviced for any claims to be \nadmissible. However, delay in intimation of the genuine claim by the claimant may be condoned by \nthe Corporation on merit and where delay is proved to be for the reasons beyond his /her control.  \n \n6) Section 45 of Insurance Act, 1938  as amended from time to time : The current provisions of the \nsame are enclosed in Annexure -III. \n \n7) The appro",
         ", as amended from time to time. The current provisions of Section 38 are \nenclosed as Annexure - I for reference.  \n \n4) Nomination: Nomination should be in accordance with provision s of Section 39 of the Insurance \nAct, 1938, as amended from time to time. The current provisions of Section 39 are enclosed in \nAnnexure -II for reference.  \n \n5) Within  90 days from the date of death, intimation of death along with death certificate must be \nnotified in writing to the office of the Corporation wh",
         " Annuitant/Secondary Annuitant shall be the claim form, \nas prescribed by the Corporation, accompanied with original policy document, NEFT mandate \nfrom the claimant for direct credit of the claim amount to the bank account, proof of title, proof of \ndeath, whichever is applicable, to the satisfaction of the  Corporation. If the age is not admitted \nunder the policy, the proof of age of the Annuitant / Secondary Annuitant  shall also be submitted.  \n \nWithin 90 days from the date of death, intim",
-        "or the date of \ncommencement of risk or the date of revival of the pol icy or the date of the rider to the policy, \nwhichever is later.  \n \n2. A policy of life insurance may be called in question at any time within three years from the date of \nissuance of the policy or the date of commencement of risk or the date of revival of the policy or the \ndate of the rider to the policy, whichever is later on the ground of fraud:  \n \nProvided that the insurer shall have to communicate in writing to the i"
+        " death along with death certificate must be \nnotified in writing to the office of the Corporation where the policy is serviced for any claims to be \nadmissible. However, delay in intimation of the genuine claim by the claimant may be condoned by \nthe Corporation on merit and where delay is proved to be for the reasons beyond his /her control.  \n \n6) Section 45 of Insurance Act, 1938  as amended from time to time : The current provisions of the \nsame are enclosed in Annexure -III. \n \n7) The appro",
+        " death of annuitant and the day of his/her death, the subsistence of life of the annuitant at \ntwelve o’clock on the day on which the said annuity falls due being duly certified from time to time in \nsuch manner as the Corporation may requir e. \n \nAnd it is hereby declared that this policy shall be subject to the Definitions, Benefits, Conditions Related \nTo Servicing Aspects, Other Terms And Conditions and  Statutory Provisions  printed in this Policy  and \nthat the Schedule and every endorseme"
       ],
       "answer": null
     },
@@ -79,30 +79,30 @@
       "top3_chunk_ids": [
         "chunk_30",
         "chunk_19",
-        "chunk_31"
+        "chunk_51"
       ],
       "top5_chunk_ids": [
         "chunk_30",
         "chunk_19",
-        "chunk_31",
-        "chunk_87",
-        "chunk_151"
+        "chunk_51",
+        "chunk_152",
+        "chunk_32"
       ],
       "scores": [
-        0.03278688524590164,
-        0.03200204813108039,
-        0.03200204813108039,
-        0.027912386121341344,
-        0.027745885954841176
+        0.9882909655570984,
+        0.08016707003116608,
+        0.004091163631528616,
+        0.0029799174517393112,
+        0.0027727263513952494
       ],
       "hit_at_3": 1,
-      "retrieval_latency_ms": 11.265,
+      "retrieval_latency_ms": 1691.901,
       "retrieved_chunk_texts": [
         "ce (cover) as evidenced in the schedule of the Policy.  \n11. Date  of issuance of policy  is a date when a proposal after underwriting is accepted as a Policy \nand this contract get s effected.  \n12. Date of Vesting means the date specified in Policy Schedule on whic h Deferment Period expires \nand t he annuity becomes payable in arrears as per the mode chosen for annuity payment.  \n13. Death Benefit  means the benefit, which is payable on death, as specified in Condition 1 of Part C \nof this Po",
         "Sample Policy Document - LIC’s New Jeevan Shanti  (UIN: 512N338V01)                                                                   Page 4 of 21 SCHEDULE  \nDIVISIONAL OFFICE:        BRANCH OFFICE:  \n \nPolicy No.:  \nDate of Commencement of Policy:  \nDate of Commencement of Risk:  \n \n \nDeferment Period:  \nDate of Vesting:  Plan No.:  \nUIN:   \nPurchase Price: (Rs.)  \nPremium: (Rs.)  \nAdditional Benefit on Death  per month:  (Rs) \nAmount of Annuity payment: (Rs.)  \nMode of payment of Annuity:  \nDa",
-        "fit  means the benefit, which is payable on death, as specified in Condition 1 of Part C \nof this Policy Document.  \n14. Deferment Period is the period, in years, as chosen by the policyholder and as specified in the \nSchedule, commencing from the Date of commencement of policy  to the date of Vesting.  \n15. Discharge form  is the form to be filled by Annuitant /Claimant to claim the Surrender/Death \nbenefit under the policy.  \n16. Due Date  means a fixed date on which the annuity is due and pay",
-        "rding procedures as per Rules and Regulations of the HMRC in this regard.  \n \n7. If this policy is purchase d as QROPS (Qualifying Recognized Overseas Pension Scheme), \nthrough transfer of UK tax relieved assets  the following terms and conditions prescribed by \nHMRC (Her Majesty Revenue & Customs)  shall apply : \ni. Minimum Vesting Age  shall be 55 ye ars.  \nii. If the policy is cancelled during the Free  Look period, the proceeds from cancellation shall only \nbe transferred back to the fund ho",
-        "Sample Policy Document - LIC’s New Jeevan Shanti  (UIN: 512N338V01)                                                                   Page 20 of 21 Annexure -III \n \nSection - 45 as per Insurance Act, 1938  \n \n1. No policy of life insurance shall be called in question on any ground whatsoever after the expiry of \nthree years from the date of the policy, i.e. from the date of issuance of the policy or the date of \ncommencement of risk or the date of revival of the pol icy or the date of the rider "
+        "Condition 3 of Part D of this policy document.  \n ",
+        "or the date of \ncommencement of risk or the date of revival of the pol icy or the date of the rider to the policy, \nwhichever is later.  \n \n2. A policy of life insurance may be called in question at any time within three years from the date of \nissuance of the policy or the date of commencement of risk or the date of revival of the policy or the \ndate of the rider to the policy, whichever is later on the ground of fraud:  \n \nProvided that the insurer shall have to communicate in writing to the i",
+        "th \nbenefit under the policy.  \n16. Due Date  means a fixed date on which the annuity is due and payable.  \n17. Endorsement means conditions attached/ affixed to this Policy incorporating any ame ndments or \nmodifications agreed to or issued by the Corporation.  \n18. Free Look Period  is the period of 15 days (30 days if this policy is purchased online) from the \ndate of receipt of the Policy Document by the Policyholder to review the terms and conditions of \nthis policy and where the Policyhold"
       ],
       "answer": null
     },
@@ -113,31 +113,31 @@
       "category": "definitions",
       "top3_chunk_ids": [
         "chunk_35",
-        "chunk_38",
-        "chunk_39"
+        "chunk_51",
+        "chunk_22"
       ],
       "top5_chunk_ids": [
         "chunk_35",
-        "chunk_38",
-        "chunk_39",
-        "chunk_24",
-        "chunk_136"
+        "chunk_51",
+        "chunk_22",
+        "chunk_136",
+        "chunk_39"
       ],
       "scores": [
-        0.031754032258064516,
-        0.031099324975891997,
-        0.031024531024531024,
-        0.029386529386529386,
-        0.02938045560996381
+        0.22159260511398315,
+        0.032141298055648804,
+        0.007292922120541334,
+        0.003384566167369485,
+        0.0031565530225634575
       ],
       "hit_at_3": 1,
-      "retrieval_latency_ms": 12.331,
+      "retrieval_latency_ms": 1567.669,
       "retrieved_chunk_texts": [
         "Sample Policy Document - LIC’s New Jeevan Shanti  (UIN: 512N338V01)                                                                   Page 6 of 21 value payable to the policyholder.  \n22. Minor  is a person who has not completed 18 years of age.  \n23. Mode refers to the frequency of Annuity payment as chosen by the Annuitant  from the available \nmodes of annuity i.e. yearly, half -yearly, quarterly, and monthly. The Annuity shall be payable in \narrears i.e. the annuity payment shall commence aft",
-        "ime.  \n26. Nominee(s)  means the person(s) nominated under this policy and who is (are) authorized to \nreceive the benefit/s under this policy, on the death of the Annuitant/ P rimary Annuitant/Secondary \nAnnuitant, wherever applicable as per the annuity option chosen  and to give a valid discharge to \nthe Corporation on settlement of the claim . \n27. Person with disability (Divyangjan) defined under Condition 8 of Part D of this Policy d ocument,  \nwho is the beneficiary under this policy and a",
-        "der Condition 8 of Part D of this Policy d ocument,  \nwho is the beneficiary under this policy and a relative of the Annuitant/ Primary annuitant . \n28. Polic y/ Policy Document  means this document a long with endorsements , if any, issued by the \nCorporation which is a legal contract between the Policyholder and the Corporation.  \n29. Policyholder is the legal owner of this policy.  \n30. Premium  is the amount paid by the Policyholder as mentioned in the Schedule of this Policy \nDocument (excl",
-        "Sample Policy Document - LIC’s New Jeevan Shanti  (UIN: 512N338V01)                                                                   Page 5 of 21 PART – B: DEFINITIONS  \n \nThe definitions of terms/words used in the Policy Document are as under:  \n \n1. Age is the age last birthday of the Annuitant (s) on the date of commencement of the policy.  \n2. Annuitant(s)  being  person(s) on whose life this policy has been taken and who become entitled \nto receive the annuity benefits as stated in Policy ",
-        "sons to whom the money secured \nby the policy shall be paid in the event of his death:  \n \nProvided that, where any nominee is a minor, it shall be lawful for the policy holder to appoint any \nperson in the manner laid down by the insurer, to receive the money secured by policy in the event \nof his death during the minority of the nominee.  \n \n2. Any such nomination in order to be effectual shall, unless it is incorporated in the text of the policy \nitself, be made by an endorsement on the polic"
+        "Condition 3 of Part D of this policy document.  \n ",
+        "nsurance Act, 1938 : \nNominee(s) Name  Nominee’s \nAge Percentage \nShare  Relationship to the \nAnnuitant/Primary \nAnnuitant  Appointee  Name (in case the \nNominee is a minor \n/Divyangjan ) \n     \n     \n     \n     \n \nSigned on behalf of the Corporation at the above -mentioned Branch office whose address and e -mail ID \nare given on the first page and to which all communications relating to the policy should be addressed.  \n \nDate:  \n \nExamined by:   \n         __________________________  \nForm No.:",
+        "sons to whom the money secured \nby the policy shall be paid in the event of his death:  \n \nProvided that, where any nominee is a minor, it shall be lawful for the policy holder to appoint any \nperson in the manner laid down by the insurer, to receive the money secured by policy in the event \nof his death during the minority of the nominee.  \n \n2. Any such nomination in order to be effectual shall, unless it is incorporated in the text of the policy \nitself, be made by an endorsement on the polic",
+        "der Condition 8 of Part D of this Policy d ocument,  \nwho is the beneficiary under this policy and a relative of the Annuitant/ Primary annuitant . \n28. Polic y/ Policy Document  means this document a long with endorsements , if any, issued by the \nCorporation which is a legal contract between the Policyholder and the Corporation.  \n29. Policyholder is the legal owner of this policy.  \n30. Premium  is the amount paid by the Policyholder as mentioned in the Schedule of this Policy \nDocument (excl"
       ],
       "answer": null
     },
@@ -148,31 +148,31 @@
       "category": "benefits",
       "top3_chunk_ids": [
         "chunk_53",
-        "chunk_52",
-        "chunk_36"
+        "chunk_36",
+        "chunk_52"
       ],
       "top5_chunk_ids": [
         "chunk_53",
-        "chunk_52",
         "chunk_36",
-        "chunk_66",
-        "chunk_45"
+        "chunk_52",
+        "chunk_20",
+        "chunk_66"
       ],
       "scores": [
-        0.032266458495966696,
-        0.032266458495966696,
-        0.03225806451612903,
-        0.030330882352941176,
-        0.02964426877470356
+        0.9966701865196228,
+        0.966332197189331,
+        0.8981004953384399,
+        0.28998732566833496,
+        0.014350829645991325
       ],
       "hit_at_3": 1,
-      "retrieval_latency_ms": 16.932,
+      "retrieval_latency_ms": 1878.417,
       "retrieved_chunk_texts": [
         " Benefit on Death  per month  (as specified in the \nSchedule)  during the Deferment Period shall be as under:  \n \nAdditional Benefit on Death  per month  = (Purchase Price * Annuity rate p.a. payable monthly) / \n12 \n \nWhere Annuity rate p.a. payable monthly shall be equal to Monthly tabular annuity rate and shall \ndepend on the Option chosen, Age at entry of the annuitant(s) and the Deferment Period opted for.  \n \nIn case of death of the annuitant or surrender of the policy during the Deferment ",
-        "Sample Policy Document - LIC’s New Jeevan Shanti  (UIN: 512N338V01)                                                                   Page 8 of 21  \n2. Maturity Benefit:  There is no maturity benefit under this policy.  \n \n3. Additional Benefit on Death : \n \nThe Additional Benefit on Death  shall accrue at the end of each policy month, till the end of \nDeferment Period only. The rate of Additional Benefit on Death  per month  (as specified in the \nSchedule)  during the Deferment Period shall be ",
         "y, and monthly. The Annuity shall be payable in \narrears i.e. the annuity payment shall commence after 1 year, 6 months, 3 months and 1 month \nfrom the Date of Vesting of Policy  depending on whether the mode of annuity payment is Yearly, \nHalf yearly, Quarterly and Monthly respectively.  \n24. Monthly tabular annuity rate for the purpose of calculating Additional Benefit on Death  means \nthe annuity rate per Unit Purchase Price applicable for monthly mode without applying any \nincentive in annui",
-        ": \nUnder this option the benefit amount payable on death can be received in installments over \nthe chosen period of 5 or 10 or 15 years instead of lumpsum amount. This option ca n be \nexercised for full or part of the Death Benefit payable under the policy. The amount opted by \nthe Annuitant (i.e. net claim amount) can be either in absolute value or as a percentage of the \ntotal claim proceeds payable.  \n \nThe installments shall be paid  in advance at yearly or half -yearly or quarterly or month",
-        "n Death  \n1 Deferred \nannuity for \nSingle Life  During deferment \nperiod: Nothing is \npayable during the \ndeferment period.  \n \n \nAfter deferment \nperiod : A nnuity \npayments will be \nmade in arrears as \nlong as the Annuitant \nis alive, as per the \nchosen mode of \nannuity payment.  Death Benefit shall be  \nHigher of :  \n Purchase Price plus Accrued Additional \nBenefit on Death  (as specified in Condition 3 of \nPart C of this policy document ) minus Total \nannuity amount payable till date of dea"
+        "Sample Policy Document - LIC’s New Jeevan Shanti  (UIN: 512N338V01)                                                                   Page 8 of 21  \n2. Maturity Benefit:  There is no maturity benefit under this policy.  \n \n3. Additional Benefit on Death : \n \nThe Additional Benefit on Death  shall accrue at the end of each policy month, till the end of \nDeferment Period only. The rate of Additional Benefit on Death  per month  (as specified in the \nSchedule)  during the Deferment Period shall be ",
+        "efit on Death  per month:  (Rs) \nAmount of Annuity payment: (Rs.)  \nMode of payment of Annuity:  \nDate of 1st Annuity payment:                \nDue date:  \n \nAnnuity Option chosen:  \nName and Address of Proposer:  \n \n \n \nName and Address of Annuitant/Primary \nAnnuitant:  \n \n \n \nName and Address of Secondary Annuitant:  \n \n Proposal No.:  \nDate of proposal:                  \nDate of issuance of  policy:  \n \nDate of Birth of the Annuitant/Primary Annuitant:  \nAge of the Annuitant/Primary Annuitant:",
+        ": \nUnder this option the benefit amount payable on death can be received in installments over \nthe chosen period of 5 or 10 or 15 years instead of lumpsum amount. This option ca n be \nexercised for full or part of the Death Benefit payable under the policy. The amount opted by \nthe Annuitant (i.e. net claim amount) can be either in absolute value or as a percentage of the \ntotal claim proceeds payable.  \n \nThe installments shall be paid  in advance at yearly or half -yearly or quarterly or month"
       ],
       "answer": null
     },
@@ -184,29 +184,29 @@
       "top3_chunk_ids": [
         "chunk_72",
         "chunk_71",
-        "chunk_70"
+        "chunk_134"
       ],
       "top5_chunk_ids": [
         "chunk_72",
         "chunk_71",
+        "chunk_134",
         "chunk_70",
-        "chunk_54",
         "chunk_43"
       ],
       "scores": [
-        0.03278688524590164,
-        0.03225806451612903,
-        0.031746031746031744,
-        0.02946912242686891,
-        0.02900988017658188
+        0.9980327486991882,
+        0.9627035856246948,
+        0.0918600782752037,
+        0.06351733952760696,
+        0.016145432367920876
       ],
       "hit_at_3": 1,
-      "retrieval_latency_ms": 19.527,
+      "retrieval_latency_ms": 1682.211,
       "retrieved_chunk_texts": [
         "e date of surrender  \n \nThe applicable Guaranteed Surrender Value  (GSV)  Factors shall be:  \n \nPolicy Year  1 2 3 4 5 and above  \nGSV Factor  75% 75% 75% 90% 90% \n \nNote: If reduced annuity amount is paid under a policy on account of loan taken, the gross \nannuity amount originally payable shall be deducted for the calculation of Surrender Value.  \n \nSpecial Surrender Value:  \n \nThe Special Surrender Value is reviewable and shall be determined by the Corporation from \ntime to time subject to pr",
         "Sample Policy Document - LIC’s New Jeevan Shanti  (UIN: 512N338V01)                                                                   Page 10 of 21  \nThe Surrender Value payable shall be higher of Guaranteed Surrender Value or Special Surrender \nValue.  \n \nGuaranteed Surrender Value (GSV):  \n \nGuaranteed Surrender Value = ( GSV  Factor * Purchase Price) minus total annuity amount \npayable up to the date of surrender  \n \nThe applicable Guaranteed Surrender Value  (GSV)  Factors shall be:  \n \nPoli",
+        "esidual amount payable \nunder the same policy.  \n \n \n  ",
         "terest rate for the calculation of installment amount shall be 4.71% p.a. effective.  \n \n4. Surrender:  \nThe policy can be surrendered at anytime during the policy term.  \n \nOn the payment of the surrender value, the policy shall terminate and all other benefits shall cease.  ",
-        "od opted for.  \n \nIn case of death of the annuitant or surrender of the policy during the Deferment Period , Additional \nBenefit on Death  for the policy year in which the death /surrender  has occurred shall accrue till the \ncompleted policy month as on the date of death /surrender . \n \n \n \nPART - D: CONDITIONS RELATED TO SERVICING ASPECTS  \n \n1. Proof of Age:  \nThe purchase price having been  calculated on the age of the Annuitant(s) as declared in the \nProposal Form, in case the age is found ",
         "rrender  means \ncomplete withdrawal / termination of the entire Policy.  \n36. Surrender Value  means an amount, if any, that becomes payable in case of surrender in \naccordance with the terms and conditions of this policy.  \n37. UIN means the Unique Identification Number allotted to this Plan by the IRDAI.  \n \n \n  "
       ],
       "answer": null
@@ -217,32 +217,32 @@
       "expected_chunk_id": "chunk_81",
       "category": "loan",
       "top3_chunk_ids": [
-        "chunk_77",
+        "chunk_80",
         "chunk_78",
-        "chunk_80"
+        "chunk_77"
       ],
       "top5_chunk_ids": [
-        "chunk_77",
-        "chunk_78",
         "chunk_80",
-        "chunk_81",
-        "chunk_76"
+        "chunk_78",
+        "chunk_77",
+        "chunk_79",
+        "chunk_81"
       ],
       "scores": [
-        0.03252247488101534,
-        0.03252247488101534,
-        0.031746031746031744,
-        0.03125,
-        0.03076923076923077
+        0.9921276569366455,
+        0.9811579585075378,
+        0.9632322788238525,
+        0.788101077079773,
+        0.5376052260398865
       ],
       "hit_at_3": 0,
-      "retrieval_latency_ms": 14.42,
+      "retrieval_latency_ms": 1616.841,
       "retrieved_chunk_texts": [
-        "an. \nThe first payment of interest is to be made on the next policy anniver sary or on the date six \nmonth before the next policy anniversary which ever immediately follows the date on which \nthe loan is sanctioned and every half year thereafter.  \n \nii) In case if the loan is not repaid during the Deferment Period and if there is no defa ult in the \ninterest payment as of the end of Deferment Period, then Interest on the loan shall be \nrecovered from annuity amount payable after the Deferment P",
-        "iod, then Interest on the loan shall be \nrecovered from annuity amount payable after the Deferment Period . \n \niii) In case if the loan is not repaid during the Deferment Period and if there is a default in the \ninterest payment as of the end of the Deferment Period, the difference of Surrender Value ",
         "nt on the \ndue dates and when the outstanding loan amount along with interest is to exceed the \nSurrender Value, the policy shall be forfeited  to the Corporation. The difference of Surrender \nValue and the loan outstanding amount along with interest, if any, shall be payable to the \nAnnuitant / Secondary Annuitant and the policy shall be terminated.  \n \nAfter Deferment period : \nLoan interest will be recovered from annuity amount payable under the policy. The Loan \ninterest will accrue as per t",
-        "l be recovered from annuity amount payable under the policy. The Loan \ninterest will accrue as per the frequency of annuity payment under the policy and it will be \ndue on the due date of annuity. The loan outstanding shall be recovered from  the claim \nproceeds at the time of exit.  \n \nThe loan interest rate for all the loans commencing during the 12 months’ period from 1st May to \n30th April, shall be compounding half -yearly  rate not exceeding 10 year G -Sec Base/Par yield p.a. \ncompounding ",
-        "e annual annuity amount payable \nunder the po licy subject to maximum of 80% of Surrender Value.  \n \nDuring Deferment Period : \nThe policy loan will be available subject to the following terms and conditions:  \n \ni) Interest on Loan during the deferment period shall be paid on compounding half -yearly basis \nto the Corporation at the rate to be specified by the Corporation at the time of taking loan. \nThe first payment of interest is to be made on the next policy anniver sary or on the date six "
+        "iod, then Interest on the loan shall be \nrecovered from annuity amount payable after the Deferment Period . \n \niii) In case if the loan is not repaid during the Deferment Period and if there is a default in the \ninterest payment as of the end of the Deferment Period, the difference of Surrender Value ",
+        "an. \nThe first payment of interest is to be made on the next policy anniver sary or on the date six \nmonth before the next policy anniversary which ever immediately follows the date on which \nthe loan is sanctioned and every half year thereafter.  \n \nii) In case if the loan is not repaid during the Deferment Period and if there is no defa ult in the \ninterest payment as of the end of Deferment Period, then Interest on the loan shall be \nrecovered from annuity amount payable after the Deferment P",
+        "Sample Policy Document - LIC’s New Jeevan Shanti  (UIN: 512N338V01)                                                                   Page 11 of 21 and the loan outstanding amount along with interest, if any, shall be payable to the Primary \nAnnuitant / Secondary Annuitant an d the policy shall be terminated.  \n \niv) During the Deferment Period, in the event of failure of payment of interest payment on the \ndue dates and when the outstanding loan amount along with interest is to exceed the \nSurr",
+        "l be recovered from annuity amount payable under the policy. The Loan \ninterest will accrue as per the frequency of annuity payment under the policy and it will be \ndue on the due date of annuity. The loan outstanding shall be recovered from  the claim \nproceeds at the time of exit.  \n \nThe loan interest rate for all the loans commencing during the 12 months’ period from 1st May to \n30th April, shall be compounding half -yearly  rate not exceeding 10 year G -Sec Base/Par yield p.a. \ncompounding "
       ],
       "answer": null
     },
@@ -252,32 +252,32 @@
       "expected_chunk_id": "chunk_67",
       "category": "death-benefit",
       "top3_chunk_ids": [
-        "chunk_65",
-        "chunk_36",
-        "chunk_53"
+        "chunk_67",
+        "chunk_66",
+        "chunk_36"
       ],
       "top5_chunk_ids": [
-        "chunk_65",
+        "chunk_67",
+        "chunk_66",
         "chunk_36",
-        "chunk_53",
-        "chunk_68",
-        "chunk_64"
+        "chunk_134",
+        "chunk_65"
       ],
       "scores": [
-        0.03200204813108039,
-        0.03128054740957967,
-        0.03125763125763126,
-        0.03125,
-        0.03007688828584351
+        0.9605275392532349,
+        0.5473769903182983,
+        0.23645471036434174,
+        0.15301929414272308,
+        0.07814016193151474
       ],
-      "hit_at_3": 0,
-      "retrieval_latency_ms": 18.948,
+      "hit_at_3": 1,
+      "retrieval_latency_ms": 1703.448,
       "retrieved_chunk_texts": [
-        " In case the eligibility conditions of the annuity plan available at \nthat time are not met or the benefit amount payable on death is insufficient to purchase the \nminimum amount of annuity, then the said amount shall be paid as a lump sum to the \nnominee(s). Any benefits payable to the nominee shall be as pe r Section 39 of Insurance Act, \n1938  as amended from time to time . \n \n In Installment : \nUnder this option the benefit amount payable on death can be received in installments over \nthe c",
+        "able.  \n \nThe installments shall be paid  in advance at yearly or half -yearly or quarterly or monthly \nintervals, as opted for, subject to minimum installment amount for different modes of \npayments being as under:  \n \nMode of Installment payment  Minimum installment amount  \nMonthly  Rs.  5000/ - \nQuarterly  Rs. 15000/ - \nHalf-Yearly  Rs. 25000/ - \nYearly  Rs. 50000/ - \n \nIf the Net Claim Amount is less than the required amount to provide the minimum installment \namount as per the option exerc",
+        ": \nUnder this option the benefit amount payable on death can be received in installments over \nthe chosen period of 5 or 10 or 15 years instead of lumpsum amount. This option ca n be \nexercised for full or part of the Death Benefit payable under the policy. The amount opted by \nthe Annuitant (i.e. net claim amount) can be either in absolute value or as a percentage of the \ntotal claim proceeds payable.  \n \nThe installments shall be paid  in advance at yearly or half -yearly or quarterly or month",
         "y, and monthly. The Annuity shall be payable in \narrears i.e. the annuity payment shall commence after 1 year, 6 months, 3 months and 1 month \nfrom the Date of Vesting of Policy  depending on whether the mode of annuity payment is Yearly, \nHalf yearly, Quarterly and Monthly respectively.  \n24. Monthly tabular annuity rate for the purpose of calculating Additional Benefit on Death  means \nthe annuity rate per Unit Purchase Price applicable for monthly mode without applying any \nincentive in annui",
-        " Benefit on Death  per month  (as specified in the \nSchedule)  during the Deferment Period shall be as under:  \n \nAdditional Benefit on Death  per month  = (Purchase Price * Annuity rate p.a. payable monthly) / \n12 \n \nWhere Annuity rate p.a. payable monthly shall be equal to Monthly tabular annuity rate and shall \ndepend on the Option chosen, Age at entry of the annuitant(s) and the Deferment Period opted for.  \n \nIn case of death of the annuitant or surrender of the policy during the Deferment ",
-        " is less than the required amount to provide the minimum installment \namount as per the option exercised by the Annuitant (s), the claim proceed shall be paid in \nlumpsum only.  \n \nFor all the installment  payment options commencing during the 12 months’ period from 1st \nMay to 30th April, t he interest rate applicable for arriving at the instalment amount shall be \nannual effective rate equal to the 10 year G -Sec Base/Par yield p.a. compounding half -yearly \nminus  200 basis points; where, the",
-        " be opted for full or part of the benefit amount payable on death. However, the annuity \npayments for each nominee(s) shall be subject to the eligibility conditions of the annuity plan \navaila ble at that time and then prevailing Regulatory provisions on the minimum limits for \nannuities. Currently applicable regulation is IRDAI (Minimum limits for Annuities and other \nBenefits) Regulations, 2015. In case the eligibility conditions of the annuity plan available at \nthat time are not met or the b"
+        "esidual amount payable \nunder the same policy.  \n \n \n  ",
+        " In case the eligibility conditions of the annuity plan available at \nthat time are not met or the benefit amount payable on death is insufficient to purchase the \nminimum amount of annuity, then the said amount shall be paid as a lump sum to the \nnominee(s). Any benefits payable to the nominee shall be as pe r Section 39 of Insurance Act, \n1938  as amended from time to time . \n \n In Installment : \nUnder this option the benefit amount payable on death can be received in installments over \nthe c"
       ],
       "answer": null
     },
@@ -288,31 +288,31 @@
       "category": "regulations",
       "top3_chunk_ids": [
         "chunk_64",
-        "chunk_99",
-        "chunk_68"
+        "chunk_68",
+        "chunk_87"
       ],
       "top5_chunk_ids": [
         "chunk_64",
-        "chunk_99",
         "chunk_68",
-        "chunk_57",
-        "chunk_65"
+        "chunk_87",
+        "chunk_134",
+        "chunk_42"
       ],
       "scores": [
-        0.03278688524590164,
-        0.03149801587301587,
-        0.030309988518943745,
-        0.02964426877470356,
-        0.027783137179239824
+        0.9925944209098816,
+        0.03838491812348366,
+        0.013901430182158947,
+        0.013650072738528252,
+        0.013080027885735035
       ],
       "hit_at_3": 1,
-      "retrieval_latency_ms": 15.232,
+      "retrieval_latency_ms": 1879.316,
       "retrieved_chunk_texts": [
         " be opted for full or part of the benefit amount payable on death. However, the annuity \npayments for each nominee(s) shall be subject to the eligibility conditions of the annuity plan \navaila ble at that time and then prevailing Regulatory provisions on the minimum limits for \nannuities. Currently applicable regulation is IRDAI (Minimum limits for Annuities and other \nBenefits) Regulations, 2015. In case the eligibility conditions of the annuity plan available at \nthat time are not met or the b",
-        "Sample Policy Document - LIC’s New Jeevan Shanti  (UIN: 512N338V01)                                                                   Page 13 of 21  \n4. Normal requirements for benefit payable:  \nFor annuities in payment : \nThe Existence Certificate in the format prescribed by the Corporation is to be submitted by the \nAnnuit ant/ Primary Annuitant  as and when required by the Corporation. In case of Option 2 (as \ndefined in Condition 1of Part C), after the death of the Primary Annuitant, the Ex",
         " is less than the required amount to provide the minimum installment \namount as per the option exercised by the Annuitant (s), the claim proceed shall be paid in \nlumpsum only.  \n \nFor all the installment  payment options commencing during the 12 months’ period from 1st \nMay to 30th April, t he interest rate applicable for arriving at the instalment amount shall be \nannual effective rate equal to the 10 year G -Sec Base/Par yield p.a. compounding half -yearly \nminus  200 basis points; where, the",
-        "oration with interest at such rate as fixed by the Corporation from time to time. The \ndifference arising out of incorrect annuities paid in the past along with interest shall be collected \nfrom the Annuitant or would be adjusted from the f ollowing Annuity payments.  \n(ii) If the correct age is such as would have made the Annuitant uninsurable under this Policy, then \nthis policy shall be cancelled and the Premium  paid may be refunded after deducting the \ncharges for stamp duty, taxes and Annu",
-        " In case the eligibility conditions of the annuity plan available at \nthat time are not met or the benefit amount payable on death is insufficient to purchase the \nminimum amount of annuity, then the said amount shall be paid as a lump sum to the \nnominee(s). Any benefits payable to the nominee shall be as pe r Section 39 of Insurance Act, \n1938  as amended from time to time . \n \n In Installment : \nUnder this option the benefit amount payable on death can be received in installments over \nthe c"
+        "rding procedures as per Rules and Regulations of the HMRC in this regard.  \n \n7. If this policy is purchase d as QROPS (Qualifying Recognized Overseas Pension Scheme), \nthrough transfer of UK tax relieved assets  the following terms and conditions prescribed by \nHMRC (Her Majesty Revenue & Customs)  shall apply : \ni. Minimum Vesting Age  shall be 55 ye ars.  \nii. If the policy is cancelled during the Free  Look period, the proceeds from cancellation shall only \nbe transferred back to the fund ho",
+        "esidual amount payable \nunder the same policy.  \n \n \n  ",
+        "de U nited Kingdom  and is registered with and hence  meets the requirements \nset by Her Majesty’s Revenue and Customs (HMRC).  \n34. Schedule  is the part of policy document that gives the specific details of this policy.  \n35. Secondary Annuitant (applicable under joint life Annuity Option) is the person entitled to \nreceive the annuity payment, in the event of death of the Primary Annuitant.  Surrender  means \ncomplete withdrawal / termination of the entire Policy.  \n36. Surrender Value  means"
       ],
       "answer": null
     },
@@ -322,32 +322,32 @@
       "expected_chunk_id": "chunk_50",
       "category": "benefits",
       "top3_chunk_ids": [
-        "chunk_47",
+        "chunk_50",
         "chunk_49",
         "chunk_45"
       ],
       "top5_chunk_ids": [
-        "chunk_47",
+        "chunk_50",
         "chunk_49",
         "chunk_45",
-        "chunk_50",
-        "chunk_48"
+        "chunk_47",
+        "chunk_42"
       ],
       "scores": [
-        0.03278688524590164,
-        0.0315136476426799,
-        0.03149801587301587,
-        0.03149801587301587,
-        0.030621785881252923
+        0.9993323683738708,
+        0.9978927969932556,
+        0.9739441275596619,
+        0.96586012840271,
+        0.9582961201667786
       ],
-      "hit_at_3": 0,
-      "retrieval_latency_ms": 9.353,
+      "hit_at_3": 1,
+      "retrieval_latency_ms": 1882.268,
       "retrieved_chunk_texts": [
-        "er the deferment \nperiod : The annuity payments shall cea se \nimmediately and Death Benefit as defined above \nshall be payable to nominee(s)  as per the option \nexercised by the Annuitant as specified in Condition 3 \nof Part D of this policy document.  \n2 Deferred \nannuity for \nJoint life  During deferment \nperiod:  On the \nsurvival of the \nPrimary Annuitant \nand/or Secondary \nAnnuitant during the \ndeferment period, \nnothing is payable.  \n \nAfter deferment \nperiod:    Annuity \npayments will be \n",
+        "ocument.  \n \nAfter the Deferment Period:  \nOn first death (of either of the covered lives) : \n100% of the annuity amount shall continue to be paid \nas long as one of the Annuitant is alive.  \n \nOn death of the last survivor: Annuity payment \nshall cease immediately and  Death Benefit as \ndefined above shall be payable to nominee(s) as per \nthe option exercised by the Annuitant(s) as specified \nin Condition 3 of Part D of this policy document.  \n ",
         "inus Total \nannuity amount payable till date of death or  \n 105% of Purchase Price.  \n \nDuring the Deferment Period:  \nOn first death (of either of the covered lives) : \nNothing shall be payable.  \n \nOn death of the last survivor: Death Benefit as \ndefined above shall be payable to nominee(s) as per \nthe option exercised by th e Annuitant(s) as specified \nin Condition 3 of Part D of this policy document.  \n \nAfter the Deferment Period:  \nOn first death (of either of the covered lives) : \n100% o",
         "n Death  \n1 Deferred \nannuity for \nSingle Life  During deferment \nperiod: Nothing is \npayable during the \ndeferment period.  \n \n \nAfter deferment \nperiod : A nnuity \npayments will be \nmade in arrears as \nlong as the Annuitant \nis alive, as per the \nchosen mode of \nannuity payment.  Death Benefit shall be  \nHigher of :  \n Purchase Price plus Accrued Additional \nBenefit on Death  (as specified in Condition 3 of \nPart C of this policy document ) minus Total \nannuity amount payable till date of dea",
-        "ocument.  \n \nAfter the Deferment Period:  \nOn first death (of either of the covered lives) : \n100% of the annuity amount shall continue to be paid \nas long as one of the Annuitant is alive.  \n \nOn death of the last survivor: Annuity payment \nshall cease immediately and  Death Benefit as \ndefined above shall be payable to nominee(s) as per \nthe option exercised by the Annuitant(s) as specified \nin Condition 3 of Part D of this policy document.  \n ",
-        " \ndeferment period, \nnothing is payable.  \n \nAfter deferment \nperiod:    Annuity \npayments will be \nmade in arrears as \nlong as the Primary \nAnnuitant and/or \nSecondary Annuitant \nis alive, as per the \nchosen mode of \nannuity payment.  Death Benefit shall be  \nHigher of  \n Purchase Price plus Accrued Additional \nBenefit on Death  (as specified in Condition 3 of \nPart C of this policy document ) minus Total \nannuity amount payable till date of death or  \n 105% of Purchase Price.  \n \nDuring the "
+        "er the deferment \nperiod : The annuity payments shall cea se \nimmediately and Death Benefit as defined above \nshall be payable to nominee(s)  as per the option \nexercised by the Annuitant as specified in Condition 3 \nof Part D of this policy document.  \n2 Deferred \nannuity for \nJoint life  During deferment \nperiod:  On the \nsurvival of the \nPrimary Annuitant \nand/or Secondary \nAnnuitant during the \ndeferment period, \nnothing is payable.  \n \nAfter deferment \nperiod:    Annuity \npayments will be \n",
+        "de U nited Kingdom  and is registered with and hence  meets the requirements \nset by Her Majesty’s Revenue and Customs (HMRC).  \n34. Schedule  is the part of policy document that gives the specific details of this policy.  \n35. Secondary Annuitant (applicable under joint life Annuity Option) is the person entitled to \nreceive the annuity payment, in the event of death of the Primary Annuitant.  Surrender  means \ncomplete withdrawal / termination of the entire Policy.  \n36. Surrender Value  means"
       ],
       "answer": null
     },
@@ -365,24 +365,24 @@
         "chunk_87",
         "chunk_4",
         "chunk_83",
-        "chunk_30",
-        "chunk_41"
+        "chunk_41",
+        "chunk_134"
       ],
       "scores": [
-        0.03278688524590164,
-        0.031754032258064516,
-        0.03149801587301587,
-        0.03007688828584351,
-        0.028991596638655463
+        0.9990977048873901,
+        0.7337067127227783,
+        0.21819104254245758,
+        0.13640543818473816,
+        0.04399881884455681
       ],
       "hit_at_3": 1,
-      "retrieval_latency_ms": 10.01,
+      "retrieval_latency_ms": 1622.138,
       "retrieved_chunk_texts": [
         "rding procedures as per Rules and Regulations of the HMRC in this regard.  \n \n7. If this policy is purchase d as QROPS (Qualifying Recognized Overseas Pension Scheme), \nthrough transfer of UK tax relieved assets  the following terms and conditions prescribed by \nHMRC (Her Majesty Revenue & Customs)  shall apply : \ni. Minimum Vesting Age  shall be 55 ye ars.  \nii. If the policy is cancelled during the Free  Look period, the proceeds from cancellation shall only \nbe transferred back to the fund ho",
         " (30 days if this \npolicy is purchased online) from the date of receipt of Policy Document stating the reasons of your \nobjections and disagreement. On receipt of the policy , we shall cancel the same and the amount of \npremium deposited by you shall be refunded to you after deducting the charges for stamp duty and \nAnnuity paid (if any).  In case of QROPS, these  provisions shall be further subject to any specific \nprovisions regar ding procedures as per Rules and Regulations of the HMRC in thi",
         " April, \n2021, the applicable interest rate is 9.50% p.a. compounding half -yearly for entire term of the loan.  \n \nAny change in basis of determination of interest rate for policy loan shall be subject to prior approval \nof IRDAI.  \n \nIn case of QROPS, above policy loan provisions shall be subject to Rules and Regulations of HMRC \nin this regard.  \n \n6. Free  Look period:  \nDuring the Free Look period of 15 days (30 days if this policy is purchased online) from the date of \nreceipt of the Polic",
-        "ce (cover) as evidenced in the schedule of the Policy.  \n11. Date  of issuance of policy  is a date when a proposal after underwriting is accepted as a Policy \nand this contract get s effected.  \n12. Date of Vesting means the date specified in Policy Schedule on whic h Deferment Period expires \nand t he annuity becomes payable in arrears as per the mode chosen for annuity payment.  \n13. Death Benefit  means the benefit, which is payable on death, as specified in Condition 1 of Part C \nof this Po",
-        "hedule.  For joint life annuity option under this policy, word “Annuitant” is used for “Primary \nAnnuitant”.  \n32. Purchase Price  is an amount mentioned in the Schedule of this Policy Document as opted by the \npolicyholder which is considered to determine the benefits under the policy.  \n33. Qualifying Recognised  Overseas  Pension Scheme (QROPS)  is a pension scheme which is \nadministered out side U nited Kingdom  and is registered with and hence  meets the requirements \nset by Her Majesty’s R"
+        "hedule.  For joint life annuity option under this policy, word “Annuitant” is used for “Primary \nAnnuitant”.  \n32. Purchase Price  is an amount mentioned in the Schedule of this Policy Document as opted by the \npolicyholder which is considered to determine the benefits under the policy.  \n33. Qualifying Recognised  Overseas  Pension Scheme (QROPS)  is a pension scheme which is \nadministered out side U nited Kingdom  and is registered with and hence  meets the requirements \nset by Her Majesty’s R",
+        "esidual amount payable \nunder the same policy.  \n \n \n  "
       ],
       "answer": null
     },
@@ -392,32 +392,32 @@
       "expected_chunk_id": "chunk_152",
       "category": "statutory-provisions",
       "top3_chunk_ids": [
-        "chunk_157",
         "chunk_152",
+        "chunk_157",
         "chunk_151"
       ],
       "top5_chunk_ids": [
-        "chunk_157",
         "chunk_152",
+        "chunk_157",
         "chunk_151",
-        "chunk_156",
-        "chunk_163"
+        "chunk_160",
+        "chunk_74"
       ],
       "scores": [
-        0.03252247488101534,
-        0.03252247488101534,
-        0.031746031746031744,
-        0.031009615384615385,
-        0.03007688828584351
+        0.9995330572128296,
+        0.9990214109420776,
+        0.9967074394226074,
+        0.14542946219444275,
+        0.14151090383529663
       ],
       "hit_at_3": 1,
-      "retrieval_latency_ms": 10.482,
+      "retrieval_latency_ms": 1689.394,
       "retrieved_chunk_texts": [
-        "d that in case of fraud, the onus of disproving lies upon the beneficiaries, in case the \npolicyholder is not alive.  \n \nExplanation – A person who solicits and negotiates a contract of insurance shall be deemed for the \npurpose of the formation of the contract, to be the agent of the insurer.  \n \n4. A policy of life insurance may be called in question at any time within three years from the date of \nissuance of the policy or the date of commencement of risk or the date of revival of the policy ",
         "or the date of \ncommencement of risk or the date of revival of the pol icy or the date of the rider to the policy, \nwhichever is later.  \n \n2. A policy of life insurance may be called in question at any time within three years from the date of \nissuance of the policy or the date of commencement of risk or the date of revival of the policy or the \ndate of the rider to the policy, whichever is later on the ground of fraud:  \n \nProvided that the insurer shall have to communicate in writing to the i",
+        "d that in case of fraud, the onus of disproving lies upon the beneficiaries, in case the \npolicyholder is not alive.  \n \nExplanation – A person who solicits and negotiates a contract of insurance shall be deemed for the \npurpose of the formation of the contract, to be the agent of the insurer.  \n \n4. A policy of life insurance may be called in question at any time within three years from the date of \nissuance of the policy or the date of commencement of risk or the date of revival of the policy ",
         "Sample Policy Document - LIC’s New Jeevan Shanti  (UIN: 512N338V01)                                                                   Page 20 of 21 Annexure -III \n \nSection - 45 as per Insurance Act, 1938  \n \n1. No policy of life insurance shall be called in question on any ground whatsoever after the expiry of \nthree years from the date of the policy, i.e. from the date of issuance of the policy or the date of \ncommencement of risk or the date of revival of the pol icy or the date of the rider ",
-        "ion (2), no insurer shall repudiate a life insurance \npolicy o n the ground of fraud if the insured can prove that the misstatement of or suppression of a \nmaterial fact was true to the best of his knowledge and belief or that there was no deliberate \nintention to suppress the fact or that such misstatement of or suppre ssion of a material fact are \nwithin the knowledge of the insurer:  \n \nProvided that in case of fraud, the onus of disproving lies upon the beneficiaries, in case the \npolicyhold",
-        " he is \nentitled to do so, and no policy shall be deemed to be called in question merely because the terms of \nthe policy are adjusted on subsequent proof that the age of the life insured was incorrectly stated in \nthe proposal.  \n "
+        " the ground of fraud the premiums collected on the policy ",
+        " as per Rules and Regulations of the HMRC.  \n \n5. Policy Loan:  \nLoan facility shall be available at any time after three months from the completion of policy (i.e. 3 \nmonths from the date of issuance of policy) or after expiry of the free -look period, whichever is later , \nsubject to the following terms and conditions, wi thin the surrender value of the policy for such \namounts and on such further terms and conditions as the Corporation may fix from time to time.  \n \nUnder joint life the loan "
       ],
       "answer": null
     },
@@ -427,30 +427,30 @@
       "expected_chunk_id": "chunk_41",
       "category": "qrops",
       "top3_chunk_ids": [
-        "chunk_86",
+        "chunk_87",
         "chunk_41",
-        "chunk_83"
+        "chunk_86"
       ],
       "top5_chunk_ids": [
-        "chunk_86",
+        "chunk_87",
         "chunk_41",
-        "chunk_83",
+        "chunk_86",
         "chunk_4",
         "chunk_73"
       ],
       "scores": [
-        0.03200204813108039,
-        0.03125763125763126,
-        0.03125,
-        0.031099324975891997,
-        0.0304147465437788
+        0.9700871109962463,
+        0.8058419227600098,
+        0.2924763858318329,
+        0.05812743306159973,
+        0.02246774174273014
       ],
       "hit_at_3": 1,
-      "retrieval_latency_ms": 7.852,
+      "retrieval_latency_ms": 1502.294,
       "retrieved_chunk_texts": [
-        " of any other Life \nInsurer: The proceeds from cancellation will be transferred back to that Life Insurer.  \nb) If this policy has been purchased as QROPS as detailed in Condition 7 below: The proceeds \nfrom cancellation shall only  be transferred back to the fund house from where the money was \nreceived.  In case of QROPS, above provisions shall be further subject to any specific \nprovisions regarding procedures as per Rules and Regulations of the HMRC in this regard.  \n \n7. If this policy is p",
+        "rding procedures as per Rules and Regulations of the HMRC in this regard.  \n \n7. If this policy is purchase d as QROPS (Qualifying Recognized Overseas Pension Scheme), \nthrough transfer of UK tax relieved assets  the following terms and conditions prescribed by \nHMRC (Her Majesty Revenue & Customs)  shall apply : \ni. Minimum Vesting Age  shall be 55 ye ars.  \nii. If the policy is cancelled during the Free  Look period, the proceeds from cancellation shall only \nbe transferred back to the fund ho",
         "hedule.  For joint life annuity option under this policy, word “Annuitant” is used for “Primary \nAnnuitant”.  \n32. Purchase Price  is an amount mentioned in the Schedule of this Policy Document as opted by the \npolicyholder which is considered to determine the benefits under the policy.  \n33. Qualifying Recognised  Overseas  Pension Scheme (QROPS)  is a pension scheme which is \nadministered out side U nited Kingdom  and is registered with and hence  meets the requirements \nset by Her Majesty’s R",
-        " April, \n2021, the applicable interest rate is 9.50% p.a. compounding half -yearly for entire term of the loan.  \n \nAny change in basis of determination of interest rate for policy loan shall be subject to prior approval \nof IRDAI.  \n \nIn case of QROPS, above policy loan provisions shall be subject to Rules and Regulations of HMRC \nin this regard.  \n \n6. Free  Look period:  \nDuring the Free Look period of 15 days (30 days if this policy is purchased online) from the date of \nreceipt of the Polic",
+        " of any other Life \nInsurer: The proceeds from cancellation will be transferred back to that Life Insurer.  \nb) If this policy has been purchased as QROPS as detailed in Condition 7 below: The proceeds \nfrom cancellation shall only  be transferred back to the fund house from where the money was \nreceived.  In case of QROPS, above provisions shall be further subject to any specific \nprovisions regarding procedures as per Rules and Regulations of the HMRC in this regard.  \n \n7. If this policy is p",
         " (30 days if this \npolicy is purchased online) from the date of receipt of Policy Document stating the reasons of your \nobjections and disagreement. On receipt of the policy , we shall cancel the same and the amount of \npremium deposited by you shall be refunded to you after deducting the charges for stamp duty and \nAnnuity paid (if any).  In case of QROPS, these  provisions shall be further subject to any specific \nprovisions regar ding procedures as per Rules and Regulations of the HMRC in thi",
         "nder Value is reviewable and shall be determined by the Corporation from \ntime to time subject to prior approval of IRDAI.  \n \nAny loan amount outstanding along with interest and/or any other amount recoverable from \nAnnuitant shall be recovered from the surrender value payment.  \n \nIn case of QROPS, the surrender provisions shall be further subject to any specific provisions \nregarding procedures as per Rules and Regulations of the HMRC.  \n \n5. Policy Loan:  \nLoan facility shall be available at"
       ],
