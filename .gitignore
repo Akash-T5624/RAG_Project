@@ -5,6 +5,19 @@
 __pycache__/
 *.py[cod]
 
+# Runtime data (uploads, indices, chat history)
+backend/uploads/
+backend/indices/
+backend/chats/
+backend/data/
+*.log
+
 # Generated vector database files
-chunks.pkl
-vectors.index
+backend/chunks.pkl
+backend/vectors.index
+
+# Frontend build output (via npm run build)
+frontend/dist/
+
+# Node
+node_modules/
