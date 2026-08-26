@@ -56,34 +56,10 @@ metadata = data["metadata"]
 print(f"Loaded {len(chunks)} chunks")
 
 
-def query_to_vector(query):
-
-    print("\nConverting question into vector...")
-
-    vector = embedding_model.encode(
-        [query],
-        convert_to_numpy=True
-    )
-
-    vector = np.array(
-        vector,
-        dtype="float32"
-    )
-
-    faiss.normalize_L2(vector)
-
-    return vector
-
-
 def search_database(query, top_k=5):
 
     print("Searching FAISS database...")
 
-    # ONE retrieval change:
-    #   BEFORE: FAISS semantic retrieval (semantic_search)
-    #   AFTER:  FAISS semantic retrieval + BM25 keyword retrieval
-    #           fused with Reciprocal Rank Fusion (RRF, k=60).
-    # LLM, prompt, chunks, embeddings, and corpus are unchanged.
     results = retrieval.hybrid_search(query, final_top_k=top_k)
 
     return results

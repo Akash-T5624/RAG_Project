@@ -12,21 +12,16 @@ def get_embedding_model():
     """Lazy-load the sentence transformer once and reuse it everywhere."""
     global _model
     if _model is None:
-        print("Loading embedding model...")
         _model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
-        print("Embedding model loaded")
     return _model
 
 
 def extract_pdf_chunks(pdf_path, chunk_size=500, chunk_overlap=100):
     """Read a PDF and return (page_texts, chunks, metadata) without side effects."""
 
-    print(f"\nReading PDF: {pdf_path}")
-
     with open(pdf_path, "rb") as f:
         pdf_reader = PyPDF2.PdfReader(f)
         total_pages = len(pdf_reader.pages)
-        print(f"Total pages: {total_pages}")
 
         page_texts = []
         for page_num, page in enumerate(pdf_reader.pages):
@@ -57,8 +52,6 @@ def extract_pdf_chunks(pdf_path, chunk_size=500, chunk_overlap=100):
                 "start_position": start,
             })
 
-    print(f"Created {len(chunks)} chunks")
-
     return {
         "total_pages": total_pages,
         "chunks": chunks,
@@ -69,7 +62,6 @@ def extract_pdf_chunks(pdf_path, chunk_size=500, chunk_overlap=100):
 def embed_chunks(chunks):
     """Embed text chunks and L2-normalize them for FAISS inner-product search."""
     model = get_embedding_model()
-    print("\nCreating local embeddings...")
     embeddings = model.encode(
         chunks,
         show_progress_bar=True,
@@ -77,7 +69,6 @@ def embed_chunks(chunks):
     )
     embeddings = np.array(embeddings, dtype="float32")
     faiss.normalize_L2(embeddings)
-    print(f"Vector shape: {embeddings.shape}")
     return embeddings
 
 
@@ -94,9 +85,6 @@ def save_index_files(index, chunks, metadata, total_pages,
             },
             f,
         )
-    print("Saved vector database files:")
-    print(f"   {index_path}")
-    print(f"   {chunks_path}")
 
 
 def pdf_to_vectors(pdf_path):
@@ -104,7 +92,6 @@ def pdf_to_vectors(pdf_path):
     data = extract_pdf_chunks(pdf_path)
 
     if not data["chunks"]:
-        print("No text found in PDF.")
         return None, [], []
 
     embeddings = embed_chunks(data["chunks"])
@@ -120,10 +107,6 @@ def pdf_to_vectors(pdf_path):
         data["total_pages"],
     )
 
-    print("\nVECTOR DATABASE CREATED")
-    print(f"\nNumber of chunks: {len(data['chunks'])}")
-    print(f"Vector dimension: {embeddings.shape[1]}")
-
     return embeddings, data["chunks"], data["metadata"]
 
 
@@ -132,5 +115,3 @@ if __name__ == "__main__":
     pdf_file = "documents/LIC_Insurance.pdf"
 
     embeddings, chunks, metadata = pdf_to_vectors(pdf_file)
-
-    print("\nSetup completed!")

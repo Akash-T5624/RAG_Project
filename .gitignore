@@ -10,6 +10,8 @@ backend/uploads/
 backend/indices/
 backend/chats/
 backend/data/
+backend/traces/
+backend/traces_demo/
 *.log
 
 # Generated vector database files

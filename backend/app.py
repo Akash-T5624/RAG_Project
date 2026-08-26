@@ -3,6 +3,7 @@ import uuid
 import json
 import logging
 import datetime
+import time
 from pathlib import Path
 from typing import List, Optional, Iterator
 
@@ -17,6 +18,7 @@ from pydantic import BaseModel
 from starlette.requests import Request
 from fastapi.middleware.cors import CORSMiddleware
 
+import trace_log
 from pdf_reader import extract_pdf_chunks, embed_chunks, get_embedding_model
 
 # ---------------------------------------------------------------------------
@@ -75,13 +77,15 @@ SYSTEM_PROMPT = (
     "Do not make up information. Format answers clearly using markdown when helpful."
 )
 
+# Bump this whenever SYSTEM_PROMPT, retrieval strategy, or model params change,
+# so every trace records exactly which pipeline version produced it.
+PROMPT_VERSION = "v1-hybrid-rrf60"
+
 # ---------------------------------------------------------------------------
 # FastAPI app setup
 # ---------------------------------------------------------------------------
 
-print("Loading embedding model...")
 get_embedding_model()
-print("Embedding model ready")
 
 app = FastAPI(
     title="RAG API",
@@ -184,6 +188,7 @@ def _search_database(query: str, index, chunks, metadata, top_k: int = TOP_K):
             continue
         results.append({
             "rank": rank + 1,
+            "chunk_index": int(idx),
             "chunk": chunks[idx],
             "metadata": metadata[idx],
             "score": float(distance[0][rank]),
@@ -291,6 +296,34 @@ def _groq_complete(messages: List[dict]) -> str:
 
 def _sse(event_type: str, data) -> str:
     return f"data: {json.dumps({'type': event_type, **data}, ensure_ascii=False)}\n\n"
+
+
+def _record_chat_trace(*, endpoint, session_id, doc_id, question,
+                       llm_messages, results, raw_output, started_at,
+                       error=None):
+    """Write one complete, redacted-before-write trace to disk."""
+    try:
+        trace = trace_log.build_trace(
+            endpoint=endpoint,
+            session_id=session_id,
+            doc_id=doc_id,
+            prompt_version=PROMPT_VERSION,
+            question=question,
+            llm_messages=llm_messages,
+            retrieval_results=results,
+            model=GROQ_MODEL,
+            temperature=0.5,
+            stream=endpoint == "/chat/stream",
+            raw_output=raw_output,
+            latency_ms=(time.perf_counter() - started_at) * 1000.0,
+            error=error,
+        )
+        path = trace_log.save_trace(trace)
+        trace_log.save_trace_jsonl(trace)
+        logger.info("Trace %s written to %s + trace.jsonl", trace["trace_id"], path.name)
+    except Exception:
+        # Tracing must never break answering.
+        logger.exception("Failed to write trace")
 
 
 # ---------------------------------------------------------------------------
@@ -561,6 +594,7 @@ def _resolve_doc_and_index(request: ChatRequest):
 @app.post("/chat/stream", tags=["chats"])
 async def chat_stream(request: ChatRequest):
     """Ask a question and stream the answer token-by-token over SSE."""
+    started_at = time.perf_counter()
     question = request.question.strip()
     if not question:
         raise HTTPException(status_code=400, detail="Question cannot be empty.")
@@ -591,7 +625,10 @@ async def chat_stream(request: ChatRequest):
     llm_messages += _recent_llm_messages(history)
     llm_messages.append({"role": "user", "content": question})
 
+    stream_error = None
+
     def event_stream() -> Iterator[str]:
+        nonlocal stream_error
         answer_parts = []
         try:
             yield _sse("meta", {"session_id": session_id, "doc_id": doc_id})
@@ -611,22 +648,26 @@ async def chat_stream(request: ChatRequest):
                 yield _sse("token", {"content": token})
             yield _sse("done", {})
         except requests.exceptions.ConnectionError:
-            yield _sse("error", {"detail": "Could not reach the Groq API. Check your connection."})
+            stream_error = "Could not reach the Groq API. Check your connection."
+            yield _sse("error", {"detail": stream_error})
             return
         except requests.exceptions.HTTPError as exc:
             detail = getattr(exc.response, "text", "") or str(exc)
-            yield _sse("error", {"detail": f"Groq API error: {detail}"})
+            stream_error = f"Groq API error: {detail}"
+            yield _sse("error", {"detail": stream_error})
             return
         except RuntimeError as exc:
-            yield _sse("error", {"detail": str(exc)})
+            stream_error = str(exc)
+            yield _sse("error", {"detail": stream_error})
             return
         except Exception:
             logger.exception("Streaming chat failed")
-            yield _sse("error", {"detail": "Unexpected server error."})
+            stream_error = "Unexpected server error."
+            yield _sse("error", {"detail": stream_error})
             return
         finally:
-            if answer_parts:
-                answer = "".join(answer_parts)
+            answer = "".join(answer_parts)
+            if answer:
                 now = _now_iso()
                 history["messages"].append({"role": "user", "content": question, "timestamp": now})
                 history["messages"].append({"role": "assistant", "content": answer, "timestamp": now})
@@ -634,6 +675,17 @@ async def chat_stream(request: ChatRequest):
                     history["title"] = question[:60] + ("..." if len(question) > 60 else "")
                 history["updated_at"] = now
                 _save_history(history)
+            _record_chat_trace(
+                endpoint="/chat/stream",
+                session_id=session_id,
+                doc_id=doc_id,
+                question=question,
+                llm_messages=llm_messages,
+                results=results,
+                raw_output=answer,
+                started_at=started_at,
+                error={"detail": stream_error} if stream_error else None,
+            )
 
     return StreamingResponse(
         event_stream(),
@@ -645,6 +697,7 @@ async def chat_stream(request: ChatRequest):
 @app.post("/chat", tags=["chats"])
 async def chat(request: ChatRequest):
     """Classic non-streaming question endpoint (kept for compatibility)."""
+    started_at = time.perf_counter()
     question = request.question.strip()
     if not question:
         raise HTTPException(status_code=400, detail="Question cannot be empty.")
@@ -676,9 +729,21 @@ async def chat(request: ChatRequest):
     try:
         answer = _groq_complete(llm_messages)
     except RuntimeError as exc:
+        _record_chat_trace(
+            endpoint="/chat", session_id=session_id, doc_id=doc_id,
+            question=question, llm_messages=llm_messages, results=results,
+            raw_output="", started_at=started_at,
+            error={"detail": str(exc)},
+        )
         raise HTTPException(status_code=503, detail=str(exc)) from exc
     except requests.exceptions.RequestException as exc:
         logger.exception("Groq request failed")
+        _record_chat_trace(
+            endpoint="/chat", session_id=session_id, doc_id=doc_id,
+            question=question, llm_messages=llm_messages, results=results,
+            raw_output="", started_at=started_at,
+            error={"detail": f"Groq request failed: {exc}"},
+        )
         raise HTTPException(status_code=502, detail=f"Groq request failed: {exc}") from exc
 
     now = _now_iso()
@@ -688,6 +753,12 @@ async def chat(request: ChatRequest):
         history["title"] = question[:60] + ("..." if len(question) > 60 else "")
     history["updated_at"] = now
     _save_history(history)
+
+    _record_chat_trace(
+        endpoint="/chat", session_id=session_id, doc_id=doc_id,
+        question=question, llm_messages=llm_messages, results=results,
+        raw_output=answer, started_at=started_at,
+    )
 
     return {
         "session_id": session_id,

@@ -1,17 +1,3 @@
-"""Evaluation driver for the Week 4 Practical.
-
-Runs the golden set through:
-  --stage baseline  -> pure FAISS semantic search (retrieval.semantic_search)
-  --stage after     -> FAISS + BM25 + RRF(k=60) (retrieval.hybrid_search)
-
-Records per-question: top-3 chunk_ids, scores, hit@3, retrieval latency, and
-(optionally) the generated answer. Saves a JSON snapshot for later analysis.
-
-Usage:
-  python evaluate.py --stage baseline --out baseline_results.json
-  python evaluate.py --stage after --out after_results.json --with-generation
-"""
-
 import argparse
 import contextlib
 import io
@@ -28,7 +14,6 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--stage", choices=["baseline", "after"], required=True)
     parser.add_argument("--out", required=True)
-    parser.add_argument("--with-generation", action="store_true")
     args = parser.parse_args()
 
     with suppress_stdout():
@@ -47,9 +32,6 @@ def main():
                 f"Golden set error: {q['expected_chunk_id']} not in corpus"
             )
 
-    # Warm-up: one untimed retrieval so the measured latencies reflect
-    # steady-state per-query retrieval, not one-time init (model load,
-    # corpus load, BM25 index build).
     warmup = questions[0]
     if args.stage == "baseline":
         retrieval.semantic_search(warmup["question"], top_k=5)
@@ -84,11 +66,6 @@ def main():
         expected = q["expected_chunk_id"]
         hit_at_3 = 1 if expected in top_chunk_ids[:3] else 0
 
-        answer = None
-        if args.with_generation:
-            with suppress_stdout():
-                answer = query.generate_answer(q["question"], hits)
-
         results.append({
             "question_id": q["id"],
             "question": q["question"],
@@ -100,7 +77,6 @@ def main():
             "hit_at_3": hit_at_3,
             "retrieval_latency_ms": round(latency_ms, 3),
             "retrieved_chunk_texts": chunk_texts,
-            "answer": answer,
         })
 
     with open(args.out, "w", encoding="utf-8") as f:
