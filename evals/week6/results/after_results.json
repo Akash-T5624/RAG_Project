@@ -1,0 +1,129 @@
+[
+  {
+    "id": "rc_001",
+    "mode": "retrieval_failure",
+    "question": "what is the policy number?",
+    "expected": [
+      "DBTR10541714586"
+    ],
+    "answer": "The policy number is **DBTR10541714586/01**.",
+    "passed": true,
+    "retrieved_parents": [
+      1,
+      5,
+      6
+    ]
+  },
+  {
+    "id": "rc_002",
+    "mode": "exact_value",
+    "question": "what is the bike registration number?",
+    "expected": [
+      "TN09DB0750"
+    ],
+    "answer": "TN09DB0750",
+    "passed": true,
+    "retrieved_parents": [
+      3,
+      6
+    ]
+  },
+  {
+    "id": "rc_003",
+    "mode": "hierarchical_context",
+    "question": "after an accident, what is the first step to claim?",
+    "expected": [
+      "inform acko",
+      "contact acko",
+      "step 1",
+      "first step"
+    ],
+    "answer": "The first step is to **inform ACKO right away—either through the ACKO app or via their website**.",
+    "passed": true,
+    "retrieved_parents": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": "rc_004",
+    "mode": "hierarchical_context",
+    "question": "how many steps are in the acko claim process?",
+    "expected": [
+      "3",
+      "three",
+      "3 easy ways"
+    ],
+    "answer": "There are three steps in the ACKO claim process.",
+    "passed": true,
+    "retrieved_parents": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "rc_005",
+    "mode": "spelling_error",
+    "question": "is repining a kesibilty for ths policy?",
+    "expected": [
+      "one click",
+      "renewal"
+    ],
+    "answer": "I could not find the answer in the provided document.",
+    "passed": false,
+    "retrieved_parents": [
+      1,
+      5,
+      6
+    ]
+  },
+  {
+    "id": "rc_006",
+    "mode": "grammar_variation",
+    "question": "policy vehicle use for hire or reward covered?",
+    "expected": [
+      "not covered",
+      "not payable",
+      "is not",
+      "excluded",
+      "does not cover",
+      "not cover"
+    ],
+    "answer": "No. The policy does **not** cover using the vehicle for hire or reward; such use is expressly excluded.",
+    "passed": true,
+    "retrieved_parents": [
+      1,
+      5
+    ]
+  },
+  {
+    "id": "rc_007",
+    "mode": "exact_value",
+    "question": "what is the acko gstin number?",
+    "expected": [
+      "29AAOCA9055C1ZF"
+    ],
+    "answer": "29AAOCA9055C1ZF",
+    "passed": true,
+    "retrieved_parents": [
+      3,
+      5
+    ]
+  },
+  {
+    "id": "rc_008",
+    "mode": "retrieval_failure",
+    "question": "how do i renew the bike policy?",
+    "expected": [
+      "one click",
+      "renewal"
+    ],
+    "answer": "I could not find the answer in the provided document.",
+    "passed": false,
+    "retrieved_parents": [
+      0,
+      1,
+      6
+    ]
+  }
+]

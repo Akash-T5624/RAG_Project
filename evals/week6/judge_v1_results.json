@@ -1,0 +1,110 @@
+{
+  "W6-001": {
+    "verdict": "ACCEPT",
+    "raw_output": "ACCEPT"
+  },
+  "W6-002": {
+    "verdict": "ACCEPT",
+    "raw_output": "ACCEPT"
+  },
+  "W6-003": {
+    "verdict": "REJECT",
+    "raw_output": "REJECT"
+  },
+  "W6-004": {
+    "verdict": "ACCEPT",
+    "raw_output": "ACCEPT"
+  },
+  "W6-005": {
+    "verdict": "REJECT",
+    "raw_output": "REJECT"
+  },
+  "W6-006": {
+    "verdict": "ACCEPT",
+    "raw_output": "ACCEPT"
+  },
+  "W6-007": {
+    "verdict": "ACCEPT",
+    "raw_output": "ACCEPT"
+  },
+  "W6-008": {
+    "verdict": "ACCEPT",
+    "raw_output": "ACCEPT"
+  },
+  "W6-009": {
+    "verdict": "ACCEPT",
+    "raw_output": "ACCEPT"
+  },
+  "W6-010": {
+    "verdict": "ACCEPT",
+    "raw_output": "ACCEPT"
+  },
+  "W6-011": {
+    "verdict": "ACCEPT",
+    "raw_output": "ACCEPT"
+  },
+  "W6-012": {
+    "verdict": "REJECT",
+    "raw_output": "REJECT"
+  },
+  "W6-013": {
+    "verdict": "ACCEPT",
+    "raw_output": "ACCEPT"
+  },
+  "W6-014": {
+    "verdict": "REJECT",
+    "raw_output": "REJECT"
+  },
+  "W6-015": {
+    "verdict": "ACCEPT",
+    "raw_output": "ACCEPT"
+  },
+  "W6-016": {
+    "verdict": "ACCEPT",
+    "raw_output": "ACCEPT"
+  },
+  "W6-017": {
+    "verdict": "ACCEPT",
+    "raw_output": "ACCEPT"
+  },
+  "W6-026": {
+    "verdict": "ACCEPT",
+    "raw_output": "ACCEPT"
+  },
+  "W6-018": {
+    "verdict": "ACCEPT",
+    "raw_output": "ACCEPT"
+  },
+  "W6-019": {
+    "verdict": "ACCEPT",
+    "raw_output": "ACCEPT"
+  },
+  "W6-020": {
+    "verdict": "ACCEPT",
+    "raw_output": "ACCEPT"
+  },
+  "W6-021": {
+    "verdict": "REJECT",
+    "raw_output": "REJECT"
+  },
+  "W6-022": {
+    "verdict": "REJECT",
+    "raw_output": "REJECT"
+  },
+  "W6-023": {
+    "verdict": "ACCEPT",
+    "raw_output": "ACCEPT"
+  },
+  "W6-024": {
+    "verdict": "ACCEPT",
+    "raw_output": "ACCEPT"
+  },
+  "W6-025": {
+    "verdict": "ACCEPT",
+    "raw_output": "ACCEPT"
+  },
+  "W6-027": {
+    "verdict": "ACCEPT",
+    "raw_output": "ACCEPT"
+  }
+}

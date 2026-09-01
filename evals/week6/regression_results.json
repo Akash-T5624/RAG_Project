@@ -1,0 +1,20 @@
+[
+  {
+    "trace_id": "4cb9d33f-1b00-4a38-8b55-499894fd261f",
+    "question": "/tyres and tubes damage cover in the policy",
+    "expect": "refusal",
+    "original_output": "I could not find the answer in the provided document.",
+    "replayed_output": "I could not find the answer in the provided document.",
+    "passed": true,
+    "detail": "original='refusal' replayed='refusal'"
+  },
+  {
+    "trace_id": "a2d35a99-fadc-4be9-978d-8d84606c1a41",
+    "question": "policy number?",
+    "expect": "refusal",
+    "original_output": "I could not find the answer in the provided document.",
+    "replayed_output": "I could not find the answer in the provided document.",
+    "passed": true,
+    "detail": "original='refusal' replayed='refusal'"
+  }
+]

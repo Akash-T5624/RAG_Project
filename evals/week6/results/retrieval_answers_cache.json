@@ -1,0 +1,34 @@
+{
+  "rc_001": {
+    "baseline": "DBTR10541714586/01",
+    "after": "The policy number is **DBTR10541714586/01**."
+  },
+  "rc_002": {
+    "baseline": "TN09DB0750",
+    "after": "TN09DB0750"
+  },
+  "rc_003": {
+    "baseline": "The first step is to inform ACKO—e.g., via the Acko app or the ACKO website.",
+    "after": "The first step is to **inform ACKO right away—either through the ACKO app or via their website**."
+  },
+  "rc_004": {
+    "baseline": "There are three steps in the ACKO claim process.",
+    "after": "There are three steps in the ACKO claim process."
+  },
+  "rc_005": {
+    "baseline": "I could not find the answer in the provided document.",
+    "after": "I could not find the answer in the provided document."
+  },
+  "rc_006": {
+    "baseline": "The policy does **not** cover using the vehicle for hire or reward.",
+    "after": "No. The policy does **not** cover using the vehicle for hire or reward; such use is expressly excluded."
+  },
+  "rc_007": {
+    "baseline": "29AAOCA9055C1ZF",
+    "after": "29AAOCA9055C1ZF"
+  },
+  "rc_008": {
+    "baseline": "I could not find the answer in the provided document.",
+    "after": "I could not find the answer in the provided document."
+  }
+}

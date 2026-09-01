@@ -1,0 +1,45 @@
+PREDICTION (written BEFORE modifying judge_v1 -> judge_v2)
+===========================================================
+Date written : 2026-09-01
+Blind labels : labels_25.json (committed 9111077, 2026-08-31 23:08 +0530)
+Judge v1     : 3ea136a (committed 2026-09-01)
+Agreement    : v1 = 20/27 = 74.1%
+
+Judge v1 had 7 disagreements with the blind human labels. Reading them, two
+clear patterns emerge from the judge's OWN disagreements:
+
+  Over-reject: W6-003, W6-005, W6-012, W6-014, W6-021, W6-022
+      human = acceptable, judge v1 = REJECT
+      -> the summary is faithful AND complete, but the judge still rejects it.
+
+  Under-reject: W6-006
+      human = reject, judge v1 = ACCEPT
+      -> a summary approving a PARTIAL payout while excluding a claimed item
+         was passed as acceptably routable, when it should be flagged.
+
+I will add exactly two of the judge's own disagreements to judge_v2 as few-shot
+examples — W6-003 (over-reject) and W6-006 (under-reject) — because they each
+exercise one of the two failure directions.
+
+PREDICTION:
+  "Adding the two disagreement examples (W6-003: a faithful, complete summary
+   the v1 judge wrongly rejected; W6-006: a partial-approval-with-exclusion
+   summary the v1 judge wrongly accepted) will fix the judge's systematic
+   over-rejection of faithful summaries and its under-rejection of partial
+   payout/coverage-denial summaries. I expect human agreement to rise from
+   74.1% (20/27), primarily by recovering most of the 6 false rejects while
+   keeping W6-006 correctly rejected. I predict agreement_after >= 85%
+   (>= 23/27), likely 24/27 (88.9%)."
+
+Mechanism this predicts to change:
+  - Fewer REJECT verdicts on faithful, complete summaries (fix over-reject bias).
+  - W6-006 flips REJECT (fix under-reject on partial-approval-with-exclusion).
+
+Honest caveat: judge_v2 re-uses the SAME 27 test cases and the few-shot examples
+come from those cases, so agreement may rise partly because the model now has
+those exact cases in-context. This is a deliberate rubric requirement ("use 2 of
+its own disagreements as few-shot examples") and is reported transparently.
+
+Falsifiable check after judge_v2:
+  - If agreement does NOT go up, or W6-006 stays ACCEPT, the prediction is WRONG
+    and that outcome is recorded honestly with the actual numbers.
