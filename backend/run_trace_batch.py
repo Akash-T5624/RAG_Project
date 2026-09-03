@@ -36,7 +36,7 @@ def main():
         raise SystemExit("No documents uploaded. Upload a PDF via the app or /upload first.")
 
     doc_id = max(registry.items(), key=lambda kv: kv[1].get("created_at", ""))[0]
-    index, chunks, metadata = app._load_index_for_doc(doc_id)
+    index, chunks, metadata, page_texts = app._load_index_for_doc(doc_id)
     if index is None:
         raise SystemExit(f"Index files missing for doc {doc_id}; re-upload the PDF.")
 
@@ -53,7 +53,7 @@ def main():
                             {"role": "user", "content": q}]
             try:
                 results = app._search_database(q, index, chunks, metadata)
-                context = app._build_context(results)
+                context = app._build_context(results, page_texts)
                 payload = [{
                     "role": "system",
                     "content": app.SYSTEM_PROMPT + "\n\n" + context,

@@ -150,6 +150,61 @@ class BM25:
         scores.sort(key=lambda x: x[1], reverse=True)
         return scores[:top_k]
 
+    def expand_typos(self, query_terms, max_dist=2, min_len=4):
+        """Map misspelled query tokens to corpus tokens within edit distance.
+
+        Pure-Python Levenshtein tolerant matching.  Words shorter than min_len
+        or with no corpus match are left as-is.  Returns a list of
+        (original_term, best_fuzzy_correction) pairs; pairs where the original
+        already exists in the corpus are dropped (they need no correction).
+
+        A relative edit-distance budget is used (max_dist=2 absolute, or up to
+        3 for tokens of length >= 8) so longer misspellings like "repining"->
+        styles are still recoverable.  This is the spelling_error fix from the
+        Week 5 taxonomy.
+        """
+        vocab = sorted(self.df.keys(), key=len)
+        corrections = []
+        for term in set(query_terms):
+            if term in self.df:
+                continue  # already present, no correction needed
+            if len(term) < min_len:
+                continue  # too short to correct reliably
+            budget = max_dist if len(term) < 8 else 3
+            best = None
+            best_dist = None
+            for candidate in vocab:
+                if abs(len(candidate) - len(term)) > 2:
+                    continue
+                d = _edit_distance(term, candidate)
+                if d <= budget and (best_dist is None or d < best_dist):
+                    best_dist = d
+                    best = candidate
+            if best is not None:
+                corrections.append((term, best))
+        return corrections
+
+
+def _edit_distance(a, b):
+    """Levenshtein edit distance (used for typo-tolerant BM25)."""
+    m, n = len(a), len(b)
+    if m == 0:
+        return n
+    if n == 0:
+        return m
+    prev = list(range(n + 1))
+    for i in range(1, m + 1):
+        curr = [i] + [0] * n
+        for j in range(1, n + 1):
+            cost = 0 if a[i - 1] == b[j - 1] else 1
+            curr[j] = min(
+                prev[j] + 1,
+                curr[j - 1] + 1,
+                prev[j - 1] + cost,
+            )
+        prev = curr
+    return prev[n]
+
 
 def get_bm25():
     global _bm25
@@ -335,6 +390,88 @@ def rerank_results(query, candidates, top_k=5):
             "score": float(rerank_score),
         })
     return final
+
+def hybrid_search_per_doc(query, index, chunks, metadata, top_k=5):
+    """Full hybrid pipeline for a single-document FAISS index (used by app.py).
+
+    Runs FAISS semantic + BM25 keyword + RRF fusion + Cross-Encoder reranking
+    on a per-document index.  Returns the same result format as the global
+    hybrid_search so app.py can drop it in as a replacement for _search_database.
+    """
+    if not query or not query.strip():
+        return []
+
+    # --- FAISS semantic search → top 40 ---
+    qv = query_to_vector(query)
+    faiss_dists, faiss_idx = index.search(qv, min(40, index.ntotal))
+
+    semantic_results = []
+    for rank, index_id in enumerate(faiss_idx[0]):
+        if index_id == -1:
+            continue
+        semantic_results.append({
+            "rank": rank + 1,
+            "chunk_idx": int(index_id),
+            "chunk_id": chunk_id(int(index_id)),
+            "score": float(faiss_dists[0][rank]),
+            "chunk": chunks[index_id],
+        })
+
+    # --- BM25 keyword search → top 40 ---
+    bm = BM25(chunks)
+    query_terms = tokenize(query)
+
+    # Week 5 spelling_error fix: further-rank with typo-corrected terms so a
+    # misspelled query still surfaces the right chunk.
+    typo_corrections = bm.expand_typos(query_terms)
+    if typo_corrections:
+        corrected_terms = list(query_terms) + [c for _, c in typo_corrections]
+        bm25_results = bm.rank(corrected_terms, top_k=min(40, len(chunks)))
+    else:
+        bm25_results = bm.rank(query_terms, top_k=min(40, len(chunks)))
+
+    # --- RRF fusion ---
+    fused = {}
+    for rank, r in enumerate(semantic_results):
+        cid = r["chunk_id"]
+        fused.setdefault(cid, {"score": 0.0, "chunk_idx": r["chunk_idx"]})
+        fused[cid]["score"] += 1.0 / (RRF_K + r["rank"])
+
+    for rank, (doc_idx, _bm25_score) in enumerate(bm25_results):
+        cid = chunk_id(doc_idx)
+        if cid not in fused:
+            fused[cid] = {"score": 0.0, "chunk_idx": doc_idx}
+        fused[cid]["score"] += 1.0 / (RRF_K + rank + 1)
+
+    fused_list = sorted(fused.items(), key=lambda kv: kv[1]["score"], reverse=True)
+    candidates = [
+        {"chunk_idx": v["chunk_idx"], "chunk_id": cid, "rrf_score": v["score"]}
+        for cid, v in fused_list[:30]
+    ]
+
+    if not candidates:
+        return []
+
+    # --- Cross-Encoder reranking → top_k ---
+    reranker = _get_reranker()
+    pairs = [(query, chunks[c["chunk_idx"]]) for c in candidates]
+    scores = reranker.predict(pairs)
+    scored = list(zip(candidates, scores))
+    scored.sort(key=lambda x: x[1], reverse=True)
+
+    final = []
+    for rank, (cand, rerank_score) in enumerate(scored[:top_k]):
+        idx = cand["chunk_idx"]
+        final.append({
+            "rank": rank + 1,
+            "chunk_index": idx,
+            "chunk_id": cand["chunk_id"],
+            "chunk": chunks[idx],
+            "metadata": metadata[idx],
+            "score": float(rerank_score),
+        })
+    return final
+
 
 def hybrid_search(
     query,

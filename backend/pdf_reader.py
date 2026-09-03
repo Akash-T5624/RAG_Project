@@ -52,10 +52,14 @@ def extract_pdf_chunks(pdf_path, chunk_size=500, chunk_overlap=100):
                 "start_position": start,
             })
 
+    # Full page texts for hierarchical parent-context recovery (Week 6 fix).
+    full_page_texts = [p["text"] for p in page_texts]
+
     return {
         "total_pages": total_pages,
         "chunks": chunks,
         "metadata": chunk_metadata,
+        "page_texts": full_page_texts,
     }
 
 
@@ -72,7 +76,7 @@ def embed_chunks(chunks):
     return embeddings
 
 
-def save_index_files(index, chunks, metadata, total_pages,
+def save_index_files(index, chunks, metadata, total_pages, page_texts=None,
                      index_path="vectors.index", chunks_path="chunks.pkl"):
     """Persist a FAISS index plus its chunks/metadata to disk."""
     faiss.write_index(index, str(index_path))
@@ -82,6 +86,7 @@ def save_index_files(index, chunks, metadata, total_pages,
                 "chunks": chunks,
                 "metadata": metadata,
                 "total_pages": total_pages,
+                "page_texts": page_texts or [],
             },
             f,
         )
@@ -105,6 +110,7 @@ def pdf_to_vectors(pdf_path):
         data["chunks"],
         data["metadata"],
         data["total_pages"],
+        page_texts=data.get("page_texts"),
     )
 
     return embeddings, data["chunks"], data["metadata"]

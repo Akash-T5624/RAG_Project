@@ -20,6 +20,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 import trace_log
 from pdf_reader import extract_pdf_chunks, embed_chunks, get_embedding_model
+from retrieval import hybrid_search_per_doc
 
 # ---------------------------------------------------------------------------
 # Environment / configuration
@@ -79,7 +80,7 @@ SYSTEM_PROMPT = (
 
 # Bump this whenever SYSTEM_PROMPT, retrieval strategy, or model params change,
 # so every trace records exactly which pipeline version produced it.
-PROMPT_VERSION = "v1-hybrid-rrf60"
+PROMPT_VERSION = "v2-hierarchical-hybrid"
 
 # ---------------------------------------------------------------------------
 # FastAPI app setup
@@ -149,16 +150,16 @@ def _now_iso():
 
 
 def _load_index_for_doc(doc_id: str):
-    """Return cached or disk-loaded (index, chunks, metadata) for a document."""
+    """Return cached or disk-loaded (index, chunks, metadata, page_texts) for a document."""
     if doc_id in _index_cache:
         cached = _index_cache[doc_id]
-        return cached["index"], cached["chunks"], cached["metadata"]
+        return cached["index"], cached["chunks"], cached["metadata"], cached.get("page_texts", [])
 
     index_path = INDEX_DIR / f"{doc_id}_vectors.index"
     chunks_path = INDEX_DIR / f"{doc_id}_chunks.pkl"
 
     if not index_path.exists() or not chunks_path.exists():
-        return None, None, None
+        return None, None, None, []
 
     index = faiss.read_index(str(index_path))
     with open(chunks_path, "rb") as f:
@@ -168,8 +169,9 @@ def _load_index_for_doc(doc_id: str):
         "index": index,
         "chunks": data["chunks"],
         "metadata": data["metadata"],
+        "page_texts": data.get("page_texts", []),
     }
-    return index, data["chunks"], data["metadata"]
+    return index, data["chunks"], data["metadata"], data.get("page_texts", [])
 
 
 def _query_to_vector(query: str):
@@ -180,30 +182,40 @@ def _query_to_vector(query: str):
 
 
 def _search_database(query: str, index, chunks, metadata, top_k: int = TOP_K):
-    query_vector = _query_to_vector(query)
-    distance, indices = index.search(query_vector, top_k)
-    results = []
-    for rank, idx in enumerate(indices[0]):
-        if idx == -1:
-            continue
-        results.append({
-            "rank": rank + 1,
-            "chunk_index": int(idx),
-            "chunk": chunks[idx],
-            "metadata": metadata[idx],
-            "score": float(distance[0][rank]),
-        })
-    return results
+    """Hybrid retrieval: FAISS semantic + BM25 keyword + RRF + Cross-Encoder rerank.
+
+    Replaces the old FAISS-only search.  The hybrid pipeline catches:
+      - spelling errors (BM25 partial matching)
+      - exact-value lookups (BM25 keyword match for IDs, numbers)
+      - semantic misses (FAISS catches conceptual similarity BM25 misses)
+    """
+    return hybrid_search_per_doc(query, index, chunks, metadata, top_k=top_k)
 
 
-def _build_context(results) -> str:
+def _build_context(results, page_texts=None) -> str:
+    """Build LLM context with hierarchical parent-page recovery.
+
+    After each child chunk, the full parent page is appended so the LLM sees
+    anaphoric references ("these items", "STEP 1") in their proper context.
+    This fixes the hierarchical_context failure mode from the Week 5 taxonomy.
+    """
     context = ""
+    seen_pages = set()
     for result in results:
         page_number = result["metadata"]["page_number"]
         context += (
             f"\n--- Document Chunk {result['rank']} (Page {page_number}) ---\n"
             f"{result['chunk']}\n"
         )
+        # Inject parent page context on first encounter for each page.
+        if page_texts and page_number not in seen_pages:
+            seen_pages.add(page_number)
+            page_idx = page_number - 1  # page_number is 1-indexed
+            if 0 <= page_idx < len(page_texts) and page_texts[page_idx].strip():
+                context += (
+                    f"\n--- Parent section (Page {page_number}) ---\n"
+                    f"{page_texts[page_idx]}\n"
+                )
     return context
 
 
@@ -398,9 +410,15 @@ async def upload_pdf(file: UploadFile = File(...)):
             "chunks": chunks,
             "metadata": metadata,
             "total_pages": extracted["total_pages"],
+            "page_texts": extracted.get("page_texts", []),
         }, f)
 
-    _index_cache[doc_id] = {"index": index, "chunks": chunks, "metadata": metadata}
+    _index_cache[doc_id] = {
+        "index": index,
+        "chunks": chunks,
+        "metadata": metadata,
+        "page_texts": extracted.get("page_texts", []),
+    }
 
     registry = _read_registry()
     registry[doc_id] = {
@@ -582,13 +600,13 @@ def _resolve_doc_and_index(request: ChatRequest):
             detail=f"Document '{doc_id}' not found. It may have been deleted.",
         )
 
-    index, chunks, metadata = _load_index_for_doc(doc_id)
+    index, chunks, metadata, page_texts = _load_index_for_doc(doc_id)
     if index is None:
         raise HTTPException(
             status_code=500,
             detail="Document index files are missing. Please re-upload the PDF.",
         )
-    return doc_id, index, chunks, metadata
+    return doc_id, index, chunks, metadata, page_texts
 
 
 @app.post("/chat/stream", tags=["chats"])
@@ -614,12 +632,12 @@ async def chat_stream(request: ChatRequest):
             "messages": [],
         }
 
-    doc_id, index, chunks, metadata = _resolve_doc_and_index(request)
+    doc_id, index, chunks, metadata, page_texts = _resolve_doc_and_index(request)
     if not history.get("doc_id"):
         history["doc_id"] = doc_id
 
     results = _search_database(question, index, chunks, metadata)
-    context = _build_context(results)
+    context = _build_context(results, page_texts)
 
     llm_messages = [{"role": "system", "content": SYSTEM_PROMPT + "\n\n" + context}]
     llm_messages += _recent_llm_messages(history)
@@ -715,12 +733,12 @@ async def chat(request: ChatRequest):
             "messages": [],
         }
 
-    doc_id, index, chunks, metadata = _resolve_doc_and_index(request)
+    doc_id, index, chunks, metadata, page_texts = _resolve_doc_and_index(request)
     if not history.get("doc_id"):
         history["doc_id"] = doc_id
 
     results = _search_database(question, index, chunks, metadata)
-    context = _build_context(results)
+    context = _build_context(results, page_texts)
 
     llm_messages = [{"role": "system", "content": SYSTEM_PROMPT + "\n\n" + context}]
     llm_messages += _recent_llm_messages(history)
