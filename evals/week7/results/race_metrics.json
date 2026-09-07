@@ -1,0 +1,25 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "agent": {
+    "claims_run": 10,
+    "pass_rate_pct": 100.0,
+    "p50_latency_ms": 31715.3,
+    "total_tokens": 46466,
+    "cost_per_claim": 0.004273,
+    "total_cost": 0.042728
+  },
+  "workflow": {
+    "claims_run": 10,
+    "pass_rate_pct": 100.0,
+    "p50_latency_ms": 2.7,
+    "total_tokens": 0,
+    "cost_per_claim": 0.0,
+    "total_cost": 0.0
+  },
+  "pricing_assumption": {
+    "input_usd_per_1m": 0.8,
+    "output_usd_per_1m": 4.0,
+    "source": "Groq list price for qwen/qwen3.8-27b (console.groq.com/docs/model/qwen/qwen3.8-27b): input $0.80 / output $4.00 per 1M tokens"
+  },
+  "claim_amount_assumption": 30000.0
+}

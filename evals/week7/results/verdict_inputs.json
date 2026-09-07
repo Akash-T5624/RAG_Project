@@ -1,0 +1,41 @@
+{
+  "comparison": {
+    "agent": {
+      "claims_run": 10,
+      "pass_rate_pct": 100.0,
+      "p50_latency_ms": 31715.3,
+      "total_tokens": 46466,
+      "cost_per_claim": 0.004273,
+      "total_cost": 0.042728
+    },
+    "workflow": {
+      "claims_run": 10,
+      "pass_rate_pct": 100.0,
+      "p50_latency_ms": 2.7,
+      "total_tokens": 0,
+      "cost_per_claim": 0.0,
+      "total_cost": 0.0
+    },
+    "delta_pass_rate_pp": 0.0,
+    "delta_p50_latency_ms": -31712.6
+  },
+  "reasons": {
+    "W6-001": "completed",
+    "W6-002": "completed",
+    "W6-003": "completed",
+    "W6-004": "completed",
+    "W6-005": "completed",
+    "W6-006": "completed",
+    "W6-008": "completed",
+    "W6-009": "completed",
+    "W6-010": "completed",
+    "W6-011": "completed"
+  },
+  "branching_claim_ids": [
+    "W6-002",
+    "W6-004",
+    "W6-008",
+    "W6-011"
+  ],
+  "branching_counterfactual": "For claims where the exclusion-clause citation in the notes is the deciding fact (e.g. W6-002 water ingress -> Exc-7.4), the workflow's coded decision reaches the same status as the provided labels, so no benefit from agent branching was measured on this dataset."
+}

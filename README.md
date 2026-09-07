@@ -264,3 +264,54 @@ the **web app** (frontend + FastAPI) and the **CLI mode** (`main.py`).
 | `RAG_TOP_K`            | `5`                          | Chunks retrieved per question |
 | `CORS_ORIGINS`         | localhost:5173, localhost:4173 | Allowed dev origins         |
 | `LOG_LEVEL`            | `INFO`                       | Logging verbosity             |
+
+---
+
+## Week 7 Module 4 — Claims Agent vs Fixed Workflow Race
+
+Same-task race between a hand-built ReAct claims agent and a deterministic
+fixed workflow, on the insurance-claims evaluation set
+(`evals/week6/eval_set.jsonl`, 27 claims). Both systems use the **same tools**
+(`evals/week7/tools.py`), the **same output contract**, the **same evaluator**,
+and the **same model configuration**.
+
+### Run
+
+```powershell
+python run_agent.py W6-002       # one claim through the agent (Groq)
+python run_workflow.py W6-002    # one claim through the fixed workflow
+python race.py                   # full race: 10 claims x both systems
+python test_budget.py            # budget-termination test -> budget_termination.log
+```
+
+### Artifacts
+
+- `race.csv` — per-claim reproducibility master (latency, tokens, cost,
+  termination reason, pass).
+- `evals/week7/results/` — `race_metrics.json`, `per_claim_results.json`,
+  `comparison_table.md`, `verdict.md` (final table + <150-word verdict),
+  `tool_description_diff.md`, `budget_termination_max_tokens.log`.
+- `budget_termination.log` — clean termination when `MAX_ITERS=1` is forced.
+- `evals/week7/logs/` — per-claim agent/workflow logs (gitignored `*.log`).
+
+### Result (2026-09-06)
+
+| Metric | Agent | Fixed Workflow |
+| --- | ---: | ---: |
+| Pass rate | 100% (10/10) | 100% (10/10) |
+| p50 latency | 31.7 s | 2.7 ms |
+| Total tokens | 46,466 | 0 |
+| Cost per claim | $0.004273 | $0.000000 |
+
+### Documented assumptions (see `results/verdict.md`)
+
+- Claim amounts are absent from the eval set; `DEFAULT_CLAIM_AMOUNT = 30,000`
+  is used for every claim (`WEEK7_CLAIM_AMOUNT` overridable).
+- The backend-configured `openai/gpt-oss-120b` is model-level rate limited on
+  the shared key (429 + multi-minute cool-off); the race uses
+  `qwen/qwen3.8-27b` on the same key for **both** systems (`WEEK7_MODEL`
+  overridable), at Groq's list price $0.80/$4.00 per 1M tokens.
+- The workflow is deterministic code with no LLM in its path, so 0 tokens /
+  $0 is a property of the implementation, measured, not assumed.
+- All four agent budgets (iterations, tokens, cost, wall-clock) are enforced
+  inside the loop and their terminations are logged.
