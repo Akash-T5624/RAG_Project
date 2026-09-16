@@ -1,0 +1,440 @@
+{
+  "system": "workflow",
+  "aggregate": {
+    "claims_evaluated": 10,
+    "outcome_pass_rate_pct": 100.0,
+    "trajectory_pass_rate_pct": 100.0,
+    "sequence_pass_rate_pct": 100.0,
+    "gap_pp": 0.0,
+    "tool_choice_accuracy": 1.0,
+    "argument_validity_rate": 1.0,
+    "step_efficiency_mean": 1.3,
+    "step_efficiency_min": 1.0,
+    "step_efficiency_max": 1.5,
+    "cost_per_claim_p50": 0.000601,
+    "cost_per_claim_max": 0.000681,
+    "cost_per_claim_mean": 0.000604,
+    "cost_per_claim_min": 0.000571,
+    "latency_ms_p50": 236.3,
+    "latency_ms_max": 902.9,
+    "tokens_total": 6849,
+    "tokens_p50": 675.5,
+    "tokens_max": 771
+  },
+  "per_claim": [
+    {
+      "claim_id": "W6-001",
+      "title": "Front-bumper repair Honda Activa",
+      "branching": false,
+      "steps": [
+        "get_claim",
+        "search_policy",
+        "compute_payout"
+      ],
+      "steps_taken": 3,
+      "steps_needed": 2,
+      "step_efficiency": 1.5,
+      "tool_choice_accuracy": 1.0,
+      "argument_validity": 1.0,
+      "invalid_argument_slots": [],
+      "cost": 0.0006808000000000001,
+      "latency_ms": 303.8952999631874,
+      "tokens": 771,
+      "outcome_pass": true,
+      "outcome_failures": [],
+      "sequence_pass": true,
+      "sequence_reason": null,
+      "accepted_path": "get_claim -> {search_policy} -> compute_payout",
+      "modes": [],
+      "trajectory_pass": true,
+      "termination_reason": "completed"
+    },
+    {
+      "claim_id": "W6-002",
+      "title": "Water-ingress engine claim",
+      "branching": true,
+      "steps": [
+        "get_claim",
+        "search_policy",
+        "compute_payout"
+      ],
+      "steps_taken": 3,
+      "steps_needed": 3,
+      "step_efficiency": 1.0,
+      "tool_choice_accuracy": 1.0,
+      "argument_validity": 1.0,
+      "invalid_argument_slots": [],
+      "cost": 0.0006184,
+      "latency_ms": 231.36810003779829,
+      "tokens": 693,
+      "outcome_pass": true,
+      "outcome_failures": [],
+      "sequence_pass": true,
+      "sequence_reason": null,
+      "accepted_path": "get_claim -> search_policy -> compute_payout",
+      "modes": [],
+      "trajectory_pass": true,
+      "termination_reason": "completed"
+    },
+    {
+      "claim_id": "W6-003",
+      "title": "Rear-end collision",
+      "branching": false,
+      "steps": [
+        "get_claim",
+        "search_policy",
+        "compute_payout"
+      ],
+      "steps_taken": 3,
+      "steps_needed": 2,
+      "step_efficiency": 1.5,
+      "tool_choice_accuracy": 1.0,
+      "argument_validity": 1.0,
+      "invalid_argument_slots": [],
+      "cost": 0.00058,
+      "latency_ms": 220.88360000634566,
+      "tokens": 669,
+      "outcome_pass": true,
+      "outcome_failures": [],
+      "sequence_pass": true,
+      "sequence_reason": null,
+      "accepted_path": "get_claim -> {search_policy} -> compute_payout",
+      "modes": [],
+      "trajectory_pass": true,
+      "termination_reason": "completed"
+    },
+    {
+      "claim_id": "W6-004",
+      "title": "Drink-driving refusal",
+      "branching": true,
+      "steps": [
+        "get_claim",
+        "search_policy",
+        "compute_payout"
+      ],
+      "steps_taken": 3,
+      "steps_needed": 3,
+      "step_efficiency": 1.0,
+      "tool_choice_accuracy": 1.0,
+      "argument_validity": 1.0,
+      "invalid_argument_slots": [],
+      "cost": 0.0005991999999999999,
+      "latency_ms": 238.65849996218458,
+      "tokens": 669,
+      "outcome_pass": true,
+      "outcome_failures": [],
+      "sequence_pass": true,
+      "sequence_reason": null,
+      "accepted_path": "get_claim -> search_policy -> compute_payout",
+      "modes": [],
+      "trajectory_pass": true,
+      "termination_reason": "completed"
+    },
+    {
+      "claim_id": "W6-005",
+      "title": "Tree-branch storm damage",
+      "branching": false,
+      "steps": [
+        "get_claim",
+        "search_policy",
+        "compute_payout"
+      ],
+      "steps_taken": 3,
+      "steps_needed": 2,
+      "step_efficiency": 1.5,
+      "tool_choice_accuracy": 1.0,
+      "argument_validity": 1.0,
+      "invalid_argument_slots": [],
+      "cost": 0.0006096000000000001,
+      "latency_ms": 218.71759998612106,
+      "tokens": 682,
+      "outcome_pass": true,
+      "outcome_failures": [],
+      "sequence_pass": true,
+      "sequence_reason": null,
+      "accepted_path": "get_claim -> {search_policy} -> compute_payout",
+      "modes": [],
+      "trajectory_pass": true,
+      "termination_reason": "completed"
+    },
+    {
+      "claim_id": "W6-006",
+      "title": "Theft of aftermarket stereo",
+      "branching": false,
+      "steps": [
+        "get_claim",
+        "search_policy",
+        "compute_payout"
+      ],
+      "steps_taken": 3,
+      "steps_needed": 2,
+      "step_efficiency": 1.5,
+      "tool_choice_accuracy": 1.0,
+      "argument_validity": 1.0,
+      "invalid_argument_slots": [],
+      "cost": 0.0005951999999999999,
+      "latency_ms": 239.4400000339374,
+      "tokens": 688,
+      "outcome_pass": true,
+      "outcome_failures": [],
+      "sequence_pass": true,
+      "sequence_reason": null,
+      "accepted_path": "get_claim -> {search_policy} -> compute_payout",
+      "modes": [],
+      "trajectory_pass": true,
+      "termination_reason": "completed"
+    },
+    {
+      "claim_id": "W6-008",
+      "title": "Unlicensed-driver accident",
+      "branching": true,
+      "steps": [
+        "get_claim",
+        "search_policy",
+        "compute_payout"
+      ],
+      "steps_taken": 3,
+      "steps_needed": 3,
+      "step_efficiency": 1.0,
+      "tool_choice_accuracy": 1.0,
+      "argument_validity": 1.0,
+      "invalid_argument_slots": [],
+      "cost": 0.0006064,
+      "latency_ms": 902.9210000298917,
+      "tokens": 678,
+      "outcome_pass": true,
+      "outcome_failures": [],
+      "sequence_pass": true,
+      "sequence_reason": null,
+      "accepted_path": "get_claim -> search_policy -> compute_payout",
+      "modes": [],
+      "trajectory_pass": true,
+      "termination_reason": "completed"
+    },
+    {
+      "claim_id": "W6-009",
+      "title": "Multi-claim dispute",
+      "branching": false,
+      "steps": [
+        "get_claim",
+        "search_policy",
+        "compute_payout"
+      ],
+      "steps_taken": 3,
+      "steps_needed": 2,
+      "step_efficiency": 1.5,
+      "tool_choice_accuracy": 1.0,
+      "argument_validity": 1.0,
+      "invalid_argument_slots": [],
+      "cost": 0.0005792,
+      "latency_ms": 227.4240999831818,
+      "tokens": 668,
+      "outcome_pass": true,
+      "outcome_failures": [],
+      "sequence_pass": true,
+      "sequence_reason": null,
+      "accepted_path": "get_claim -> {search_policy} -> compute_payout",
+      "modes": [],
+      "trajectory_pass": true,
+      "termination_reason": "completed"
+    },
+    {
+      "claim_id": "W6-010",
+      "title": "Windshield replacement",
+      "branching": false,
+      "steps": [
+        "get_claim",
+        "search_policy",
+        "compute_payout"
+      ],
+      "steps_taken": 3,
+      "steps_needed": 2,
+      "step_efficiency": 1.5,
+      "tool_choice_accuracy": 1.0,
+      "argument_validity": 1.0,
+      "invalid_argument_slots": [],
+      "cost": 0.0005712,
+      "latency_ms": 233.9538999949582,
+      "tokens": 658,
+      "outcome_pass": true,
+      "outcome_failures": [],
+      "sequence_pass": true,
+      "sequence_reason": null,
+      "accepted_path": "get_claim -> {search_policy} -> compute_payout",
+      "modes": [],
+      "trajectory_pass": true,
+      "termination_reason": "completed"
+    },
+    {
+      "claim_id": "W6-011",
+      "title": "Tyres and tubes damage",
+      "branching": true,
+      "steps": [
+        "get_claim",
+        "search_policy",
+        "compute_payout"
+      ],
+      "steps_taken": 3,
+      "steps_needed": 3,
+      "step_efficiency": 1.0,
+      "tool_choice_accuracy": 1.0,
+      "argument_validity": 1.0,
+      "invalid_argument_slots": [],
+      "cost": 0.0006024,
+      "latency_ms": 241.79160001222044,
+      "tokens": 673,
+      "outcome_pass": true,
+      "outcome_failures": [],
+      "sequence_pass": true,
+      "sequence_reason": null,
+      "accepted_path": "get_claim -> search_policy -> compute_payout",
+      "modes": [],
+      "trajectory_pass": true,
+      "termination_reason": "completed"
+    }
+  ],
+  "top_mode": null,
+  "mode_counts": {
+    "skipped_search": 0,
+    "skipped_search_notes": 0,
+    "unverified_clean": 0,
+    "payout_before_claim": 0,
+    "search_before_claim": 0,
+    "final_without_claim": 0,
+    "fabricated_claim_number": 0,
+    "fabricated_payout_args": 0,
+    "fabricated_clause": 0,
+    "wrong_clause": 0,
+    "repeated_call": 0,
+    "junk_query": 0,
+    "no_final": 0
+  },
+  "expected_sequences": [
+    {
+      "claim_id": "W6-001",
+      "branching": false,
+      "required": [
+        "get_claim",
+        "compute_payout"
+      ],
+      "optional": [
+        "search_policy"
+      ],
+      "asserted_path": "get_claim -> {search_policy?} -> compute_payout",
+      "alternate_paths": "alternate paths: 2 legitimate sets accepted — with or without the policy lookup"
+    },
+    {
+      "claim_id": "W6-002",
+      "branching": true,
+      "required": [
+        "get_claim",
+        "search_policy",
+        "compute_payout"
+      ],
+      "optional": [],
+      "asserted_path": "get_claim -> search_policy -> compute_payout",
+      "alternate_paths": "alternate paths: none (exclusion must be opened via policy)"
+    },
+    {
+      "claim_id": "W6-003",
+      "branching": false,
+      "required": [
+        "get_claim",
+        "compute_payout"
+      ],
+      "optional": [
+        "search_policy"
+      ],
+      "asserted_path": "get_claim -> {search_policy?} -> compute_payout",
+      "alternate_paths": "alternate paths: 2 legitimate sets accepted — with or without the policy lookup"
+    },
+    {
+      "claim_id": "W6-004",
+      "branching": true,
+      "required": [
+        "get_claim",
+        "search_policy",
+        "compute_payout"
+      ],
+      "optional": [],
+      "asserted_path": "get_claim -> search_policy -> compute_payout",
+      "alternate_paths": "alternate paths: none (exclusion must be opened via policy)"
+    },
+    {
+      "claim_id": "W6-005",
+      "branching": false,
+      "required": [
+        "get_claim",
+        "compute_payout"
+      ],
+      "optional": [
+        "search_policy"
+      ],
+      "asserted_path": "get_claim -> {search_policy?} -> compute_payout",
+      "alternate_paths": "alternate paths: 2 legitimate sets accepted — with or without the policy lookup"
+    },
+    {
+      "claim_id": "W6-006",
+      "branching": false,
+      "required": [
+        "get_claim",
+        "compute_payout"
+      ],
+      "optional": [
+        "search_policy"
+      ],
+      "asserted_path": "get_claim -> {search_policy?} -> compute_payout",
+      "alternate_paths": "alternate paths: 2 legitimate sets accepted — with or without the policy lookup"
+    },
+    {
+      "claim_id": "W6-008",
+      "branching": true,
+      "required": [
+        "get_claim",
+        "search_policy",
+        "compute_payout"
+      ],
+      "optional": [],
+      "asserted_path": "get_claim -> search_policy -> compute_payout",
+      "alternate_paths": "alternate paths: none (exclusion must be opened via policy)"
+    },
+    {
+      "claim_id": "W6-009",
+      "branching": false,
+      "required": [
+        "get_claim",
+        "compute_payout"
+      ],
+      "optional": [
+        "search_policy"
+      ],
+      "asserted_path": "get_claim -> {search_policy?} -> compute_payout",
+      "alternate_paths": "alternate paths: 2 legitimate sets accepted — with or without the policy lookup"
+    },
+    {
+      "claim_id": "W6-010",
+      "branching": false,
+      "required": [
+        "get_claim",
+        "compute_payout"
+      ],
+      "optional": [
+        "search_policy"
+      ],
+      "asserted_path": "get_claim -> {search_policy?} -> compute_payout",
+      "alternate_paths": "alternate paths: 2 legitimate sets accepted — with or without the policy lookup"
+    },
+    {
+      "claim_id": "W6-011",
+      "branching": true,
+      "required": [
+        "get_claim",
+        "search_policy",
+        "compute_payout"
+      ],
+      "optional": [],
+      "asserted_path": "get_claim -> search_policy -> compute_payout",
+      "alternate_paths": "alternate paths: none (exclusion must be opened via policy)"
+    }
+  ]
+}

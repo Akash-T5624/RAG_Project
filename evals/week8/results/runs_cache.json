@@ -1,0 +1,867 @@
+{
+  "agent:W6-001": {
+    "claim_id": "W6-001",
+    "system": "agent",
+    "steps": [
+      {
+        "tool": "get_claim",
+        "args": {
+          "claim_id": "W6-001"
+        },
+        "status": "ok"
+      },
+      {
+        "tool": "compute_payout",
+        "args": {
+          "claim_amount": 30000,
+          "excess": 1500,
+          "claim_status": "approved"
+        },
+        "status": "ok"
+      }
+    ],
+    "output": {
+      "claim_id": "W6-001",
+      "claim_number": "CLM-2026-00412",
+      "loss_date": "2026-02-11",
+      "status": "approved",
+      "excess": 1500,
+      "exclusion_clause": null,
+      "payout": 28500.0
+    },
+    "termination_reason": "completed",
+    "cost": 0.003404,
+    "tokens": 3623,
+    "latency_ms": 5375.2095000236295,
+    "pass_result": true,
+    "failures": [],
+    "model": "qwen/qwen3.8-27b"
+  },
+  "agent:W6-002": {
+    "claim_id": "W6-002",
+    "system": "agent",
+    "steps": [
+      {
+        "tool": "get_claim",
+        "args": {
+          "claim_id": "W6-002"
+        },
+        "status": "ok"
+      },
+      {
+        "tool": "search_policy",
+        "args": {
+          "query": "water ingress engine damage exclusion Engine Protector add-on"
+        },
+        "status": "ok"
+      },
+      {
+        "tool": "compute_payout",
+        "args": {
+          "claim_amount": 30000.0,
+          "excess": 2500,
+          "claim_status": "excluded"
+        },
+        "status": "ok"
+      }
+    ],
+    "output": {
+      "claim_id": "W6-002",
+      "claim_number": "CLM-2026-00418",
+      "loss_date": "2026-03-02",
+      "status": "excluded",
+      "excess": 2500,
+      "exclusion_clause": "Exc-7.4",
+      "payout": 0.0
+    },
+    "termination_reason": "completed",
+    "cost": 0.005186400000000001,
+    "tokens": 5715,
+    "latency_ms": 56223.802599997725,
+    "pass_result": true,
+    "failures": [],
+    "model": "qwen/qwen3.8-27b"
+  },
+  "agent:W6-003": {
+    "claim_id": "W6-003",
+    "system": "agent",
+    "steps": [
+      {
+        "tool": "get_claim",
+        "args": {
+          "claim_id": "W6-003"
+        },
+        "status": "ok"
+      },
+      {
+        "tool": "compute_payout",
+        "args": {
+          "claim_amount": 30000,
+          "excess": 1800,
+          "claim_status": "approved"
+        },
+        "status": "ok"
+      }
+    ],
+    "output": {
+      "claim_id": "W6-003",
+      "claim_number": "CLM-2026-00425",
+      "loss_date": "2026-01-19",
+      "status": "approved",
+      "excess": 1800,
+      "exclusion_clause": null,
+      "payout": 28200.0
+    },
+    "termination_reason": "completed",
+    "cost": 0.0033528000000000004,
+    "tokens": 3559,
+    "latency_ms": 5225.986899982672,
+    "pass_result": true,
+    "failures": [],
+    "model": "qwen/qwen3.8-27b"
+  },
+  "agent:W6-004": {
+    "claim_id": "W6-004",
+    "system": "agent",
+    "steps": [
+      {
+        "tool": "get_claim",
+        "args": {
+          "claim_id": "W6-004"
+        },
+        "status": "ok"
+      },
+      {
+        "tool": "search_policy",
+        "args": {
+          "query": "intoxicated driver alcohol exclusion clause"
+        },
+        "status": "ok"
+      },
+      {
+        "tool": "compute_payout",
+        "args": {
+          "claim_amount": 30000.0,
+          "excess": 2000,
+          "claim_status": "excluded"
+        },
+        "status": "ok"
+      }
+    ],
+    "output": {
+      "claim_id": "W6-004",
+      "claim_number": "CLM-2026-00431",
+      "loss_date": "2026-02-27",
+      "status": "excluded",
+      "excess": 2000,
+      "exclusion_clause": "Exc-5.1",
+      "payout": 0.0
+    },
+    "termination_reason": "completed",
+    "cost": 0.005144800000000001,
+    "tokens": 5671,
+    "latency_ms": 57549.236299993936,
+    "pass_result": true,
+    "failures": [],
+    "model": "qwen/qwen3.8-27b"
+  },
+  "agent:W6-005": {
+    "claim_id": "W6-005",
+    "system": "agent",
+    "steps": [
+      {
+        "tool": "get_claim",
+        "args": {
+          "claim_id": "W6-005"
+        },
+        "status": "ok"
+      },
+      {
+        "tool": "compute_payout",
+        "args": {
+          "claim_amount": 30000,
+          "excess": 2200,
+          "claim_status": "approved"
+        },
+        "status": "ok"
+      }
+    ],
+    "output": {
+      "claim_id": "W6-005",
+      "claim_number": "CLM-2026-00444",
+      "loss_date": null,
+      "status": "approved",
+      "excess": 2200,
+      "exclusion_clause": null,
+      "payout": 27800.0
+    },
+    "termination_reason": "completed",
+    "cost": 0.0032744000000000002,
+    "tokens": 3501,
+    "latency_ms": 5119.6124000125565,
+    "pass_result": true,
+    "failures": [],
+    "model": "qwen/qwen3.8-27b"
+  },
+  "agent:W6-006": {
+    "claim_id": "W6-006",
+    "system": "agent",
+    "steps": [
+      {
+        "tool": "get_claim",
+        "args": {
+          "claim_id": "W6-006"
+        },
+        "status": "ok"
+      },
+      {
+        "tool": "search_policy",
+        "args": {
+          "query": "aftermarket accessories undeclared non-OEM parts coverage exclusion"
+        },
+        "status": "ok"
+      },
+      {
+        "tool": "compute_payout",
+        "args": {
+          "claim_amount": 30000.0,
+          "excess": 1800,
+          "claim_status": "approved"
+        },
+        "status": "ok"
+      }
+    ],
+    "output": {
+      "claim_id": "W6-006",
+      "claim_number": "CLM-2026-00455",
+      "loss_date": "2026-04-02",
+      "status": "approved",
+      "excess": 1800,
+      "exclusion_clause": null,
+      "payout": 28200.0
+    },
+    "termination_reason": "completed",
+    "cost": 0.005216800000000001,
+    "tokens": 5757,
+    "latency_ms": 61239.44289999781,
+    "pass_result": true,
+    "failures": [],
+    "model": "qwen/qwen3.8-27b"
+  },
+  "agent:W6-008": {
+    "claim_id": "W6-008",
+    "system": "agent",
+    "steps": [
+      {
+        "tool": "get_claim",
+        "args": {
+          "claim_id": "W6-008"
+        },
+        "status": "ok"
+      },
+      {
+        "tool": "search_policy",
+        "args": {
+          "query": "unlicensed driver exclusion clause"
+        },
+        "status": "ok"
+      },
+      {
+        "tool": "compute_payout",
+        "args": {
+          "claim_amount": 30000.0,
+          "excess": 2500,
+          "claim_status": "excluded"
+        },
+        "status": "ok"
+      }
+    ],
+    "output": {
+      "claim_id": "W6-008",
+      "claim_number": "CLM-2026-00471",
+      "loss_date": "2026-03-18",
+      "status": "excluded",
+      "excess": 2500,
+      "exclusion_clause": "Exc-2.2",
+      "payout": 0.0
+    },
+    "termination_reason": "completed",
+    "cost": 0.0051944,
+    "tokens": 5741,
+    "latency_ms": 54254.876899998635,
+    "pass_result": true,
+    "failures": [],
+    "model": "qwen/qwen3.8-27b"
+  },
+  "agent:W6-009": {
+    "claim_id": "W6-009",
+    "system": "agent",
+    "steps": [
+      {
+        "tool": "get_claim",
+        "args": {
+          "claim_id": "W6-009"
+        },
+        "status": "ok"
+      },
+      {
+        "tool": "compute_payout",
+        "args": {
+          "claim_amount": 30000.0,
+          "excess": 2000,
+          "claim_status": "approved"
+        },
+        "status": "ok"
+      }
+    ],
+    "output": {
+      "claim_id": "W6-009",
+      "claim_number": "CLM-2026-00480",
+      "loss_date": "2026-02-08",
+      "status": "approved",
+      "excess": 2000,
+      "exclusion_clause": null,
+      "payout": 28000.0
+    },
+    "termination_reason": "completed",
+    "cost": 0.0033975999999999998,
+    "tokens": 3607,
+    "latency_ms": 5325.931200000923,
+    "pass_result": true,
+    "failures": [],
+    "model": "qwen/qwen3.8-27b"
+  },
+  "agent:W6-010": {
+    "claim_id": "W6-010",
+    "system": "agent",
+    "steps": [
+      {
+        "tool": "get_claim",
+        "args": {
+          "claim_id": "W6-010"
+        },
+        "status": "ok"
+      },
+      {
+        "tool": "compute_payout",
+        "args": {
+          "claim_amount": 30000,
+          "excess": 1500,
+          "claim_status": "approved"
+        },
+        "status": "ok"
+      }
+    ],
+    "output": {
+      "claim_id": "W6-010",
+      "claim_number": "CLM-2026-00493",
+      "loss_date": "2026-04-11",
+      "status": "approved",
+      "excess": 1500,
+      "exclusion_clause": null,
+      "payout": 28500.0
+    },
+    "termination_reason": "completed",
+    "cost": 0.00334,
+    "tokens": 3543,
+    "latency_ms": 59526.34409995517,
+    "pass_result": true,
+    "failures": [],
+    "model": "qwen/qwen3.8-27b"
+  },
+  "agent:W6-011": {
+    "claim_id": "W6-011",
+    "system": "agent",
+    "steps": [
+      {
+        "tool": "get_claim",
+        "args": {
+          "claim_id": "W6-011"
+        },
+        "status": "ok"
+      },
+      {
+        "tool": "search_policy",
+        "args": {
+          "query": "tyres tubes damage exclusion not concurrent with vehicle accident"
+        },
+        "status": "ok"
+      },
+      {
+        "tool": "compute_payout",
+        "args": {
+          "claim_amount": 30000.0,
+          "excess": 2000,
+          "claim_status": "excluded"
+        },
+        "status": "ok"
+      }
+    ],
+    "output": {
+      "claim_id": "W6-011",
+      "claim_number": "CLM-2026-00504",
+      "loss_date": "2026-05-29",
+      "status": "excluded",
+      "excess": 2000,
+      "exclusion_clause": "Exc-8.1",
+      "payout": 0.0
+    },
+    "termination_reason": "completed",
+    "cost": 0.005216800000000001,
+    "tokens": 5749,
+    "latency_ms": 7637.791300017852,
+    "pass_result": true,
+    "failures": [],
+    "model": "qwen/qwen3.8-27b"
+  },
+  "workflow:W6-001": {
+    "claim_id": "W6-001",
+    "system": "workflow",
+    "steps": [
+      {
+        "tool": "get_claim",
+        "args": {
+          "claim_id": "W6-001"
+        },
+        "status": "ok"
+      },
+      {
+        "tool": "search_policy",
+        "args": {
+          "query": "front bumper repair honda activa claim 2026 00412 date loss damage after"
+        },
+        "status": "ok"
+      },
+      {
+        "tool": "compute_payout",
+        "args": {
+          "claim_amount": 30000.0,
+          "excess": 1500,
+          "claim_status": "approved"
+        },
+        "status": "ok"
+      }
+    ],
+    "output": {
+      "claim_id": "W6-001",
+      "claim_number": "CLM-2026-00412",
+      "loss_date": "2026-02-11",
+      "status": "approved",
+      "excess": 1500,
+      "exclusion_clause": null,
+      "payout": 28500.0
+    },
+    "termination_reason": "completed",
+    "cost": 0.0006808000000000001,
+    "tokens": 771.0,
+    "latency_ms": 303.8952999631874,
+    "pass_result": true,
+    "failures": [],
+    "model": "qwen/qwen3.8-27b"
+  },
+  "workflow:W6-002": {
+    "claim_id": "W6-002",
+    "system": "workflow",
+    "steps": [
+      {
+        "tool": "get_claim",
+        "args": {
+          "claim_id": "W6-002"
+        },
+        "status": "ok"
+      },
+      {
+        "tool": "search_policy",
+        "args": {
+          "query": "water ingress engine claim 2026 00418 date loss policyholder rode through flooded"
+        },
+        "status": "ok"
+      },
+      {
+        "tool": "compute_payout",
+        "args": {
+          "claim_amount": 30000.0,
+          "excess": 2500,
+          "claim_status": "excluded"
+        },
+        "status": "ok"
+      }
+    ],
+    "output": {
+      "claim_id": "W6-002",
+      "claim_number": "CLM-2026-00418",
+      "loss_date": "2026-03-02",
+      "status": "excluded",
+      "excess": 2500,
+      "exclusion_clause": "Exc-7.4",
+      "payout": 0.0
+    },
+    "termination_reason": "completed",
+    "cost": 0.0006184,
+    "tokens": 693.0,
+    "latency_ms": 231.36810003779829,
+    "pass_result": true,
+    "failures": [],
+    "model": "qwen/qwen3.8-27b"
+  },
+  "workflow:W6-003": {
+    "claim_id": "W6-003",
+    "system": "workflow",
+    "steps": [
+      {
+        "tool": "get_claim",
+        "args": {
+          "claim_id": "W6-003"
+        },
+        "status": "ok"
+      },
+      {
+        "tool": "search_policy",
+        "args": {
+          "query": "rear collision claim 2026 00425 date loss speed excess 1800 bumper number"
+        },
+        "status": "ok"
+      },
+      {
+        "tool": "compute_payout",
+        "args": {
+          "claim_amount": 30000.0,
+          "excess": 1800,
+          "claim_status": "approved"
+        },
+        "status": "ok"
+      }
+    ],
+    "output": {
+      "claim_id": "W6-003",
+      "claim_number": "CLM-2026-00425",
+      "loss_date": "2026-01-19",
+      "status": "approved",
+      "excess": 1800,
+      "exclusion_clause": null,
+      "payout": 28200.0
+    },
+    "termination_reason": "completed",
+    "cost": 0.00058,
+    "tokens": 669.0,
+    "latency_ms": 220.88360000634566,
+    "pass_result": true,
+    "failures": [],
+    "model": "qwen/qwen3.8-27b"
+  },
+  "workflow:W6-004": {
+    "claim_id": "W6-004",
+    "system": "workflow",
+    "steps": [
+      {
+        "tool": "get_claim",
+        "args": {
+          "claim_id": "W6-004"
+        },
+        "status": "ok"
+      },
+      {
+        "tool": "search_policy",
+        "args": {
+          "query": "drink driving refusal claim 2026 00431 date loss vehicle found driven while"
+        },
+        "status": "ok"
+      },
+      {
+        "tool": "compute_payout",
+        "args": {
+          "claim_amount": 30000.0,
+          "excess": 2000,
+          "claim_status": "excluded"
+        },
+        "status": "ok"
+      }
+    ],
+    "output": {
+      "claim_id": "W6-004",
+      "claim_number": "CLM-2026-00431",
+      "loss_date": "2026-02-27",
+      "status": "excluded",
+      "excess": 2000,
+      "exclusion_clause": "Exc-5.1",
+      "payout": 0.0
+    },
+    "termination_reason": "completed",
+    "cost": 0.0005991999999999999,
+    "tokens": 669.0,
+    "latency_ms": 238.65849996218458,
+    "pass_result": true,
+    "failures": [],
+    "model": "qwen/qwen3.8-27b"
+  },
+  "workflow:W6-005": {
+    "claim_id": "W6-005",
+    "system": "workflow",
+    "steps": [
+      {
+        "tool": "get_claim",
+        "args": {
+          "claim_id": "W6-005"
+        },
+        "status": "ok"
+      },
+      {
+        "tool": "search_policy",
+        "args": {
+          "query": "tree branch storm damage claim 2026 00444 fell parked during excess 2200"
+        },
+        "status": "ok"
+      },
+      {
+        "tool": "compute_payout",
+        "args": {
+          "claim_amount": 30000.0,
+          "excess": 2200,
+          "claim_status": "approved"
+        },
+        "status": "ok"
+      }
+    ],
+    "output": {
+      "claim_id": "W6-005",
+      "claim_number": "CLM-2026-00444",
+      "loss_date": null,
+      "status": "approved",
+      "excess": 2200,
+      "exclusion_clause": null,
+      "payout": 27800.0
+    },
+    "termination_reason": "completed",
+    "cost": 0.0006096000000000001,
+    "tokens": 682.0,
+    "latency_ms": 218.71759998612106,
+    "pass_result": true,
+    "failures": [],
+    "model": "qwen/qwen3.8-27b"
+  },
+  "workflow:W6-006": {
+    "claim_id": "W6-006",
+    "system": "workflow",
+    "steps": [
+      {
+        "tool": "get_claim",
+        "args": {
+          "claim_id": "W6-006"
+        },
+        "status": "ok"
+      },
+      {
+        "tool": "search_policy",
+        "args": {
+          "query": "theft aftermarket stereo claim 2026 00455 date loss undeclared unit stolen vehicle"
+        },
+        "status": "ok"
+      },
+      {
+        "tool": "compute_payout",
+        "args": {
+          "claim_amount": 30000.0,
+          "excess": 1800,
+          "claim_status": "approved"
+        },
+        "status": "ok"
+      }
+    ],
+    "output": {
+      "claim_id": "W6-006",
+      "claim_number": "CLM-2026-00455",
+      "loss_date": "2026-04-02",
+      "status": "approved",
+      "excess": 1800,
+      "exclusion_clause": null,
+      "payout": 28200.0
+    },
+    "termination_reason": "completed",
+    "cost": 0.0005951999999999999,
+    "tokens": 688.0,
+    "latency_ms": 239.4400000339374,
+    "pass_result": true,
+    "failures": [],
+    "model": "qwen/qwen3.8-27b"
+  },
+  "workflow:W6-008": {
+    "claim_id": "W6-008",
+    "system": "workflow",
+    "steps": [
+      {
+        "tool": "get_claim",
+        "args": {
+          "claim_id": "W6-008"
+        },
+        "status": "ok"
+      },
+      {
+        "tool": "search_policy",
+        "args": {
+          "query": "unlicensed driver accident claim 2026 00471 date loss while vehicle driven person"
+        },
+        "status": "ok"
+      },
+      {
+        "tool": "compute_payout",
+        "args": {
+          "claim_amount": 30000.0,
+          "excess": 2500,
+          "claim_status": "excluded"
+        },
+        "status": "ok"
+      }
+    ],
+    "output": {
+      "claim_id": "W6-008",
+      "claim_number": "CLM-2026-00471",
+      "loss_date": "2026-03-18",
+      "status": "excluded",
+      "excess": 2500,
+      "exclusion_clause": "Exc-2.2",
+      "payout": 0.0
+    },
+    "termination_reason": "completed",
+    "cost": 0.0006064,
+    "tokens": 678.0,
+    "latency_ms": 902.9210000298917,
+    "pass_result": true,
+    "failures": [],
+    "model": "qwen/qwen3.8-27b"
+  },
+  "workflow:W6-009": {
+    "claim_id": "W6-009",
+    "system": "workflow",
+    "steps": [
+      {
+        "tool": "get_claim",
+        "args": {
+          "claim_id": "W6-009"
+        },
+        "status": "ok"
+      },
+      {
+        "tool": "search_policy",
+        "args": {
+          "query": "multi claim dispute 2026 00480 date loss separate events claimed under policy"
+        },
+        "status": "ok"
+      },
+      {
+        "tool": "compute_payout",
+        "args": {
+          "claim_amount": 30000.0,
+          "excess": 2000,
+          "claim_status": "approved"
+        },
+        "status": "ok"
+      }
+    ],
+    "output": {
+      "claim_id": "W6-009",
+      "claim_number": "CLM-2026-00480",
+      "loss_date": "2026-02-08",
+      "status": "approved",
+      "excess": 2000,
+      "exclusion_clause": null,
+      "payout": 28000.0
+    },
+    "termination_reason": "completed",
+    "cost": 0.0005792,
+    "tokens": 668.0,
+    "latency_ms": 227.4240999831818,
+    "pass_result": true,
+    "failures": [],
+    "model": "qwen/qwen3.8-27b"
+  },
+  "workflow:W6-010": {
+    "claim_id": "W6-010",
+    "system": "workflow",
+    "steps": [
+      {
+        "tool": "get_claim",
+        "args": {
+          "claim_id": "W6-010"
+        },
+        "status": "ok"
+      },
+      {
+        "tool": "search_policy",
+        "args": {
+          "query": "windshield replacement claim 2026 00493 date loss stone chip cracked excess 1500"
+        },
+        "status": "ok"
+      },
+      {
+        "tool": "compute_payout",
+        "args": {
+          "claim_amount": 30000.0,
+          "excess": 1500,
+          "claim_status": "approved"
+        },
+        "status": "ok"
+      }
+    ],
+    "output": {
+      "claim_id": "W6-010",
+      "claim_number": "CLM-2026-00493",
+      "loss_date": "2026-04-11",
+      "status": "approved",
+      "excess": 1500,
+      "exclusion_clause": null,
+      "payout": 28500.0
+    },
+    "termination_reason": "completed",
+    "cost": 0.0005712,
+    "tokens": 658.0,
+    "latency_ms": 233.9538999949582,
+    "pass_result": true,
+    "failures": [],
+    "model": "qwen/qwen3.8-27b"
+  },
+  "workflow:W6-011": {
+    "claim_id": "W6-011",
+    "system": "workflow",
+    "steps": [
+      {
+        "tool": "get_claim",
+        "args": {
+          "claim_id": "W6-011"
+        },
+        "status": "ok"
+      },
+      {
+        "tool": "search_policy",
+        "args": {
+          "query": "tyres tubes damage claim 2026 00504 date loss policyholder reports punctured front"
+        },
+        "status": "ok"
+      },
+      {
+        "tool": "compute_payout",
+        "args": {
+          "claim_amount": 30000.0,
+          "excess": 2000,
+          "claim_status": "excluded"
+        },
+        "status": "ok"
+      }
+    ],
+    "output": {
+      "claim_id": "W6-011",
+      "claim_number": "CLM-2026-00504",
+      "loss_date": "2026-05-29",
+      "status": "excluded",
+      "excess": 2000,
+      "exclusion_clause": "Exc-8.1",
+      "payout": 0.0
+    },
+    "termination_reason": "completed",
+    "cost": 0.0006024,
+    "tokens": 673.0,
+    "latency_ms": 241.79160001222044,
+    "pass_result": true,
+    "failures": [],
+    "model": "qwen/qwen3.8-27b"
+  }
+}
