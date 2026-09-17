@@ -199,6 +199,15 @@ def make_report(agent_agg, work_agg, agent_per_claim, work_per_claim,
     md.append(f"Model: `{os.getenv('WEEK8_MODEL') or 'qwen/qwen3.8-27b'}` · "
               f"10 claims · pricing input $0.80/M output $4.00/M (Groq list).")
     md.append("")
+    md.append("Tool registry (week-8, extended to **6 tools**): `get_claim`, "
+              "`search_policy`, `retrieve_policy_exclusions`, "
+              "`validate_claim_number`, `escalate_claim`, `compute_payout`. "
+              "`escalate_claim` is the only **write/action** tool and has no "
+              "valid path in this batch — any call is flagged `extra_tool` "
+              "(least-privilege measurement), and the read-only policy group "
+              "{`search_policy`, `retrieve_policy_exclusions`} gives the "
+              "trajectory assertions a real alternate path to accept.")
+    md.append("")
     md.append("## 1. Expected tool sequences (asserted in code, as sets)")
     md.append("")
     md.append("| Claim | Branching | Asserted path set | Alternate paths accepted |")

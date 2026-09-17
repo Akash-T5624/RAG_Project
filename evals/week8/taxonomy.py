@@ -5,21 +5,26 @@ steps, the final output, and the termination reason) plus the claim record and
 the policy corpus.  No model judgement: a mode is either raised by the rule
 below or it is not.
 
+Tool registry (week-8, six tools): get_claim, search_policy,
+retrieve_policy_exclusions, validate_claim_number, escalate_claim,
+compute_payout.  A "policy lookup" is one of {search_policy,
+retrieve_policy_exclusions}.
+
 Modes
 -----
 OMISSION
-  skipped_search          required exclusion-cite claim, policy never opened
-  skipped_search_notes    notes themselves cite an exclusion / denial, but the
-                          policy was never opened to verify it
+  skipped_search          required exclusion-cite claim, no policy lookup at all
+  skipped_search_notes    notes themselves cite an exclusion / denial, but no
+                          policy lookup was performed to verify it
   unverified_clean        CLEAN claim certified 'covered, nothing excluded'
-                          (final exclusion_clause null) with the policy never
-                          opened AND the notes not attesting that exclusions
-                          were reviewed — the "reached the correct payout
-                          without ever opening the exclusions, it happened to
-                          be a clean claim" failure the claims director saw
+                          (final exclusion_clause null) with no policy lookup
+                          AND the notes not attesting that exclusions were
+                          reviewed — the "reached the correct payout without
+                          ever opening the exclusions, it happened to be a
+                          clean claim" failure the claims director saw
 ORDER
   payout_before_claim     compute_payout called before get_claim returned data
-  search_before_claim     search_policy called before get_claim returned data
+  policy_before_claim     a policy lookup called before get_claim returned data
   final_without_claim     final answer produced without ever calling get_claim
 FABRICATION (fluent fiction passed as real data)
   fabricated_claim_number final claim_number differs from the claim record
@@ -30,7 +35,12 @@ FABRICATION (fluent fiction passed as real data)
 LOOP
   repeated_call           the same tool+args was executed more than once
 WRONG TOOL SEMANTICS
-  junk_query              search_policy query shares no keyword with the notes
+  junk_query              search_policy query / retrieve_policy_exclusions
+                          topic shares no keyword with the notes
+  extra_tool              a tool outside the accepted trajectory set was called
+                          (escalate_claim is the one in-scope candidate — it is
+                          a write/action tool with no valid path in this batch,
+                          so any call is an over-privileged action)
 QUIET GIVE-UP
   no_final                terminated without producing any final output
 """
@@ -44,6 +54,13 @@ DENIAL_RE = re.compile(
     re.IGNORECASE,
 )
 
+POLICY_TOOLS = ("search_policy", "retrieve_policy_exclusions")
+# The tools that may legitimately appear in a valid trajectory for this batch.
+ACCEPTED_TOOLS = {
+    "get_claim", "search_policy", "retrieve_policy_exclusions",
+    "validate_claim_number", "compute_payout",
+}
+
 MODES = [
     # omission
     "skipped_search",
@@ -51,7 +68,7 @@ MODES = [
     "unverified_clean",
     # order
     "payout_before_claim",
-    "search_before_claim",
+    "policy_before_claim",
     "final_without_claim",
     # fabrication
     "fabricated_claim_number",
@@ -62,19 +79,20 @@ MODES = [
     "repeated_call",
     # wrong tool semantics
     "junk_query",
+    "extra_tool",
     # quiet give-up
     "no_final",
 ]
 
 MODE_GROUPS = {
     "omission": ["skipped_search", "skipped_search_notes", "unverified_clean"],
-    "order": ["payout_before_claim", "search_before_claim", "final_without_claim"],
+    "order": ["payout_before_claim", "policy_before_claim", "final_without_claim"],
     "fabrication": [
         "fabricated_claim_number", "fabricated_payout_args",
         "fabricated_clause", "wrong_clause",
     ],
     "loop": ["repeated_call"],
-    "wrong_tool": ["junk_query"],
+    "wrong_tool": ["junk_query", "extra_tool"],
     "quiet_give_up": ["no_final"],
 }
 
@@ -171,22 +189,23 @@ def classify(record, run, corpus):
 
     tool_names = [s.get("tool") for s in steps]
     n_get = sum(1 for t in tool_names if t == "get_claim")
-    n_search = sum(1 for t in tool_names if t == "search_policy")
+    n_policy = sum(1 for t in tool_names if t in POLICY_TOOLS)
     n_payout = sum(1 for t in tool_names if t == "compute_payout")
 
     first_get = tool_names.index("get_claim") if "get_claim" in tool_names else None
-    first_search = tool_names.index("search_policy") if "search_policy" in tool_names else None
+    first_policy = next(
+        (i for i, t in enumerate(tool_names) if t in POLICY_TOOLS), None)
     first_payout = tool_names.index("compute_payout") if "compute_payout" in tool_names else None
 
     # --- omission ---------------------------------------------------------
-    if expect.get("exclusion_cite_required") and n_search == 0:
+    if expect.get("exclusion_cite_required") and n_policy == 0:
         modes.add("skipped_search")
-    if n_search == 0 and _notes_raise_exclusion(notes):
+    if n_policy == 0 and _notes_raise_exclusion(notes):
         modes.add("skipped_search_notes")
     # A clean claim whose final answer certifies 'no exclusion' but whose path
     # never opened the policy, and whose notes did not attest exclusions were
     # reviewed, is the unverified shortcut the trajectory eval exists to catch.
-    if (not expect.get("exclusion_cite_required") and n_search == 0
+    if (not expect.get("exclusion_cite_required") and n_policy == 0
             and output is not None
             and output.get("exclusion_clause") is None
             and not _notes_attest_no_exclusion(notes)):
@@ -196,8 +215,8 @@ def classify(record, run, corpus):
     if n_get > 0:
         if first_payout is not None and first_payout < first_get:
             modes.add("payout_before_claim")
-        if first_search is not None and first_search < first_get:
-            modes.add("search_before_claim")
+        if first_policy is not None and first_policy < first_get:
+            modes.add("policy_before_claim")
     if output is None:
         modes.add("no_final")
     else:
@@ -262,14 +281,22 @@ def classify(record, run, corpus):
     # --- wrong-tool semantics ---------------------------------------------
     note_tokens = _note_tokens(notes)
     for s in steps:
-        if s.get("tool") != "search_policy":
+        if s.get("tool") not in POLICY_TOOLS:
             continue
-        query = (s.get("args") or {}).get("query", "")
-        if query is None or not query.strip():
+        text = (s.get("args") or {}).get(
+            "query", (s.get("args") or {}).get("topic", ""))
+        if text is None or not str(text).strip():
             modes.add("junk_query")
             continue
-        if not (set(re.findall(r"[a-z0-9]{4,}", query.lower())) & note_tokens):
+        if not (set(re.findall(r"[a-z0-9]{4,}", str(text).lower())) & note_tokens):
             modes.add("junk_query")
+
+    # --- extra tool (over-privileged action) ------------------------------
+    # Any tool outside the accepted trajectory set for this batch.  With the
+    # six-tool registry the only in-scope candidate is escalate_claim, the
+    # write/action tool; no valid path uses it here, so any call is recorded.
+    if set(tool_names) - ACCEPTED_TOOLS:
+        modes.add("extra_tool")
 
     return modes
 

@@ -91,6 +91,94 @@ COMPUTE_PAYOUT_DESCRIPTION = (
 
 
 # ---------------------------------------------------------------------------
+# Week-8 extension — Tool 4 (new): retrieve_policy_exclusions
+# ---------------------------------------------------------------------------
+def retrieve_policy_exclusions(topic):
+    """Search the policy's exclusion wording for passages relevant to topic.
+
+    A deterministic, exclusions-tuned view of the same policy index: passages
+    that mention exclusions rank ahead of general coverage passages.  Read-only:
+    it does not retrieve claims and does not calculate payouts.
+    """
+    hits = search_policy(topic) or []
+    timed = []
+    for h in hits:
+        text = " ".join([h.get("section", ""), h.get("snippet", "")]).lower()
+        timed.append((0 if "exclu" in text else 1, h))
+    timed.sort(key=lambda x: x[0])
+    return [h for _, h in timed][:3]
+
+
+RETRIEVE_EXCLUSIONS_DESCRIPTION = (
+    "Search the policy's exclusion wording for the passages most relevant to "
+    "the given topic. Returns up to 3 exclusion-related passages (page and "
+    "section). It is a read-only view of the policy; it does not retrieve "
+    "claim records and does not calculate payouts."
+)
+
+
+# ---------------------------------------------------------------------------
+# Week-8 extension — Tool 5 (new): validate_claim_number
+# ---------------------------------------------------------------------------
+import re as _re
+
+CLAIM_NUMBER_RE = _re.compile(r"^CLM-\d{4}-\d{5}$", _re.IGNORECASE)
+
+
+def validate_claim_number(claim_number):
+    """Read-only format check of a claim number against the claim registry
+    pattern CLM-YYYY-NNNNN."""
+    value = str(claim_number or "").strip()
+    ok = bool(CLAIM_NUMBER_RE.match(value))
+    return {
+        "claim_number": value,
+        "expected_format": "CLM-YYYY-NNNNN",
+        "format_valid": ok,
+        "detail": (
+            "format matches the claim registry pattern"
+            if ok else "format does not match the claim registry pattern "
+                       "(CLM-YYYY-NNNNN)"
+        ),
+    }
+
+
+VALIDATE_CLAIM_NUMBER_DESCRIPTION = (
+    "Read-only format check of a claim number against the claim registry "
+    "pattern CLM-YYYY-NNNNN. Returns whether the format is valid. It never "
+    "changes any data and it does not retrieve or calculate anything."
+)
+
+
+# ---------------------------------------------------------------------------
+# Week-8 extension — Tool 6 (new): escalate_claim (the only write-like tool)
+# ---------------------------------------------------------------------------
+def escalate_claim(claim_id, reason):
+    """Route the claim to a human adjudicator for manual review.
+
+    The only WRITE/action tool in the registry.  It does NOT disburse any
+    payment: settlement always flows through compute_payout's pegged numbers.
+    Should be called only when a claim genuinely needs manual review (e.g.
+    suspected fraud, missing police report).
+    """
+    return {
+        "claim_id": str(claim_id),
+        "reason": str(reason or ""),
+        "escalated": True,
+        "note": "Claim routed for human adjudicator review. No payment is "
+                "disbursed by this tool.",
+    }
+
+
+ESCALATE_CLAIM_DESCRIPTION = (
+    "Route the claim to a human adjudicator for manual review. This is a write "
+    "action with human consequences and it does NOT disburse any payment. Call "
+    "it ONLY when a claim genuinely needs manual review (suspected fraud, "
+    "missing police report); routine approvals and standard exclusions must "
+    "never be escalated."
+)
+
+
+# ---------------------------------------------------------------------------
 # Tool 2 (base): search_policy
 # ---------------------------------------------------------------------------
 def search_policy(query):
@@ -125,6 +213,24 @@ TOOLS = {
         "description": SEARCH_POLICY_DESCRIPTION,
         "parameters": {"query": {"type": "string", "required": True}},
     },
+    "retrieve_policy_exclusions": {
+        "function": retrieve_policy_exclusions,
+        "description": RETRIEVE_EXCLUSIONS_DESCRIPTION,
+        "parameters": {"topic": {"type": "string", "required": True}},
+    },
+    "validate_claim_number": {
+        "function": validate_claim_number,
+        "description": VALIDATE_CLAIM_NUMBER_DESCRIPTION,
+        "parameters": {"claim_number": {"type": "string", "required": True}},
+    },
+    "escalate_claim": {
+        "function": escalate_claim,
+        "description": ESCALATE_CLAIM_DESCRIPTION,
+        "parameters": {
+            "claim_id": {"type": "string", "required": True},
+            "reason": {"type": "string", "required": True},
+        },
+    },
     "compute_payout": {
         "function": compute_payout,
         "description": COMPUTE_PAYOUT_DESCRIPTION,
@@ -140,6 +246,17 @@ TOOLS = {
     },
 }
 
+# Order in which tools are advertised to the agent: base read tools first,
+# the write-like action tool clearly separated, compute_payout last.
+TOOL_ORDER = [
+    "get_claim",
+    "search_policy",
+    "retrieve_policy_exclusions",
+    "validate_claim_number",
+    "escalate_claim",
+    "compute_payout",
+]
+
 
 def call_tool(name, args):
     """Execute a tool by registry name. Returns the tool's dict result."""
@@ -151,7 +268,7 @@ def call_tool(name, args):
 def tool_descriptions_block():
     """Human-readable tool catalogue injected into the agent system prompt."""
     lines = []
-    for name in ("get_claim", "search_policy", "compute_payout"):
+    for name in TOOL_ORDER:
         spec = TOOLS[name]
         params = ", ".join(
             f"{p}({v['type']})" for p, v in spec["parameters"].items()

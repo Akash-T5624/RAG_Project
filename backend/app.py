@@ -4,8 +4,6 @@ import json
 import logging
 import datetime
 import time
-import threading
-import asyncio
 from pathlib import Path
 from typing import List, Optional, Iterator
 
@@ -23,8 +21,6 @@ from fastapi.middleware.cors import CORSMiddleware
 import trace_log
 from pdf_reader import extract_pdf_chunks, embed_chunks, get_embedding_model
 from retrieval import hybrid_search_per_doc
-
-import trajectory_benchmark
 
 # ---------------------------------------------------------------------------
 # Environment / configuration
@@ -121,16 +117,6 @@ class ChatRequest(BaseModel):
 
 class RenameRequest(BaseModel):
     title: str
-
-
-class TrajectoryRunRequest(BaseModel):
-    doc_id: Optional[str] = None
-    skip_injection: bool = False
-
-
-# Serialises long-running trajectory benchmark runs so two clients can never
-# kick off two overlapping eval executions against the same Groq rate limit.
-_trajectory_lock = threading.Lock()
 
 
 # ---------------------------------------------------------------------------
@@ -807,55 +793,6 @@ async def chat(request: ChatRequest):
             for r in results
         ],
     }
-
-
-# ---------------------------------------------------------------------------
-# Routes: trajectory benchmark (week-8 trajectory-based agent evaluation)
-# ---------------------------------------------------------------------------
-
-@app.post("/benchmark/trajectory/run", tags=["benchmark"])
-async def run_trajectory_benchmark(body: TrajectoryRunRequest):
-    """Run the full trajectory eval pipeline under the shared long-run lock.
-
-    Runs baseline (dedup guard off) -> mitigation (dedup guard on) ->
-    regression matrix -> injection defense for every TRAJECTORY_CASE, writes
-    the nested report to trajectory_report.json and returns it.  A second call
-    while one is still running is rejected with 423.
-    """
-    if not _trajectory_lock.acquire(blocking=False):
-        raise HTTPException(
-            status_code=423,
-            detail="A trajectory benchmark run is already in progress.",
-        )
-    try:
-        started_at = time.perf_counter()
-        logger.info("Trajectory benchmark starting (skip_injection=%s, doc_id=%s)",
-                    body.skip_injection, body.doc_id)
-        report = await asyncio.to_thread(
-            trajectory_benchmark.run_report,
-            doc_id=body.doc_id,
-            skip_injection=body.skip_injection,
-        )
-        report["run_seconds"] = round(time.perf_counter() - started_at, 1)
-        logger.info("Trajectory benchmark finished in %ss", report["run_seconds"])
-        return report
-    except Exception as exc:
-        logger.exception("Trajectory benchmark failed")
-        raise HTTPException(
-            status_code=500,
-            detail=f"Trajectory benchmark failed: {exc}",
-        ) from exc
-    finally:
-        _trajectory_lock.release()
-
-
-@app.get("/benchmark/trajectory/results", tags=["benchmark"])
-async def get_trajectory_results():
-    """Read back the last saved trajectory report, or null if none exists."""
-    report = trajectory_benchmark.load_last_report()
-    if report is None:
-        return {"report": None}
-    return report
 
 
 # ---------------------------------------------------------------------------

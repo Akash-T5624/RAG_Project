@@ -32,9 +32,11 @@ def claim_metrics(claim_id, record, run, corpus):
     steps = getattr(run, "steps", None) or []
     output = getattr(run, "output", None)
     spec = expected_spec(claim_id)
-    allowed = set(spec["required_tools"] + spec["optional_tools"])
+    allowed = (set(spec["required_tools"]) | set(spec["optional_tools"])
+               | set(spec["policy_group"]))
 
     # ---- tool-choice accuracy -------------------------------------------
+    middle_tools = set(spec["policy_group"]) | {"validate_claim_number"}
     tool_names = [s.get("tool") for s in steps]
     n = len(tool_names)
     correct = 0
@@ -44,7 +46,7 @@ def claim_metrics(claim_id, record, run, corpus):
             ok = (i == 0)                      # get_claim must open the run
         if ok and t == "compute_payout":
             ok = (i == n - 1)                  # payout is the last tool call
-        if ok and t == "search_policy":
+        if ok and t in middle_tools:
             ok = (i not in (0, n - 1))         # middle, after claim before payout
         if ok:
             correct += 1
@@ -63,6 +65,20 @@ def claim_metrics(claim_id, record, run, corpus):
             overlap = _content_tokens(query) & _content_tokens(
                 record.get("adjuster_notes", ""))
             slots.append(("query_relevance", bool(query.strip()) and bool(overlap)))
+        elif t == "retrieve_policy_exclusions":
+            topic = args.get("topic") or ""
+            overlap = _content_tokens(topic) & _content_tokens(
+                record.get("adjuster_notes", ""))
+            slots.append(("topic_relevance", bool(topic.strip()) and bool(overlap)))
+        elif t == "validate_claim_number":
+            got = str(args.get("claim_number") or "").strip().upper()
+            want = str(record.get("claim_number") or "").strip().upper()
+            slots.append(("claim_number_matches_record", bool(want) and got == want))
+        elif t == "escalate_claim":
+            cid_ok = str(args.get("claim_id")) == str(claim_id)
+            reason_ok = bool(str(args.get("reason") or "").strip())
+            slots.append(("escalate_claim_id", cid_ok))
+            slots.append(("escalate_reason", reason_ok))
         elif t == "compute_payout":
             rec_amount, rec_excess = record.get("claim_amount"), record.get("excess")
             try:

@@ -35,5 +35,5 @@ Single decision point the agent (the deployed LLM workflow) trusts untrusted tex
 - Credit/settlement fraud (no exclusion involved, payout is arithmetically correct) is invisible to this guardrail.
 - The evidence-path trajectory checks (`skipped_search`, `unverified_clean`) exist precisely to catch those evasive paths — which is why the assignment runs a trajectory eval, not just P(outcome).
 
-Guardrail measurement cost: 0.4023 ms across 1 blocked runs, **0 extra tokens and 0 extra LLM calls** — it is pure arithmetic over the tool values.
+Guardrail measurement cost: 0.3487 ms across 1 blocked runs, **0 extra tokens and 0 extra LLM calls** — it is pure arithmetic over the tool values.
 

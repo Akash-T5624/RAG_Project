@@ -22,8 +22,8 @@
       "exclusion_clause": null
     },
     "flipped": false,
-    "raw_latency_ms": 252.0,
-    "guardrail_latency_ms": 1.0217,
+    "raw_latency_ms": 641.2,
+    "guardrail_latency_ms": 1.0734,
     "tokens": 771,
     "cost": 0.0006808000000000001
   },
@@ -50,8 +50,8 @@
       "exclusion_clause": "Exc-7.4"
     },
     "flipped": false,
-    "raw_latency_ms": 265.4,
-    "guardrail_latency_ms": 0.9642,
+    "raw_latency_ms": 395.5,
+    "guardrail_latency_ms": 0.8022,
     "tokens": 693,
     "cost": 0.0006184
   },
@@ -75,8 +75,8 @@
       "exclusion_clause": "Exc-7.4"
     },
     "flipped": false,
-    "raw_latency_ms": 254.5,
-    "guardrail_latency_ms": 0.0008,
+    "raw_latency_ms": 509.1,
+    "guardrail_latency_ms": 0.0007,
     "tokens": 736,
     "cost": 0.0006527999999999999
   },
@@ -100,8 +100,8 @@
       "exclusion_clause": null
     },
     "flipped": true,
-    "raw_latency_ms": 274.3,
-    "guardrail_latency_ms": 0.0008,
+    "raw_latency_ms": 509.9,
+    "guardrail_latency_ms": 0.001,
     "tokens": 737,
     "cost": 0.0006344
   },
@@ -127,8 +127,8 @@
       "exclusion_clause": null
     },
     "flipped": true,
-    "raw_latency_ms": 255.9,
-    "guardrail_latency_ms": 0.0017,
+    "raw_latency_ms": 376.1,
+    "guardrail_latency_ms": 0.0014,
     "tokens": 732,
     "cost": 0.0006303999999999999
   },
@@ -155,8 +155,8 @@
       "exclusion_clause": "Exc-7.4"
     },
     "flipped": false,
-    "raw_latency_ms": 219.2,
-    "guardrail_latency_ms": 0.4023,
+    "raw_latency_ms": 643.4,
+    "guardrail_latency_ms": 0.3487,
     "tokens": 732,
     "cost": 0.0006303999999999999
   }
