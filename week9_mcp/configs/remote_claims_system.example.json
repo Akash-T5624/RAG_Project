@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "claims_system": {
+      "transport": "streamable-http",
+      "url": "https://claims.example.com/mcp",
+      "auth": "OAuth 2.1 access token injected by the host credential store",
+      "requiredScopes": ["claims.status.read"]
+    }
+  }
+}

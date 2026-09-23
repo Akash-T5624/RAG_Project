@@ -1,0 +1,17 @@
+--- servers.before.json
++++ servers.after.json
+@@ -4,6 +4,14 @@
+       "transport": "stdio",
+       "command": "{python}",
+       "args": ["{root}/week9_mcp/policy_server.py"]
++    },
++    "claims_system": {
++      "transport": "stdio",
++      "command": "{python}",
++      "args": ["{root}/week9_mcp/claims_system_server.py"],
++      "env": {
++        "CLAIMS_SYSTEM_TOKEN": "${CLAIMS_SYSTEM_TOKEN}"
++      }
+     }
+   }
+ }

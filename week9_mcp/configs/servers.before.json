@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "policy_documents": {
+      "transport": "stdio",
+      "command": "{python}",
+      "args": ["{root}/week9_mcp/policy_server.py"]
+    }
+  }
+}

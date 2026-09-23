@@ -1,0 +1,7 @@
+Comparison: agent snapshot before adding claims_system vs current mcp_agent.py
+before SHA-256: e8dadd17f0aef0b3473422aef439297c14d7ba03e7301d46f292ab1bee51f3e9
+current SHA-256: e8dadd17f0aef0b3473422aef439297c14d7ba03e7301d46f292ab1bee51f3e9
+git diff --no-index --numstat -- submission/agent_before_server_two.py mcp_agent.py
+(no output)
+0 files changed; 0 insertions(+); 0 deletions(-)
+Only configs/servers.after.json adds the second MCP server.

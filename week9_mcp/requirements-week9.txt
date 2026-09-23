@@ -1,0 +1,2 @@
+# Installed in backend/.venv for this practical.
+fastmcp==4.0.5
