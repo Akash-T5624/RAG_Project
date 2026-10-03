@@ -1,0 +1,129 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "judge": "outputs.validate_output (evals/week7/outputs.py, week-6 contract judge)",
+  "cases": [
+    "W6-001",
+    "W6-002",
+    "W6-003",
+    "W6-004",
+    "W6-005",
+    "W6-006",
+    "W6-008",
+    "W6-009",
+    "W6-010",
+    "W6-011"
+  ],
+  "pricing_assumption": {
+    "input_usd_per_1m": 0.8,
+    "output_usd_per_1m": 4.0,
+    "source": "Groq list price for qwen/qwen3.8-27b (console.groq.com/docs/model/qwen/qwen3.8-27b): input $0.80 / output $4.00 per 1M tokens"
+  },
+  "single_agent": {
+    "claims_run": 10,
+    "pass_count": 10,
+    "pass_rate_pct": 100.0,
+    "p50_latency_ms": 57528.4,
+    "p99_latency_ms": 102438.2,
+    "total_tokens": 62573,
+    "prompt_tokens": 60711,
+    "completion_tokens": 1862,
+    "total_cost": 0.056016,
+    "cost_per_claim": 0.005602
+  },
+  "claims_squad": {
+    "claims_run": 10,
+    "pass_count": 9,
+    "pass_rate_pct": 90.0,
+    "p50_latency_ms": 44998.1,
+    "p99_latency_ms": 167476.3,
+    "total_tokens": 59755,
+    "prompt_tokens": 53447,
+    "completion_tokens": 6308,
+    "total_cost": 0.06799,
+    "cost_per_claim": 0.006799
+  },
+  "context_resend_multiplier": 1.0,
+  "dominant_handoff": {
+    "hop": "orchestrator->coverage_worker",
+    "share_pct": 53.7,
+    "tokens": 32064
+  },
+  "handoff_totals": {
+    "orchestrator->planner": {
+      "calls": 10,
+      "prompt_tokens": 2735,
+      "completion_tokens": 1466,
+      "total_tokens": 4201,
+      "cost_usd": 0.008051,
+      "cases": [
+        "W6-001",
+        "W6-002",
+        "W6-003",
+        "W6-004",
+        "W6-005",
+        "W6-006",
+        "W6-008",
+        "W6-009",
+        "W6-010",
+        "W6-011"
+      ]
+    },
+    "orchestrator->coverage_worker": {
+      "calls": 29,
+      "prompt_tokens": 29672,
+      "completion_tokens": 2392,
+      "total_tokens": 32064,
+      "cost_usd": 0.033306,
+      "cases": [
+        "W6-001",
+        "W6-002",
+        "W6-003",
+        "W6-004",
+        "W6-005",
+        "W6-006",
+        "W6-008",
+        "W6-009",
+        "W6-010",
+        "W6-011"
+      ]
+    },
+    "orchestrator->summary_worker": {
+      "calls": 18,
+      "prompt_tokens": 12774,
+      "completion_tokens": 1974,
+      "total_tokens": 14748,
+      "cost_usd": 0.018115,
+      "cases": [
+        "W6-001",
+        "W6-002",
+        "W6-003",
+        "W6-004",
+        "W6-005",
+        "W6-006",
+        "W6-008",
+        "W6-009",
+        "W6-010"
+      ]
+    },
+    "orchestrator->synthesis": {
+      "calls": 9,
+      "prompt_tokens": 8266,
+      "completion_tokens": 476,
+      "total_tokens": 8742,
+      "cost_usd": 0.008516,
+      "cases": [
+        "W6-001",
+        "W6-002",
+        "W6-003",
+        "W6-004",
+        "W6-005",
+        "W6-006",
+        "W6-008",
+        "W6-009",
+        "W6-010"
+      ]
+    }
+  },
+  "logged_squad_tokens": 59755,
+  "token_drift_vs_log": 0
+}

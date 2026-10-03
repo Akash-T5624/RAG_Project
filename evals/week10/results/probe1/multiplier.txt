@@ -1,0 +1,1 @@
+Context re-send multiplier: 0.9x (squad 59,136 tokens / single 62,573 tokens). Largest single hand-off: `orchestrator->coverage_worker` - 31,568 tokens = 53.4% of all squad-arm tokens.

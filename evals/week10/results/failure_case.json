@@ -1,0 +1,117 @@
+{
+  "case": "W6-002",
+  "model": "qwen/qwen3.8-27b",
+  "judge": "outputs.validate_output (evals/week7/outputs.py, week-6 contract judge)",
+  "injection": {
+    "target": "coverage/exclusions worker",
+    "failure": "HTTP 500 on every attempt",
+    "surface": "worker boundary (in-process in this build) - the same place a real HTTP 500 from the worker endpoint would surface, before any model usage is billed",
+    "attempts": 2,
+    "http_500_handoffs": 2,
+    "tokens_billed_for_failed_attempts": 0
+  },
+  "behaviour_one_line": "RETRIED then DEGRADED - 2 attempts, then a partial answer with status=null and no coverage assertion",
+  "retry_happened": true,
+  "degraded": true,
+  "declared_covered_without_exclusions_check": false,
+  "guardrail_fired": false,
+  "termination_reason": "worker_failure_degraded",
+  "termination_detail": "coverage/exclusions worker returned HTTP  500 on all 2 attempt(s); no policy evidence available; no coverage decision was asserted - degraded to a partial answer instead",
+  "output": {
+    "claim_id": "W6-002",
+    "claim_number": "CLM-2026-00418",
+    "loss_date": "2026-03-02",
+    "status": null,
+    "excess": 2500,
+    "exclusion_clause": null,
+    "payout": null,
+    "degraded": true,
+    "degraded_reason": "coverage/exclusions worker returned HTTP  500 on all 2 attempt(s); no policy evidence available; no coverage decision was asserted - degraded to a partial answer instead"
+  },
+  "expected": {
+    "claim_id": "W6-002",
+    "claim_number": "CLM-2026-00418",
+    "loss_date": "2026-03-02",
+    "status": "excluded",
+    "excess": 2500,
+    "exclusion_clause": "Exc-7.4",
+    "payout": 0.0
+  },
+  "judge_verdict": "FAIL",
+  "judge_failures": [
+    "status: expected 'excluded', got None",
+    "exclusion_clause: expected 'EXC-7.4', got None",
+    "payout: not numeric: None"
+  ],
+  "handoffs": [
+    {
+      "ts": "2026-10-02T16:50:45+00:00",
+      "case": "W6-002",
+      "hop": "orchestrator->planner",
+      "call": 1,
+      "status": 200,
+      "prompt_tokens": 274,
+      "completion_tokens": 137,
+      "total_tokens": 411,
+      "cost_usd": 0.000767,
+      "latency_ms": 875.3,
+      "detail": "manager decomposes the claim question"
+    },
+    {
+      "ts": "2026-10-02T16:50:47+00:00",
+      "case": "W6-002",
+      "hop": "orchestrator->coverage_worker",
+      "call": 1,
+      "status": "HTTP500",
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0,
+      "cost_usd": 0.0,
+      "latency_ms": 0.0,
+      "detail": "coverage_exclusions_worker returned HTTP 500; no model usage billed"
+    },
+    {
+      "ts": "2026-10-02T16:50:48+00:00",
+      "case": "W6-002",
+      "hop": "orchestrator->coverage_worker",
+      "call": 2,
+      "status": "HTTP500",
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0,
+      "cost_usd": 0.0,
+      "latency_ms": 0.0,
+      "detail": "coverage_exclusions_worker returned HTTP 500; no model usage billed"
+    },
+    {
+      "ts": "2026-10-02T16:50:49+00:00",
+      "case": "W6-002",
+      "hop": "orchestrator->summary_worker",
+      "call": 1,
+      "status": 200,
+      "prompt_tokens": 517,
+      "completion_tokens": 27,
+      "total_tokens": 544,
+      "cost_usd": 0.000522,
+      "latency_ms": 576.3,
+      "detail": "tool=get_claim status=ok"
+    },
+    {
+      "ts": "2026-10-02T16:50:52+00:00",
+      "case": "W6-002",
+      "hop": "orchestrator->summary_worker",
+      "call": 2,
+      "status": 200,
+      "prompt_tokens": 827,
+      "completion_tokens": 213,
+      "total_tokens": 1040,
+      "cost_usd": 0.001514,
+      "latency_ms": 975.2,
+      "detail": "finding emitted"
+    }
+  ],
+  "tokens": 1995,
+  "cost": 0.002802,
+  "latency_ms": 9445.5,
+  "clean_race_run": null
+}

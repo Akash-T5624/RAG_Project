@@ -1,0 +1,3222 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "judge": "outputs.validate_output (evals/week7/outputs.py, week-6 contract judge)",
+  "cases": [
+    "W6-001",
+    "W6-002",
+    "W6-003",
+    "W6-004",
+    "W6-005",
+    "W6-006",
+    "W6-008",
+    "W6-009",
+    "W6-010",
+    "W6-011"
+  ],
+  "expected_status": {
+    "W6-001": "approved",
+    "W6-002": "excluded",
+    "W6-003": "approved",
+    "W6-004": "excluded",
+    "W6-005": "approved",
+    "W6-006": "approved",
+    "W6-008": "excluded",
+    "W6-009": "approved",
+    "W6-010": "approved",
+    "W6-011": "excluded"
+  },
+  "runs": {
+    "single_agent:W6-001": {
+      "claim_id": "W6-001",
+      "system": "single_agent",
+      "pass_result": true,
+      "latency_ms": 5890.8,
+      "tokens": 4179,
+      "prompt_tokens": 4019,
+      "completion_tokens": 160,
+      "cost": 0.003855,
+      "termination_reason": "completed",
+      "termination_detail": "agent produced a final structured output",
+      "iterations": 3,
+      "output": {
+        "claim_id": "W6-001",
+        "claim_number": "CLM-2026-00412",
+        "loss_date": "2026-02-11",
+        "status": "approved",
+        "excess": 1500,
+        "exclusion_clause": null,
+        "payout": 28500.0
+      },
+      "failures": [],
+      "steps": [
+        {
+          "tool": "get_claim",
+          "args": {
+            "claim_id": "W6-001"
+          },
+          "timestamp": "2026-10-02T16:51:09.014036+00:00",
+          "tokens_this_call": 1111,
+          "cumulative_tokens": 1111,
+          "cumulative_cost": 0.0009752,
+          "elapsed_s": 0.5644148999126628,
+          "status": "ok",
+          "result": {
+            "claim_id": "W6-001",
+            "title": "Front-bumper repair Honda Activa",
+            "mode": "hallucinated-coverage",
+            "claim_number": "CLM-2026-00412",
+            "loss_date": "2026-02-11",
+            "excess": 1500,
+            "claim_amount": 30000.0,
+            "adjuster_notes": "Claim CLM-2026-00412. Date of loss 2026-02-11. Own-damage front bumper damage after low-speed collision with a divider. Excess/deductible Rs 1500. Assessor notes no engine damage, no third-party involvement. Recommended: repair only front bumper unit. Exclusions reviewed: collision damage is covered under own damage; no exclusion applies.",
+            "expect": {
+              "claim_number": "CLM-2026-00412",
+              "loss_date": "2026-02-11",
+              "excess": 1500,
+              "denial": false,
+              "exclusion_cite_required": false
+            },
+            "hand_label": "acceptable"
+          }
+        },
+        {
+          "tool": "compute_payout",
+          "args": {
+            "claim_amount": 30000.0,
+            "excess": 1500,
+            "claim_status": "approved"
+          },
+          "timestamp": "2026-10-02T16:51:11.574825+00:00",
+          "tokens_this_call": 1451,
+          "cumulative_tokens": 2562,
+          "cumulative_cost": 0.0022832,
+          "elapsed_s": 3.125197399989702,
+          "status": "ok",
+          "result": {
+            "claim_amount": 30000.0,
+            "excess": 1500.0,
+            "claim_status": "approved",
+            "payout": 28500.0
+          }
+        }
+      ],
+      "handoffs": [],
+      "model": "qwen/qwen3.8-27b",
+      "degraded": false,
+      "guardrail_fired": false,
+      "worker_attempts": {},
+      "injected_failure": false
+    },
+    "single_agent:W6-002": {
+      "claim_id": "W6-002",
+      "system": "single_agent",
+      "pass_result": true,
+      "latency_ms": 68313.1,
+      "tokens": 9162,
+      "prompt_tokens": 8944,
+      "completion_tokens": 218,
+      "cost": 0.008027,
+      "termination_reason": "completed",
+      "termination_detail": "agent produced a final structured output",
+      "iterations": 5,
+      "output": {
+        "claim_id": "W6-002",
+        "claim_number": "CLM-2026-00418",
+        "loss_date": "2026-03-02",
+        "status": "excluded",
+        "excess": 2500,
+        "exclusion_clause": "Exc-7.4",
+        "payout": 0.0
+      },
+      "failures": [],
+      "steps": [
+        {
+          "tool": "get_claim",
+          "args": {
+            "claim_id": "W6-002"
+          },
+          "timestamp": "2026-10-02T16:51:16.083840+00:00",
+          "tokens_this_call": 1111,
+          "cumulative_tokens": 1111,
+          "cumulative_cost": 0.0009752,
+          "elapsed_s": 0.7262074999744073,
+          "status": "ok",
+          "result": {
+            "claim_id": "W6-002",
+            "title": "Water-ingress engine claim",
+            "mode": "omitted-exclusion",
+            "claim_number": "CLM-2026-00418",
+            "loss_date": "2026-03-02",
+            "excess": 2500,
+            "claim_amount": 30000.0,
+            "adjuster_notes": "Claim CLM-2026-00418. Date of loss 2026-03-02. Policyholder rode through flooded road and engine water ingress reported. Excess Rs 2500. Engine Protector add-on was NOT purchased. Under exclusion clause Exc-7.4 engine damage from water ingress is excluded unless Engine Protector add-on present. Recommend denial.",
+            "expect": {
+              "claim_number": "CLM-2026-00418",
+              "loss_date": "2026-03-02",
+              "excess": 2500,
+              "denial": true,
+              "exclusion_cite_required": true
+            },
+            "hand_label": "reject"
+          }
+        },
+        {
+          "tool": "search_policy",
+          "args": {
+            "query": "water ingress engine damage exclusion Engine Protector add-on"
+          },
+          "timestamp": "2026-10-02T16:51:18.741995+00:00",
+          "tokens_this_call": 1423,
+          "cumulative_tokens": 2534,
+          "cumulative_cost": 0.0022064,
+          "elapsed_s": 3.3843771999236196,
+          "status": "ok",
+          "result": [
+            {
+              "rank": 1,
+              "page_number": 1,
+              "section": "3. Optional Add-ons Selected",
+              "snippet": "ligibility and policy conditions.\n3. Optional Add-ons Selected\nAdd-on\nBenefit / Limit\nZero Depreciation\nEligible replacement parts may be settled without applying standard depreciation, subject to terms.\nRoadside Assistance\nUp to 4 assistance events during the policy period.\nEngine Protector\nCovered engine damage resulting from water ingress, subject to exclusions.\nConsumables Cover\nCovered consum",
+              "score": 13.8794
+            },
+            {
+              "rank": 2,
+              "page_number": 1,
+              "section": "3. Optional Add-ons Selected",
+              "snippet": "r explosion.\n Natural Disasters: Loss or damage caused by flood, cyclone, earthquake, landslide, storm, or other covered\nnatural events.\n Third-Party Liability: Legal liability for accidental injury, death, or covered property damage to a third party,\nsubject to policy terms and applicable law.\n Personal Accident Cover: Personal accident cover for the owner-driver up to ■15,00,000, subject to\ne",
+              "score": 3.5746
+            },
+            {
+              "rank": 3,
+              "page_number": 2,
+              "section": "policy",
+              "snippet": "5. Important Exclusions\n Normal wear and tear, gradual deterioration, or depreciation except where an applicable add-on provides\notherwise.\n Mechanical or electrical breakdown not directly caused by an insured accident.\n Damage occurring while the vehicle is driven by a person without a valid driving licence.\n Damage occurring while the driver is under the influence of alcohol or illegal drugs",
+              "score": 3.0339
+            }
+          ]
+        },
+        {
+          "tool": "retrieve_policy_exclusions",
+          "args": {
+            "topic": "water ingress engine damage"
+          },
+          "timestamp": "2026-10-02T16:51:21.301832+00:00",
+          "tokens_this_call": 1855,
+          "cumulative_tokens": 4389,
+          "cumulative_cost": 0.0037736,
+          "elapsed_s": 5.944212000002153,
+          "status": "ok",
+          "result": [
+            {
+              "rank": 1,
+              "page_number": 1,
+              "section": "3. Optional Add-ons Selected",
+              "snippet": "ligibility and policy conditions.\n3. Optional Add-ons Selected\nAdd-on\nBenefit / Limit\nZero Depreciation\nEligible replacement parts may be settled without applying standard depreciation, subject to terms.\nRoadside Assistance\nUp to 4 assistance events during the policy period.\nEngine Protector\nCovered engine damage resulting from water ingress, subject to exclusions.\nConsumables Cover\nCovered consum",
+              "score": 8.6883
+            },
+            {
+              "rank": 3,
+              "page_number": 2,
+              "section": "policy",
+              "snippet": "5. Important Exclusions\n Normal wear and tear, gradual deterioration, or depreciation except where an applicable add-on provides\notherwise.\n Mechanical or electrical breakdown not directly caused by an insured accident.\n Damage occurring while the vehicle is driven by a person without a valid driving licence.\n Damage occurring while the driver is under the influence of alcohol or illegal drugs",
+              "score": 0.8489
+            },
+            {
+              "rank": 2,
+              "page_number": 1,
+              "section": "2. What This Policy Covers",
+              "snippet": "■3,850 including applicable taxes\n2. What This Policy Covers\n Own Damage: Accidental damage to the insured vehicle caused by collision, overturning, impact, or\naccidental external means.\n Theft: Theft or attempted theft of the insured vehicle, subject to submission of the required police and\nregistration documents.\n Fire and Explosion: Loss or damage caused by fire, self-ignition, lightning, o",
+              "score": 0.9408
+            }
+          ]
+        },
+        {
+          "tool": "compute_payout",
+          "args": {
+            "claim_amount": 30000.0,
+            "excess": 2500,
+            "claim_status": "excluded"
+          },
+          "timestamp": "2026-10-02T16:52:21.017004+00:00",
+          "tokens_this_call": 2304,
+          "cumulative_tokens": 6693,
+          "cumulative_cost": 0.0057672,
+          "elapsed_s": 65.6593502999749,
+          "status": "ok",
+          "result": {
+            "claim_amount": 30000.0,
+            "excess": 2500.0,
+            "claim_status": "excluded",
+            "payout": 0.0
+          }
+        }
+      ],
+      "handoffs": [],
+      "model": "qwen/qwen3.8-27b",
+      "degraded": false,
+      "guardrail_fired": false,
+      "worker_attempts": {},
+      "injected_failure": false
+    },
+    "single_agent:W6-003": {
+      "claim_id": "W6-003",
+      "system": "single_agent",
+      "pass_result": true,
+      "latency_ms": 54048.8,
+      "tokens": 5763,
+      "prompt_tokens": 5568,
+      "completion_tokens": 195,
+      "cost": 0.005234,
+      "termination_reason": "completed",
+      "termination_detail": "agent produced a final structured output",
+      "iterations": 4,
+      "output": {
+        "claim_id": "W6-003",
+        "claim_number": "CLM-2026-00425",
+        "loss_date": "2026-01-19",
+        "status": "approved",
+        "excess": 1800,
+        "exclusion_clause": null,
+        "payout": 28200.0
+      },
+      "failures": [],
+      "steps": [
+        {
+          "tool": "get_claim",
+          "args": {
+            "claim_id": "W6-003"
+          },
+          "timestamp": "2026-10-02T16:52:25.202454+00:00",
+          "tokens_this_call": 1111,
+          "cumulative_tokens": 1111,
+          "cumulative_cost": 0.0009752,
+          "elapsed_s": 0.5168130999663845,
+          "status": "ok",
+          "result": {
+            "claim_id": "W6-003",
+            "title": "Rear-end collision",
+            "mode": "wrong-claim-number",
+            "claim_number": "CLM-2026-00425",
+            "loss_date": "2026-01-19",
+            "excess": 1800,
+            "claim_amount": 30000.0,
+            "adjuster_notes": "Claim CLM-2026-00425. Date of loss 2026-01-19. Rear-end collision at low speed. Excess Rs 1800. Rear bumper and number-plate bracket damaged. No injuries. Both parties insured with us.",
+            "expect": {
+              "claim_number": "CLM-2026-00425",
+              "loss_date": "2026-01-19",
+              "excess": 1800,
+              "denial": false,
+              "exclusion_cite_required": false
+            },
+            "hand_label": "acceptable"
+          }
+        },
+        {
+          "tool": "validate_claim_number",
+          "args": {
+            "claim_number": "CLM-2026-00425"
+          },
+          "timestamp": "2026-10-02T16:52:27.862925+00:00",
+          "tokens_this_call": 1408,
+          "cumulative_tokens": 2519,
+          "cumulative_cost": 0.0022136,
+          "elapsed_s": 3.177279100054875,
+          "status": "ok",
+          "result": {
+            "claim_number": "CLM-2026-00425",
+            "expected_format": "CLM-YYYY-NNNNN",
+            "format_valid": true,
+            "detail": "format matches the claim registry pattern"
+          }
+        },
+        {
+          "tool": "compute_payout",
+          "args": {
+            "claim_amount": 30000.0,
+            "excess": 1800,
+            "claim_status": "approved"
+          },
+          "timestamp": "2026-10-02T16:53:16.033716+00:00",
+          "tokens_this_call": 1539,
+          "cumulative_tokens": 4058,
+          "cumulative_cost": 0.0035919999999999997,
+          "elapsed_s": 51.348046400002204,
+          "status": "ok",
+          "result": {
+            "claim_amount": 30000.0,
+            "excess": 1800.0,
+            "claim_status": "approved",
+            "payout": 28200.0
+          }
+        }
+      ],
+      "handoffs": [],
+      "model": "qwen/qwen3.8-27b",
+      "degraded": false,
+      "guardrail_fired": false,
+      "worker_attempts": {},
+      "injected_failure": false
+    },
+    "single_agent:W6-004": {
+      "claim_id": "W6-004",
+      "system": "single_agent",
+      "pass_result": true,
+      "latency_ms": 65875.4,
+      "tokens": 6404,
+      "prompt_tokens": 6215,
+      "completion_tokens": 189,
+      "cost": 0.005728,
+      "termination_reason": "completed",
+      "termination_detail": "agent produced a final structured output",
+      "iterations": 4,
+      "output": {
+        "claim_id": "W6-004",
+        "claim_number": "CLM-2026-00431",
+        "loss_date": "2026-02-27",
+        "status": "excluded",
+        "excess": 2000,
+        "exclusion_clause": "Exc-5.1",
+        "payout": 0.0
+      },
+      "failures": [],
+      "steps": [
+        {
+          "tool": "get_claim",
+          "args": {
+            "claim_id": "W6-004"
+          },
+          "timestamp": "2026-10-02T16:53:20.192512+00:00",
+          "tokens_this_call": 1111,
+          "cumulative_tokens": 1111,
+          "cumulative_cost": 0.0009752,
+          "elapsed_s": 0.440572899999097,
+          "status": "ok",
+          "result": {
+            "claim_id": "W6-004",
+            "title": "Drink-driving refusal",
+            "mode": "omitted-exclusion",
+            "claim_number": "CLM-2026-00431",
+            "loss_date": "2026-02-27",
+            "excess": 2000,
+            "claim_amount": 30000.0,
+            "adjuster_notes": "Claim CLM-2026-00431. Date of loss 2026-02-27. Vehicle found driven while under influence after accident; police report flags alcohol. Under exclusion clause Exc-5.1 any claim arising while driver intoxicated is excluded. Recommend denial.",
+            "expect": {
+              "claim_number": "CLM-2026-00431",
+              "loss_date": "2026-02-27",
+              "excess": 2000,
+              "denial": true,
+              "exclusion_cite_required": true
+            },
+            "hand_label": "reject"
+          }
+        },
+        {
+          "tool": "search_policy",
+          "args": {
+            "query": "intoxicated driver alcohol exclusion"
+          },
+          "timestamp": "2026-10-02T16:53:23.057664+00:00",
+          "tokens_this_call": 1398,
+          "cumulative_tokens": 2509,
+          "cumulative_cost": 0.0021768,
+          "elapsed_s": 3.3057243999792263,
+          "status": "ok",
+          "result": [
+            {
+              "rank": 1,
+              "page_number": 2,
+              "section": "policy",
+              "snippet": "5. Important Exclusions\n Normal wear and tear, gradual deterioration, or depreciation except where an applicable add-on provides\notherwise.\n Mechanical or electrical breakdown not directly caused by an insured accident.\n Damage occurring while the vehicle is driven by a person without a valid driving licence.\n Damage occurring while the driver is under the influence of alcohol or illegal drugs",
+              "score": 3.488
+            },
+            {
+              "rank": 2,
+              "page_number": 3,
+              "section": "8. Sample Claim Scenario B",
+              "snippet": "period and that the driver held a\nvalid licence. The claim was eligible. After applying the total deductible of ■600, the estimated payable amount\nwas ■17,400, subject to final repair invoices and policy terms.\n8. Sample Claim Scenario B — Rejected\nOn 20 November 2026, the vehicle suffered damage while being ridden by a person who did not possess a\nvalid driving licence. The claim was rejected bec",
+              "score": 2.8391
+            },
+            {
+              "rank": 3,
+              "page_number": 3,
+              "section": "9. No Claim Bonus",
+              "snippet": "ause driving without a valid licence is an exclusion under this\nsample policy.\n9. No Claim Bonus (NCB)\nIf no eligible own-damage claim is made during the policy period, the policy holder may receive a 20% No\nClaim Bonus (NCB) on the eligible own-damage premium at renewal. The NCB does not apply to third-party\nliability premium and may be affected by a claim or transfer rules.\n10. Free Look / Cance",
+              "score": 1.6573
+            }
+          ]
+        },
+        {
+          "tool": "compute_payout",
+          "args": {
+            "claim_amount": 30000.0,
+            "excess": 2000,
+            "claim_status": "excluded"
+          },
+          "timestamp": "2026-10-02T16:53:25.622983+00:00",
+          "tokens_this_call": 1865,
+          "cumulative_tokens": 4374,
+          "cumulative_cost": 0.0038192,
+          "elapsed_s": 5.870991099975072,
+          "status": "ok",
+          "result": {
+            "claim_amount": 30000.0,
+            "excess": 2000.0,
+            "claim_status": "excluded",
+            "payout": 0.0
+          }
+        }
+      ],
+      "handoffs": [],
+      "model": "qwen/qwen3.8-27b",
+      "degraded": false,
+      "guardrail_fired": false,
+      "worker_attempts": {},
+      "injected_failure": false
+    },
+    "single_agent:W6-005": {
+      "claim_id": "W6-005",
+      "system": "single_agent",
+      "pass_result": true,
+      "latency_ms": 5536.4,
+      "tokens": 4057,
+      "prompt_tokens": 3907,
+      "completion_tokens": 150,
+      "cost": 0.003726,
+      "termination_reason": "completed",
+      "termination_detail": "agent produced a final structured output",
+      "iterations": 3,
+      "output": {
+        "claim_id": "W6-005",
+        "claim_number": "CLM-2026-00444",
+        "loss_date": null,
+        "status": "approved",
+        "excess": 2200,
+        "exclusion_clause": null,
+        "payout": 27800.0
+      },
+      "failures": [],
+      "steps": [
+        {
+          "tool": "get_claim",
+          "args": {
+            "claim_id": "W6-005"
+          },
+          "timestamp": "2026-10-02T16:54:27.083687+00:00",
+          "tokens_this_call": 1111,
+          "cumulative_tokens": 1111,
+          "cumulative_cost": 0.0009752,
+          "elapsed_s": 0.439883999992162,
+          "status": "ok",
+          "result": {
+            "claim_id": "W6-005",
+            "title": "Tree-branch storm damage",
+            "mode": "missing-loss-date",
+            "claim_number": "CLM-2026-00444",
+            "loss_date": null,
+            "excess": 2200,
+            "claim_amount": 30000.0,
+            "adjuster_notes": "Claim CLM-2026-00444. Tree branch fell on parked car during storm. Excess Rs 2200. Roof dent and windshield crack. Policyholder reports event occurred during the second week of March. Exact date to be confirmed from police FIR.",
+            "expect": {
+              "claim_number": "CLM-2026-00444",
+              "loss_date": null,
+              "excess": 2200,
+              "denial": false,
+              "exclusion_cite_required": false
+            },
+            "hand_label": "acceptable"
+          }
+        },
+        {
+          "tool": "compute_payout",
+          "args": {
+            "claim_amount": 30000.0,
+            "excess": 2200,
+            "claim_status": "approved"
+          },
+          "timestamp": "2026-10-02T16:54:29.559086+00:00",
+          "tokens_this_call": 1395,
+          "cumulative_tokens": 2506,
+          "cumulative_cost": 0.0022383999999999998,
+          "elapsed_s": 2.9152295000385493,
+          "status": "ok",
+          "result": {
+            "claim_amount": 30000.0,
+            "excess": 2200.0,
+            "claim_status": "approved",
+            "payout": 27800.0
+          }
+        }
+      ],
+      "handoffs": [],
+      "model": "qwen/qwen3.8-27b",
+      "degraded": false,
+      "guardrail_fired": false,
+      "worker_attempts": {},
+      "injected_failure": false
+    },
+    "single_agent:W6-006": {
+      "claim_id": "W6-006",
+      "system": "single_agent",
+      "pass_result": true,
+      "latency_ms": 60277.4,
+      "tokens": 9046,
+      "prompt_tokens": 8824,
+      "completion_tokens": 222,
+      "cost": 0.007947,
+      "termination_reason": "completed",
+      "termination_detail": "agent produced a final structured output",
+      "iterations": 5,
+      "output": {
+        "claim_id": "W6-006",
+        "claim_number": "CLM-2026-00455",
+        "loss_date": "2026-04-02",
+        "status": "approved",
+        "excess": 1800,
+        "exclusion_clause": null,
+        "payout": 28200.0
+      },
+      "failures": [],
+      "steps": [
+        {
+          "tool": "get_claim",
+          "args": {
+            "claim_id": "W6-006"
+          },
+          "timestamp": "2026-10-02T16:54:33.875812+00:00",
+          "tokens_this_call": 1111,
+          "cumulative_tokens": 1111,
+          "cumulative_cost": 0.0009752,
+          "elapsed_s": 0.6799953000154346,
+          "status": "ok",
+          "result": {
+            "claim_id": "W6-006",
+            "title": "Theft of aftermarket stereo",
+            "mode": "hallucinated-coverage",
+            "claim_number": "CLM-2026-00455",
+            "loss_date": "2026-04-02",
+            "excess": 1800,
+            "claim_amount": 30000.0,
+            "adjuster_notes": "Claim CLM-2026-00455. Date of loss 2026-04-02. Undeclared aftermarket stereo unit stolen; vehicle not otherwise damaged. Notes state undeclared non-OEM parts such as stereos are not covered unless declared in advance. Recommend partial: vehicle theft covered, aftermarket item excluded.",
+            "expect": {
+              "claim_number": "CLM-2026-00455",
+              "loss_date": "2026-04-02",
+              "excess": 1800,
+              "denial": false,
+              "exclusion_cite_required": false
+            },
+            "hand_label": "acceptable"
+          }
+        },
+        {
+          "tool": "search_policy",
+          "args": {
+            "query": "aftermarket accessories undeclared non-OEM parts coverage exclusion"
+          },
+          "timestamp": "2026-10-02T16:55:25.155114+00:00",
+          "tokens_this_call": 1416,
+          "cumulative_tokens": 2527,
+          "cumulative_cost": 0.0022072,
+          "elapsed_s": 51.959316099993885,
+          "status": "ok",
+          "result": [
+            {
+              "rank": 1,
+              "page_number": 3,
+              "section": "11. Contact Information",
+              "snippet": "ta basis and may be subject to deductions.\n11. Contact Information (Fictional)\nClaims Helpline: 1800-000-2026\nEmail: claims@saferide-example.invalid\nOffice: Chennai, Tamil Nadu, India\nThese contact details are fictional and intentionally non-operational.\nRAG TESTING NOTE: This document intentionally contains exact values, dates, exclusions, conditions, and claim scenarios. It can be\nused to test s",
+              "score": 2.3743
+            },
+            {
+              "rank": 2,
+              "page_number": 1,
+              "section": "3. Optional Add-ons Selected",
+              "snippet": "ligibility and policy conditions.\n3. Optional Add-ons Selected\nAdd-on\nBenefit / Limit\nZero Depreciation\nEligible replacement parts may be settled without applying standard depreciation, subject to terms.\nRoadside Assistance\nUp to 4 assistance events during the policy period.\nEngine Protector\nCovered engine damage resulting from water ingress, subject to exclusions.\nConsumables Cover\nCovered consum",
+              "score": 2.3142
+            },
+            {
+              "rank": 3,
+              "page_number": 3,
+              "section": "8. Sample Claim Scenario B",
+              "snippet": "period and that the driver held a\nvalid licence. The claim was eligible. After applying the total deductible of ■600, the estimated payable amount\nwas ■17,400, subject to final repair invoices and policy terms.\n8. Sample Claim Scenario B — Rejected\nOn 20 November 2026, the vehicle suffered damage while being ridden by a person who did not possess a\nvalid driving licence. The claim was rejected bec",
+              "score": 1.6866
+            }
+          ]
+        },
+        {
+          "tool": "retrieve_policy_exclusions",
+          "args": {
+            "topic": "aftermarket accessories undeclared non-OEM parts"
+          },
+          "timestamp": "2026-10-02T16:55:27.884791+00:00",
+          "tokens_this_call": 1885,
+          "cumulative_tokens": 4412,
+          "cumulative_cost": 0.0038144,
+          "elapsed_s": 54.68896689999383,
+          "status": "ok",
+          "result": [
+            {
+              "rank": 1,
+              "page_number": 3,
+              "section": "11. Contact Information",
+              "snippet": "ta basis and may be subject to deductions.\n11. Contact Information (Fictional)\nClaims Helpline: 1800-000-2026\nEmail: claims@saferide-example.invalid\nOffice: Chennai, Tamil Nadu, India\nThese contact details are fictional and intentionally non-operational.\nRAG TESTING NOTE: This document intentionally contains exact values, dates, exclusions, conditions, and claim scenarios. It can be\nused to test s",
+              "score": 2.3743
+            },
+            {
+              "rank": 2,
+              "page_number": 1,
+              "section": "3. Optional Add-ons Selected",
+              "snippet": "ligibility and policy conditions.\n3. Optional Add-ons Selected\nAdd-on\nBenefit / Limit\nZero Depreciation\nEligible replacement parts may be settled without applying standard depreciation, subject to terms.\nRoadside Assistance\nUp to 4 assistance events during the policy period.\nEngine Protector\nCovered engine damage resulting from water ingress, subject to exclusions.\nConsumables Cover\nCovered consum",
+              "score": 2.3142
+            }
+          ]
+        },
+        {
+          "tool": "compute_payout",
+          "args": {
+            "claim_amount": 30000.0,
+            "excess": 1800,
+            "claim_status": "approved"
+          },
+          "timestamp": "2026-10-02T16:55:30.747927+00:00",
+          "tokens_this_call": 2234,
+          "cumulative_tokens": 6646,
+          "cumulative_cost": 0.0057488,
+          "elapsed_s": 57.55213600001298,
+          "status": "ok",
+          "result": {
+            "claim_amount": 30000.0,
+            "excess": 1800.0,
+            "claim_status": "approved",
+            "payout": 28200.0
+          }
+        }
+      ],
+      "handoffs": [],
+      "model": "qwen/qwen3.8-27b",
+      "degraded": false,
+      "guardrail_fired": false,
+      "worker_attempts": {},
+      "injected_failure": false
+    },
+    "single_agent:W6-008": {
+      "claim_id": "W6-008",
+      "system": "single_agent",
+      "pass_result": true,
+      "latency_ms": 67860.7,
+      "tokens": 6474,
+      "prompt_tokens": 6287,
+      "completion_tokens": 187,
+      "cost": 0.005778,
+      "termination_reason": "completed",
+      "termination_detail": "agent produced a final structured output",
+      "iterations": 4,
+      "output": {
+        "claim_id": "W6-008",
+        "claim_number": "CLM-2026-00471",
+        "loss_date": "2026-03-18",
+        "status": "excluded",
+        "excess": 2500,
+        "exclusion_clause": "Exc-2.2",
+        "payout": 0.0
+      },
+      "failures": [],
+      "steps": [
+        {
+          "tool": "get_claim",
+          "args": {
+            "claim_id": "W6-008"
+          },
+          "timestamp": "2026-10-02T16:56:32.195329+00:00",
+          "tokens_this_call": 1111,
+          "cumulative_tokens": 1111,
+          "cumulative_cost": 0.0009752,
+          "elapsed_s": 57.71281599998474,
+          "status": "ok",
+          "result": {
+            "claim_id": "W6-008",
+            "title": "Unlicensed-driver accident",
+            "mode": "omitted-exclusion",
+            "claim_number": "CLM-2026-00471",
+            "loss_date": "2026-03-18",
+            "excess": 2500,
+            "claim_amount": 30000.0,
+            "adjuster_notes": "Claim CLM-2026-00471. Date of loss 2026-03-18. Accident while vehicle driven by a person without a valid driving licence. Notes confirm driver not named on policy. Under exclusion clause Exc-2.2 claims arising from unlicensed drivers are excluded. Recommend denial.",
+            "expect": {
+              "claim_number": "CLM-2026-00471",
+              "loss_date": "2026-03-18",
+              "excess": 2500,
+              "denial": true,
+              "exclusion_cite_required": true
+            },
+            "hand_label": "reject"
+          }
+        },
+        {
+          "tool": "search_policy",
+          "args": {
+            "query": "unlicensed driver exclusion"
+          },
+          "timestamp": "2026-10-02T16:56:34.784113+00:00",
+          "tokens_this_call": 1404,
+          "cumulative_tokens": 2515,
+          "cumulative_cost": 0.0021752,
+          "elapsed_s": 60.30158550001215,
+          "status": "ok",
+          "result": [
+            {
+              "rank": 1,
+              "page_number": 3,
+              "section": "8. Sample Claim Scenario B",
+              "snippet": "period and that the driver held a\nvalid licence. The claim was eligible. After applying the total deductible of ■600, the estimated payable amount\nwas ■17,400, subject to final repair invoices and policy terms.\n8. Sample Claim Scenario B — Rejected\nOn 20 November 2026, the vehicle suffered damage while being ridden by a person who did not possess a\nvalid driving licence. The claim was rejected bec",
+              "score": 2.8391
+            },
+            {
+              "rank": 2,
+              "page_number": 3,
+              "section": "9. No Claim Bonus",
+              "snippet": "ause driving without a valid licence is an exclusion under this\nsample policy.\n9. No Claim Bonus (NCB)\nIf no eligible own-damage claim is made during the policy period, the policy holder may receive a 20% No\nClaim Bonus (NCB) on the eligible own-damage premium at renewal. The NCB does not apply to third-party\nliability premium and may be affected by a claim or transfer rules.\n10. Free Look / Cance",
+              "score": 1.6573
+            },
+            {
+              "rank": 3,
+              "page_number": 1,
+              "section": "3. Optional Add-ons Selected",
+              "snippet": "r explosion.\n Natural Disasters: Loss or damage caused by flood, cyclone, earthquake, landslide, storm, or other covered\nnatural events.\n Third-Party Liability: Legal liability for accidental injury, death, or covered property damage to a third party,\nsubject to policy terms and applicable law.\n Personal Accident Cover: Personal accident cover for the owner-driver up to ■15,00,000, subject to\ne",
+              "score": 1.2246
+            }
+          ]
+        },
+        {
+          "tool": "compute_payout",
+          "args": {
+            "claim_amount": 30000.0,
+            "excess": 2500,
+            "claim_status": "excluded"
+          },
+          "timestamp": "2026-10-02T16:56:39.565807+00:00",
+          "tokens_this_call": 1897,
+          "cumulative_tokens": 4412,
+          "cumulative_cost": 0.0038432,
+          "elapsed_s": 65.08329860004596,
+          "status": "ok",
+          "result": {
+            "claim_amount": 30000.0,
+            "excess": 2500.0,
+            "claim_status": "excluded",
+            "payout": 0.0
+          }
+        }
+      ],
+      "handoffs": [],
+      "model": "qwen/qwen3.8-27b",
+      "degraded": false,
+      "guardrail_fired": false,
+      "worker_attempts": {},
+      "injected_failure": false
+    },
+    "single_agent:W6-009": {
+      "claim_id": "W6-009",
+      "system": "single_agent",
+      "pass_result": true,
+      "latency_ms": 54779.4,
+      "tokens": 4159,
+      "prompt_tokens": 3999,
+      "completion_tokens": 160,
+      "cost": 0.003839,
+      "termination_reason": "completed",
+      "termination_detail": "agent produced a final structured output",
+      "iterations": 3,
+      "output": {
+        "claim_id": "W6-009",
+        "claim_number": "CLM-2026-00480",
+        "loss_date": "2026-02-08",
+        "status": "approved",
+        "excess": 2000,
+        "exclusion_clause": null,
+        "payout": 28000.0
+      },
+      "failures": [],
+      "steps": [
+        {
+          "tool": "get_claim",
+          "args": {
+            "claim_id": "W6-009"
+          },
+          "timestamp": "2026-10-02T16:56:43.862553+00:00",
+          "tokens_this_call": 1111,
+          "cumulative_tokens": 1111,
+          "cumulative_cost": 0.0009752,
+          "elapsed_s": 0.5075894999317825,
+          "status": "ok",
+          "result": {
+            "claim_id": "W6-009",
+            "title": "Multi-claim dispute",
+            "mode": "release-note-summarised",
+            "claim_number": "CLM-2026-00480",
+            "loss_date": "2026-02-08",
+            "excess": 2000,
+            "claim_amount": 30000.0,
+            "adjuster_notes": "Claim CLM-2026-00480. Date of loss 2026-02-08. Two separate events claimed under one policy: a parking scrape (own damage) and a later bumper crack. Excess Rs 2000 applies per event. First event covered; second event under investigation pending assessor photos. Any payout subject to both events being confirmed.",
+            "expect": {
+              "claim_number": "CLM-2026-00480",
+              "loss_date": "2026-02-08",
+              "excess": 2000,
+              "denial": false,
+              "exclusion_cite_required": false
+            },
+            "hand_label": "acceptable"
+          }
+        },
+        {
+          "tool": "compute_payout",
+          "args": {
+            "claim_amount": 30000.0,
+            "excess": 2000,
+            "claim_status": "approved"
+          },
+          "timestamp": "2026-10-02T16:57:35.465708+00:00",
+          "tokens_this_call": 1441,
+          "cumulative_tokens": 2552,
+          "cumulative_cost": 0.0022752,
+          "elapsed_s": 52.1107544999104,
+          "status": "ok",
+          "result": {
+            "claim_amount": 30000.0,
+            "excess": 2000.0,
+            "claim_status": "approved",
+            "payout": 28000.0
+          }
+        }
+      ],
+      "handoffs": [],
+      "model": "qwen/qwen3.8-27b",
+      "degraded": false,
+      "guardrail_fired": false,
+      "worker_attempts": {},
+      "injected_failure": false
+    },
+    "single_agent:W6-010": {
+      "claim_id": "W6-010",
+      "system": "single_agent",
+      "pass_result": true,
+      "latency_ms": 5669.4,
+      "tokens": 4099,
+      "prompt_tokens": 3939,
+      "completion_tokens": 160,
+      "cost": 0.003791,
+      "termination_reason": "completed",
+      "termination_detail": "agent produced a final structured output",
+      "iterations": 3,
+      "output": {
+        "claim_id": "W6-010",
+        "claim_number": "CLM-2026-00493",
+        "loss_date": "2026-04-11",
+        "status": "approved",
+        "excess": 1500,
+        "exclusion_clause": null,
+        "payout": 28500.0
+      },
+      "failures": [],
+      "steps": [
+        {
+          "tool": "get_claim",
+          "args": {
+            "claim_id": "W6-010"
+          },
+          "timestamp": "2026-10-02T16:57:39.498815+00:00",
+          "tokens_this_call": 1111,
+          "cumulative_tokens": 1111,
+          "cumulative_cost": 0.0009752,
+          "elapsed_s": 0.3571158000268042,
+          "status": "ok",
+          "result": {
+            "claim_id": "W6-010",
+            "title": "Windshield replacement",
+            "mode": "wrong-claim-number",
+            "claim_number": "CLM-2026-00493",
+            "loss_date": "2026-04-11",
+            "excess": 1500,
+            "claim_amount": 30000.0,
+            "adjuster_notes": "Claim CLM-2026-00493. Date of loss 2026-04-11. Stone chip cracked windshield. Excess Rs 1500. Windshield replacement approved under comprehensive glass cover. No exclusions.",
+            "expect": {
+              "claim_number": "CLM-2026-00493",
+              "loss_date": "2026-04-11",
+              "excess": 1500,
+              "denial": false,
+              "exclusion_cite_required": false
+            },
+            "hand_label": "acceptable"
+          }
+        },
+        {
+          "tool": "compute_payout",
+          "args": {
+            "claim_amount": 30000.0,
+            "excess": 1500,
+            "claim_status": "approved"
+          },
+          "timestamp": "2026-10-02T16:57:41.999747+00:00",
+          "tokens_this_call": 1411,
+          "cumulative_tokens": 2522,
+          "cumulative_cost": 0.0022511999999999996,
+          "elapsed_s": 2.8580481000244617,
+          "status": "ok",
+          "result": {
+            "claim_amount": 30000.0,
+            "excess": 1500.0,
+            "claim_status": "approved",
+            "payout": 28500.0
+          }
+        }
+      ],
+      "handoffs": [],
+      "model": "qwen/qwen3.8-27b",
+      "degraded": false,
+      "guardrail_fired": false,
+      "worker_attempts": {},
+      "injected_failure": false
+    },
+    "single_agent:W6-011": {
+      "claim_id": "W6-011",
+      "system": "single_agent",
+      "pass_result": true,
+      "latency_ms": 105813.2,
+      "tokens": 9230,
+      "prompt_tokens": 9009,
+      "completion_tokens": 221,
+      "cost": 0.008091,
+      "termination_reason": "completed",
+      "termination_detail": "agent produced a final structured output",
+      "iterations": 5,
+      "output": {
+        "claim_id": "W6-011",
+        "claim_number": "CLM-2026-00504",
+        "loss_date": "2026-05-29",
+        "status": "excluded",
+        "excess": 2000,
+        "exclusion_clause": "Exc-8.1",
+        "payout": 0.0
+      },
+      "failures": [],
+      "steps": [
+        {
+          "tool": "get_claim",
+          "args": {
+            "claim_id": "W6-011"
+          },
+          "timestamp": "2026-10-02T16:57:46.326184+00:00",
+          "tokens_this_call": 1111,
+          "cumulative_tokens": 1111,
+          "cumulative_cost": 0.0009752,
+          "elapsed_s": 0.5020241000456735,
+          "status": "ok",
+          "result": {
+            "claim_id": "W6-011",
+            "title": "Tyres and tubes damage",
+            "mode": "hallucinated-coverage",
+            "claim_number": "CLM-2026-00504",
+            "loss_date": "2026-05-29",
+            "excess": 2000,
+            "claim_amount": 30000.0,
+            "adjuster_notes": "Claim CLM-2026-00504. Date of loss 2026-05-29. Policyholder reports punctured front and rear tyres. Notes explicitly state tyres and tubes are not covered by the policy unless damaged along with vehicle in an accident; here they failed in normal use. Under exclusion Exc-8.1 tyres/tubes damage not concurrent with vehicle accident is excluded. Recommend denial.",
+            "expect": {
+              "claim_number": "CLM-2026-00504",
+              "loss_date": "2026-05-29",
+              "excess": 2000,
+              "denial": true,
+              "exclusion_cite_required": true
+            },
+            "hand_label": "reject"
+          }
+        },
+        {
+          "tool": "search_policy",
+          "args": {
+            "query": "tyres and tubes damage exclusion not concurrent with vehicle accident"
+          },
+          "timestamp": "2026-10-02T16:58:43.879933+00:00",
+          "tokens_this_call": 1432,
+          "cumulative_tokens": 2543,
+          "cumulative_cost": 0.0022199999999999998,
+          "elapsed_s": 58.05575170007069,
+          "status": "ok",
+          "result": [
+            {
+              "rank": 1,
+              "page_number": 3,
+              "section": "7. Sample Claim Scenario A",
+              "snippet": "r may inspect and assess the loss before claim approval.\n6\nApproved claims are settled after applying deductibles, exclusions, depreciation where applicable, and policy limits.\n7. Sample Claim Scenario A — Approved\nOn 15 October 2026, the insured vehicle collided with another vehicle at low speed. The repair estimate was\n■18,000. The surveyor confirmed that the accident occurred during the policy",
+              "score": 4.6874
+            },
+            {
+              "rank": 2,
+              "page_number": 2,
+              "section": "policy",
+              "snippet": "5. Important Exclusions\n Normal wear and tear, gradual deterioration, or depreciation except where an applicable add-on provides\notherwise.\n Mechanical or electrical breakdown not directly caused by an insured accident.\n Damage occurring while the vehicle is driven by a person without a valid driving licence.\n Damage occurring while the driver is under the influence of alcohol or illegal drugs",
+              "score": 4.2043
+            },
+            {
+              "rank": 3,
+              "page_number": 3,
+              "section": "8. Sample Claim Scenario B",
+              "snippet": "period and that the driver held a\nvalid licence. The claim was eligible. After applying the total deductible of ■600, the estimated payable amount\nwas ■17,400, subject to final repair invoices and policy terms.\n8. Sample Claim Scenario B — Rejected\nOn 20 November 2026, the vehicle suffered damage while being ridden by a person who did not possess a\nvalid driving licence. The claim was rejected bec",
+              "score": 4.0341
+            }
+          ]
+        },
+        {
+          "tool": "retrieve_policy_exclusions",
+          "args": {
+            "topic": "tyres and tubes damage"
+          },
+          "timestamp": "2026-10-02T16:58:46.286907+00:00",
+          "tokens_this_call": 1870,
+          "cumulative_tokens": 4413,
+          "cumulative_cost": 0.0038024,
+          "elapsed_s": 60.46274800004903,
+          "status": "ok",
+          "result": [
+            {
+              "rank": 2,
+              "page_number": 2,
+              "section": "policy",
+              "snippet": "5. Important Exclusions\n Normal wear and tear, gradual deterioration, or depreciation except where an applicable add-on provides\notherwise.\n Mechanical or electrical breakdown not directly caused by an insured accident.\n Damage occurring while the vehicle is driven by a person without a valid driving licence.\n Damage occurring while the driver is under the influence of alcohol or illegal drugs",
+              "score": 1.0857
+            },
+            {
+              "rank": 1,
+              "page_number": 1,
+              "section": "2. What This Policy Covers",
+              "snippet": "■3,850 including applicable taxes\n2. What This Policy Covers\n Own Damage: Accidental damage to the insured vehicle caused by collision, overturning, impact, or\naccidental external means.\n Theft: Theft or attempted theft of the insured vehicle, subject to submission of the required police and\nregistration documents.\n Fire and Explosion: Loss or damage caused by fire, self-ignition, lightning, o",
+              "score": 1.2894
+            },
+            {
+              "rank": 3,
+              "page_number": 1,
+              "section": "3. Optional Add-ons Selected",
+              "snippet": "r explosion.\n Natural Disasters: Loss or damage caused by flood, cyclone, earthquake, landslide, storm, or other covered\nnatural events.\n Third-Party Liability: Legal liability for accidental injury, death, or covered property damage to a third party,\nsubject to policy terms and applicable law.\n Personal Accident Cover: Personal accident cover for the owner-driver up to ■15,00,000, subject to\ne",
+              "score": 1.07
+            }
+          ]
+        },
+        {
+          "tool": "compute_payout",
+          "args": {
+            "claim_amount": 30000.0,
+            "excess": 2000,
+            "claim_status": "excluded"
+          },
+          "timestamp": "2026-10-02T16:58:48.782553+00:00",
+          "tokens_this_call": 2326,
+          "cumulative_tokens": 6739,
+          "cumulative_cost": 0.0058136,
+          "elapsed_s": 62.95836680009961,
+          "status": "ok",
+          "result": {
+            "claim_amount": 30000.0,
+            "excess": 2000.0,
+            "claim_status": "excluded",
+            "payout": 0.0
+          }
+        }
+      ],
+      "handoffs": [],
+      "model": "qwen/qwen3.8-27b",
+      "degraded": false,
+      "guardrail_fired": false,
+      "worker_attempts": {},
+      "injected_failure": false
+    },
+    "orchestrator:W6-001": {
+      "claim_id": "W6-001",
+      "system": "orchestrator",
+      "iterations": 7,
+      "termination_reason": "completed",
+      "termination_detail": "The loss is covered under the own-damage section for collision, and no exclusion clause applies.",
+      "tokens": 6442,
+      "prompt_tokens": 5824,
+      "completion_tokens": 618,
+      "cost": 0.007131,
+      "latency_ms": 18994.9,
+      "output": {
+        "claim_id": "W6-001",
+        "claim_number": "CLM-2026-00412",
+        "loss_date": "2026-02-11",
+        "status": "approved",
+        "excess": 1500,
+        "exclusion_clause": null,
+        "payout": 28500.0
+      },
+      "pass_result": true,
+      "failures": [],
+      "steps": [
+        {
+          "phase": "manager",
+          "name": "get_claim",
+          "status": "ok",
+          "tokens": 0
+        },
+        {
+          "phase": "dispatch",
+          "name": "coverage_exclusions_worker",
+          "attempt": 1,
+          "status": "ok",
+          "error": "",
+          "tools": [
+            "search_policy",
+            "retrieve_policy_exclusions"
+          ],
+          "finding": {
+            "coverage_question": "Does the policy cover this loss, and does a policy exclusion clause apply? Quote the clause id if one applies.",
+            "policy_evidence": [
+              {
+                "section": "2. What This Policy Covers",
+                "page_number": 1,
+                "snippet": "Own Damage: Accidental damage to the insured vehicle caused by collision, overturning, impact, or accidental external means."
+              }
+            ],
+            "exclusion_clause": null,
+            "coverage_verdict": "covered",
+            "reasoning_summary": "The front-bumper damage from a low-speed collision is an own-damage loss caused by collision, which is explicitly covered under Section 2, and no exclusion clause was identified in the returned passages."
+          }
+        },
+        {
+          "phase": "dispatch",
+          "name": "adjuster_note_summary_worker",
+          "attempt": 1,
+          "status": "ok",
+          "error": "",
+          "tools": [
+            "get_claim"
+          ],
+          "finding": {
+            "claim_number": "CLM-2026-00412",
+            "loss_date": "2026-02-11",
+            "excess": 1500,
+            "key_facts": [
+              "Own-damage front bumper damage on a Honda Activa after a low-speed collision with a divider.",
+              "Assessor confirmed no engine damage and no third-party involvement.",
+              "Adjuster recommends repair of only the front bumper unit.",
+              "Exclusions reviewed; collision damage is covered under own damage and no exclusion applies."
+            ],
+            "denial_language": false,
+            "partial_approval": false,
+            "exclusion_mentioned": null,
+            "summary": "The claim covers own-damage front bumper repair for a Honda Activa following a low-speed collision with a divider, with no engine damage or third-party involvement. The adjuster recommends repairing only the front bumper unit, and no policy exclusion applies."
+          }
+        },
+        {
+          "phase": "synthesis",
+          "name": "decision",
+          "status": "approved",
+          "exclusion_clause": null,
+          "decision_note": "The loss is covered under the own-damage section for collision, and no exclusion clause applies.",
+          "guardrail_fired": false
+        },
+        {
+          "phase": "assemble",
+          "name": "compute_payout",
+          "status": "ok",
+          "status_decided": "approved",
+          "note": "'unclear' is not a payable status: no payout is computed and the claim is escalated in the answer"
+        }
+      ],
+      "handoffs": [
+        {
+          "ts": "2026-10-02T17:14:34+00:00",
+          "case": "W6-001",
+          "hop": "orchestrator->planner",
+          "call": 1,
+          "status": 200,
+          "prompt_tokens": 276,
+          "completion_tokens": 153,
+          "total_tokens": 429,
+          "cost_usd": 0.000833,
+          "latency_ms": 735.8,
+          "detail": "manager decomposes the claim question"
+        },
+        {
+          "ts": "2026-10-02T17:14:37+00:00",
+          "case": "W6-001",
+          "hop": "orchestrator->coverage_worker",
+          "call": 1,
+          "status": 200,
+          "prompt_tokens": 602,
+          "completion_tokens": 26,
+          "total_tokens": 628,
+          "cost_usd": 0.000586,
+          "latency_ms": 460.0,
+          "detail": "tool=search_policy status=ok"
+        },
+        {
+          "ts": "2026-10-02T17:14:39+00:00",
+          "case": "W6-001",
+          "hop": "orchestrator->coverage_worker",
+          "call": 2,
+          "status": 200,
+          "prompt_tokens": 1057,
+          "completion_tokens": 26,
+          "total_tokens": 1083,
+          "cost_usd": 0.00095,
+          "latency_ms": 421.4,
+          "detail": "tool=retrieve_policy_exclusions status=ok"
+        },
+        {
+          "ts": "2026-10-02T17:14:42+00:00",
+          "case": "W6-001",
+          "hop": "orchestrator->coverage_worker",
+          "call": 3,
+          "status": 200,
+          "prompt_tokens": 1514,
+          "completion_tokens": 146,
+          "total_tokens": 1660,
+          "cost_usd": 0.001795,
+          "latency_ms": 1086.8,
+          "detail": "finding emitted"
+        },
+        {
+          "ts": "2026-10-02T17:14:45+00:00",
+          "case": "W6-001",
+          "hop": "orchestrator->summary_worker",
+          "call": 1,
+          "status": 200,
+          "prompt_tokens": 584,
+          "completion_tokens": 27,
+          "total_tokens": 611,
+          "cost_usd": 0.000575,
+          "latency_ms": 555.1,
+          "detail": "tool=get_claim status=ok"
+        },
+        {
+          "ts": "2026-10-02T17:14:48+00:00",
+          "case": "W6-001",
+          "hop": "orchestrator->summary_worker",
+          "call": 2,
+          "status": 200,
+          "prompt_tokens": 905,
+          "completion_tokens": 193,
+          "total_tokens": 1098,
+          "cost_usd": 0.001496,
+          "latency_ms": 1167.4,
+          "detail": "finding emitted"
+        },
+        {
+          "ts": "2026-10-02T17:14:51+00:00",
+          "case": "W6-001",
+          "hop": "orchestrator->synthesis",
+          "call": 1,
+          "status": 200,
+          "prompt_tokens": 886,
+          "completion_tokens": 47,
+          "total_tokens": 933,
+          "cost_usd": 0.000897,
+          "latency_ms": 531.7,
+          "detail": "manager re-sends claim facts + both worker findings"
+        }
+      ],
+      "model": "qwen/qwen3.8-27b",
+      "injected_failure": false,
+      "degraded": false,
+      "guardrail_fired": false,
+      "worker_attempts": {
+        "coverage_exclusions_worker": 1,
+        "adjuster_note_summary_worker": 1
+      },
+      "plan": [
+        {
+          "worker": "coverage_exclusions_worker",
+          "scope": "Determine if the front-bumper repair for a Honda Activa is covered under the policy and identify any applicable exclusions.",
+          "inputs": [
+            "claim_id",
+            "title"
+          ]
+        },
+        {
+          "worker": "adjuster_note_summary_worker",
+          "scope": "Summarize the key facts, damage details, and adjuster observations from the notes for claim W6-001.",
+          "inputs": [
+            "claim_id",
+            "adjuster_notes"
+          ]
+        }
+      ]
+    },
+    "orchestrator:W6-002": {
+      "claim_id": "W6-002",
+      "system": "orchestrator",
+      "iterations": 7,
+      "termination_reason": "completed",
+      "termination_detail": "The claim is excluded because the Engine Protector add-on was not purchased, triggering exclusion clause Exc-7.4 for engine damage from water ingress.",
+      "tokens": 6387,
+      "prompt_tokens": 5761,
+      "completion_tokens": 626,
+      "cost": 0.007113,
+      "latency_ms": 74884.3,
+      "output": {
+        "claim_id": "W6-002",
+        "claim_number": "CLM-2026-00418",
+        "loss_date": "2026-03-02",
+        "status": "excluded",
+        "excess": 2500,
+        "exclusion_clause": "Exc-7.4",
+        "payout": 0.0
+      },
+      "pass_result": true,
+      "failures": [],
+      "steps": [
+        {
+          "phase": "manager",
+          "name": "get_claim",
+          "status": "ok",
+          "tokens": 0
+        },
+        {
+          "phase": "dispatch",
+          "name": "coverage_exclusions_worker",
+          "attempt": 1,
+          "status": "ok",
+          "error": "",
+          "tools": [
+            "retrieve_policy_exclusions",
+            "search_policy"
+          ],
+          "finding": {
+            "coverage_question": "Does the policy cover this loss, and does a policy exclusion clause apply? Quote the clause id if one applies.",
+            "policy_evidence": [
+              {
+                "section": "3. Optional Add-ons Selected",
+                "page_number": 1,
+                "snippet": "Engine Protector\nCovered engine damage resulting from water ingress, subject to exclusions."
+              }
+            ],
+            "exclusion_clause": "Exc-7.4",
+            "coverage_verdict": "excluded",
+            "reasoning_summary": "The adjuster notes state the Engine Protector add-on was not purchased and that exclusion clause Exc-7.4 excludes engine damage from water ingress unless the add-on is present, so the loss is excluded."
+          }
+        },
+        {
+          "phase": "dispatch",
+          "name": "adjuster_note_summary_worker",
+          "attempt": 1,
+          "status": "ok",
+          "error": "",
+          "tools": [
+            "get_claim"
+          ],
+          "finding": {
+            "claim_number": "CLM-2026-00418",
+            "loss_date": "2026-03-02",
+            "excess": 2500,
+            "key_facts": [
+              "Policyholder rode through a flooded road and reported engine water ingress.",
+              "Engine Protector add-on was NOT purchased.",
+              "Exclusion clause Exc-7.4 excludes engine damage from water ingress unless the Engine Protector add-on is present.",
+              "Adjuster recommends denial."
+            ],
+            "denial_language": true,
+            "partial_approval": false,
+            "exclusion_mentioned": "Exc-7.4",
+            "summary": "The claim involves engine water ingress after the policyholder rode through a flooded road on 2026-03-02. Because the Engine Protector add-on was not purchased, exclusion clause Exc-7.4 applies, and the adjuster recommends denial of the claim."
+          }
+        },
+        {
+          "phase": "synthesis",
+          "name": "decision",
+          "status": "excluded",
+          "exclusion_clause": "Exc-7.4",
+          "decision_note": "The claim is excluded because the Engine Protector add-on was not purchased, triggering exclusion clause Exc-7.4 for engine damage from water ingress.",
+          "guardrail_fired": false
+        },
+        {
+          "phase": "assemble",
+          "name": "compute_payout",
+          "status": "ok",
+          "status_decided": "excluded",
+          "note": "'unclear' is not a payable status: no payout is computed and the claim is escalated in the answer"
+        }
+      ],
+      "handoffs": [
+        {
+          "ts": "2026-10-02T17:14:55+00:00",
+          "case": "W6-002",
+          "hop": "orchestrator->planner",
+          "call": 1,
+          "status": 200,
+          "prompt_tokens": 274,
+          "completion_tokens": 137,
+          "total_tokens": 411,
+          "cost_usd": 0.000767,
+          "latency_ms": 994.7,
+          "detail": "manager decomposes the claim question"
+        },
+        {
+          "ts": "2026-10-02T17:14:57+00:00",
+          "case": "W6-002",
+          "hop": "orchestrator->coverage_worker",
+          "call": 1,
+          "status": 200,
+          "prompt_tokens": 592,
+          "completion_tokens": 27,
+          "total_tokens": 619,
+          "cost_usd": 0.000582,
+          "latency_ms": 562.0,
+          "detail": "tool=retrieve_policy_exclusions status=ok"
+        },
+        {
+          "ts": "2026-10-02T17:15:00+00:00",
+          "case": "W6-002",
+          "hop": "orchestrator->coverage_worker",
+          "call": 2,
+          "status": 200,
+          "prompt_tokens": 1046,
+          "completion_tokens": 30,
+          "total_tokens": 1076,
+          "cost_usd": 0.000957,
+          "latency_ms": 549.4,
+          "detail": "tool=search_policy status=ok"
+        },
+        {
+          "ts": "2026-10-02T17:15:03+00:00",
+          "case": "W6-002",
+          "hop": "orchestrator->coverage_worker",
+          "call": 3,
+          "status": 200,
+          "prompt_tokens": 1502,
+          "completion_tokens": 146,
+          "total_tokens": 1648,
+          "cost_usd": 0.001786,
+          "latency_ms": 1070.7,
+          "detail": "finding emitted"
+        },
+        {
+          "ts": "2026-10-02T17:15:05+00:00",
+          "case": "W6-002",
+          "hop": "orchestrator->summary_worker",
+          "call": 1,
+          "status": 200,
+          "prompt_tokens": 574,
+          "completion_tokens": 27,
+          "total_tokens": 601,
+          "cost_usd": 0.000567,
+          "latency_ms": 559.3,
+          "detail": "tool=get_claim status=ok"
+        },
+        {
+          "ts": "2026-10-02T17:15:08+00:00",
+          "case": "W6-002",
+          "hop": "orchestrator->summary_worker",
+          "call": 2,
+          "status": 200,
+          "prompt_tokens": 884,
+          "completion_tokens": 196,
+          "total_tokens": 1080,
+          "cost_usd": 0.001491,
+          "latency_ms": 965.7,
+          "detail": "finding emitted"
+        },
+        {
+          "ts": "2026-10-02T17:16:06+00:00",
+          "case": "W6-002",
+          "hop": "orchestrator->synthesis",
+          "call": 1,
+          "status": 200,
+          "prompt_tokens": 889,
+          "completion_tokens": 63,
+          "total_tokens": 952,
+          "cost_usd": 0.000963,
+          "latency_ms": 56160.5,
+          "detail": "manager re-sends claim facts + both worker findings"
+        }
+      ],
+      "model": "qwen/qwen3.8-27b",
+      "injected_failure": false,
+      "degraded": false,
+      "guardrail_fired": false,
+      "worker_attempts": {
+        "coverage_exclusions_worker": 1,
+        "adjuster_note_summary_worker": 1
+      },
+      "plan": [
+        {
+          "worker": "coverage_exclusions_worker",
+          "scope": "Determine if the water-ingress engine damage is covered or excluded under the policy terms.",
+          "inputs": [
+            "claim_id",
+            "title"
+          ]
+        },
+        {
+          "worker": "adjuster_note_summary_worker",
+          "scope": "Summarize the key facts and findings from the adjuster notes for the claim.",
+          "inputs": [
+            "claim_id",
+            "adjuster_notes"
+          ]
+        }
+      ]
+    },
+    "orchestrator:W6-003": {
+      "claim_id": "W6-003",
+      "system": "orchestrator",
+      "iterations": 7,
+      "termination_reason": "completed",
+      "termination_detail": "The loss is covered under the policy's own-damage provision for accidental collision, and no exclusion clause applies.",
+      "tokens": 6501,
+      "prompt_tokens": 5823,
+      "completion_tokens": 678,
+      "cost": 0.00737,
+      "latency_ms": 18858.5,
+      "output": {
+        "claim_id": "W6-003",
+        "claim_number": "CLM-2026-00425",
+        "loss_date": "2026-01-19",
+        "status": "approved",
+        "excess": 1800,
+        "exclusion_clause": null,
+        "payout": 28200.0
+      },
+      "pass_result": true,
+      "failures": [],
+      "steps": [
+        {
+          "phase": "manager",
+          "name": "get_claim",
+          "status": "ok",
+          "tokens": 0
+        },
+        {
+          "phase": "dispatch",
+          "name": "coverage_exclusions_worker",
+          "attempt": 1,
+          "status": "ok",
+          "error": "",
+          "tools": [
+            "search_policy",
+            "retrieve_policy_exclusions"
+          ],
+          "finding": {
+            "coverage_question": "Does the policy cover this loss, and does a policy exclusion clause apply? Quote the clause id if one applies.",
+            "policy_evidence": [
+              {
+                "section": "2. What This Policy Covers",
+                "page_number": 1,
+                "snippet": "Own Damage: Accidental damage to the insured vehicle caused by collision, overturning, impact, or accidental external means."
+              },
+              {
+                "section": "7. Sample Claim Scenario A",
+                "page_number": 3,
+                "snippet": "On 15 October 2026, the insured vehicle collided with another vehicle at low speed. The repair estimate was ■18,000. The surveyor confirmed that the accident occurred during the policy"
+              }
+            ],
+            "exclusion_clause": null,
+            "coverage_verdict": "covered",
+            "reasoning_summary": "The rear-end collision causing bumper and bracket damage falls under the policy's own-damage coverage for accidental collision, and no returned passage supports an applicable exclusion clause."
+          }
+        },
+        {
+          "phase": "dispatch",
+          "name": "adjuster_note_summary_worker",
+          "attempt": 1,
+          "status": "ok",
+          "error": "",
+          "tools": [
+            "get_claim"
+          ],
+          "finding": {
+            "claim_number": "CLM-2026-00425",
+            "loss_date": "2026-01-19",
+            "excess": 1800,
+            "key_facts": [
+              "Rear-end collision at low speed",
+              "Rear bumper and number-plate bracket damaged",
+              "No injuries",
+              "Both parties insured with us",
+              "Claim amount Rs 30000.0"
+            ],
+            "denial_language": false,
+            "partial_approval": false,
+            "exclusion_mentioned": null,
+            "summary": "Low-speed rear-end collision on 2026-01-19 causing damage to the rear bumper and number-plate bracket, with no injuries. Both parties are insured with the company, and the claim amount is Rs 30000.0 subject to a Rs 1800 excess."
+          }
+        },
+        {
+          "phase": "synthesis",
+          "name": "decision",
+          "status": "approved",
+          "exclusion_clause": null,
+          "decision_note": "The loss is covered under the policy's own-damage provision for accidental collision, and no exclusion clause applies.",
+          "guardrail_fired": false
+        },
+        {
+          "phase": "assemble",
+          "name": "compute_payout",
+          "status": "ok",
+          "status_decided": "approved",
+          "note": "'unclear' is not a payable status: no payout is computed and the claim is escalated in the answer"
+        }
+      ],
+      "handoffs": [
+        {
+          "ts": "2026-10-02T17:16:10+00:00",
+          "case": "W6-003",
+          "hop": "orchestrator->planner",
+          "call": 1,
+          "status": 200,
+          "prompt_tokens": 273,
+          "completion_tokens": 143,
+          "total_tokens": 416,
+          "cost_usd": 0.00079,
+          "latency_ms": 878.5,
+          "detail": "manager decomposes the claim question"
+        },
+        {
+          "ts": "2026-10-02T17:16:13+00:00",
+          "case": "W6-003",
+          "hop": "orchestrator->coverage_worker",
+          "call": 1,
+          "status": 200,
+          "prompt_tokens": 571,
+          "completion_tokens": 32,
+          "total_tokens": 603,
+          "cost_usd": 0.000585,
+          "latency_ms": 431.4,
+          "detail": "tool=search_policy status=ok"
+        },
+        {
+          "ts": "2026-10-02T17:16:15+00:00",
+          "case": "W6-003",
+          "hop": "orchestrator->coverage_worker",
+          "call": 2,
+          "status": 200,
+          "prompt_tokens": 1084,
+          "completion_tokens": 29,
+          "total_tokens": 1113,
+          "cost_usd": 0.000983,
+          "latency_ms": 455.4,
+          "detail": "tool=retrieve_policy_exclusions status=ok"
+        },
+        {
+          "ts": "2026-10-02T17:16:18+00:00",
+          "case": "W6-003",
+          "hop": "orchestrator->coverage_worker",
+          "call": 3,
+          "status": 200,
+          "prompt_tokens": 1556,
+          "completion_tokens": 207,
+          "total_tokens": 1763,
+          "cost_usd": 0.002073,
+          "latency_ms": 888.6,
+          "detail": "finding emitted"
+        },
+        {
+          "ts": "2026-10-02T17:16:21+00:00",
+          "case": "W6-003",
+          "hop": "orchestrator->summary_worker",
+          "call": 1,
+          "status": 200,
+          "prompt_tokens": 553,
+          "completion_tokens": 27,
+          "total_tokens": 580,
+          "cost_usd": 0.00055,
+          "latency_ms": 654.6,
+          "detail": "tool=get_claim status=ok"
+        },
+        {
+          "ts": "2026-10-02T17:16:24+00:00",
+          "case": "W6-003",
+          "hop": "orchestrator->summary_worker",
+          "call": 2,
+          "status": 200,
+          "prompt_tokens": 842,
+          "completion_tokens": 190,
+          "total_tokens": 1032,
+          "cost_usd": 0.001434,
+          "latency_ms": 940.9,
+          "detail": "finding emitted"
+        },
+        {
+          "ts": "2026-10-02T17:16:26+00:00",
+          "case": "W6-003",
+          "hop": "orchestrator->synthesis",
+          "call": 1,
+          "status": 200,
+          "prompt_tokens": 944,
+          "completion_tokens": 50,
+          "total_tokens": 994,
+          "cost_usd": 0.000955,
+          "latency_ms": 582.3,
+          "detail": "manager re-sends claim facts + both worker findings"
+        }
+      ],
+      "model": "qwen/qwen3.8-27b",
+      "injected_failure": false,
+      "degraded": false,
+      "guardrail_fired": false,
+      "worker_attempts": {
+        "coverage_exclusions_worker": 1,
+        "adjuster_note_summary_worker": 1
+      },
+      "plan": [
+        {
+          "worker": "coverage_exclusions_worker",
+          "scope": "Determine if the rear-end collision is covered under the policy and identify any applicable exclusions.",
+          "inputs": [
+            "claim_id",
+            "title"
+          ]
+        },
+        {
+          "worker": "adjuster_note_summary_worker",
+          "scope": "Summarize the key facts and findings from the adjuster notes for claim W6-003.",
+          "inputs": [
+            "claim_id",
+            "adjuster_notes"
+          ]
+        }
+      ]
+    },
+    "orchestrator:W6-004": {
+      "claim_id": "W6-004",
+      "system": "orchestrator",
+      "iterations": 6,
+      "termination_reason": "completed",
+      "termination_detail": "The claim is excluded because the driver was under the influence of alcohol, triggering exclusion clause Exc-5.1.",
+      "tokens": 4703,
+      "prompt_tokens": 4124,
+      "completion_tokens": 579,
+      "cost": 0.005615,
+      "latency_ms": 15945.7,
+      "output": {
+        "claim_id": "W6-004",
+        "claim_number": "CLM-2026-00431",
+        "loss_date": "2026-02-27",
+        "status": "excluded",
+        "excess": 2000,
+        "exclusion_clause": "Exc-5.1",
+        "payout": 0.0
+      },
+      "pass_result": true,
+      "failures": [],
+      "steps": [
+        {
+          "phase": "manager",
+          "name": "get_claim",
+          "status": "ok",
+          "tokens": 0
+        },
+        {
+          "phase": "dispatch",
+          "name": "coverage_exclusions_worker",
+          "attempt": 1,
+          "status": "ok",
+          "error": "",
+          "tools": [
+            "retrieve_policy_exclusions"
+          ],
+          "finding": {
+            "coverage_question": "Does the policy cover this loss, and does a policy exclusion clause apply? Quote the clause id if one applies.",
+            "policy_evidence": [
+              {
+                "section": "5. Important Exclusions",
+                "page_number": 2,
+                "snippet": "Damage occurring while the driver is under the influence of alcohol or illegal drugs"
+              }
+            ],
+            "exclusion_clause": "Exc-5.1",
+            "coverage_verdict": "excluded",
+            "reasoning_summary": "The adjuster notes state the driver was under the influence of alcohol and cite exclusion clause Exc-5.1, which aligns with the policy's exclusion for damage occurring while the driver is under the influence of alcohol."
+          }
+        },
+        {
+          "phase": "dispatch",
+          "name": "adjuster_note_summary_worker",
+          "attempt": 1,
+          "status": "ok",
+          "error": "",
+          "tools": [
+            "get_claim"
+          ],
+          "finding": {
+            "claim_number": "CLM-2026-00431",
+            "loss_date": "2026-02-27",
+            "excess": 2000,
+            "key_facts": [
+              "Vehicle was driven while under the influence of alcohol after an accident.",
+              "Police report flags alcohol involvement.",
+              "Adjuster cites exclusion clause Exc-5.1, which excludes claims arising while the driver is intoxicated.",
+              "Adjuster recommends denial of the claim."
+            ],
+            "denial_language": true,
+            "partial_approval": false,
+            "exclusion_mentioned": "Exc-5.1",
+            "summary": "The claim involves a vehicle driven while under the influence of alcohol, as confirmed by a police report. The adjuster cites exclusion clause Exc-5.1 and recommends denial of the claim."
+          }
+        },
+        {
+          "phase": "synthesis",
+          "name": "decision",
+          "status": "excluded",
+          "exclusion_clause": "Exc-5.1",
+          "decision_note": "The claim is excluded because the driver was under the influence of alcohol, triggering exclusion clause Exc-5.1.",
+          "guardrail_fired": false
+        },
+        {
+          "phase": "assemble",
+          "name": "compute_payout",
+          "status": "ok",
+          "status_decided": "excluded",
+          "note": "'unclear' is not a payable status: no payout is computed and the claim is escalated in the answer"
+        }
+      ],
+      "handoffs": [
+        {
+          "ts": "2026-10-02T17:16:30+00:00",
+          "case": "W6-004",
+          "hop": "orchestrator->planner",
+          "call": 1,
+          "status": 200,
+          "prompt_tokens": 272,
+          "completion_tokens": 144,
+          "total_tokens": 416,
+          "cost_usd": 0.000794,
+          "latency_ms": 780.6,
+          "detail": "manager decomposes the claim question"
+        },
+        {
+          "ts": "2026-10-02T17:16:33+00:00",
+          "case": "W6-004",
+          "hop": "orchestrator->coverage_worker",
+          "call": 1,
+          "status": 200,
+          "prompt_tokens": 570,
+          "completion_tokens": 29,
+          "total_tokens": 599,
+          "cost_usd": 0.000572,
+          "latency_ms": 397.5,
+          "detail": "tool=retrieve_policy_exclusions status=ok"
+        },
+        {
+          "ts": "2026-10-02T17:16:35+00:00",
+          "case": "W6-004",
+          "hop": "orchestrator->coverage_worker",
+          "call": 2,
+          "status": 200,
+          "prompt_tokens": 1021,
+          "completion_tokens": 146,
+          "total_tokens": 1167,
+          "cost_usd": 0.001401,
+          "latency_ms": 733.1,
+          "detail": "finding emitted"
+        },
+        {
+          "ts": "2026-10-02T17:16:38+00:00",
+          "case": "W6-004",
+          "hop": "orchestrator->summary_worker",
+          "call": 1,
+          "status": 200,
+          "prompt_tokens": 552,
+          "completion_tokens": 27,
+          "total_tokens": 579,
+          "cost_usd": 0.00055,
+          "latency_ms": 599.9,
+          "detail": "tool=get_claim status=ok"
+        },
+        {
+          "ts": "2026-10-02T17:16:41+00:00",
+          "case": "W6-004",
+          "hop": "orchestrator->summary_worker",
+          "call": 2,
+          "status": 200,
+          "prompt_tokens": 840,
+          "completion_tokens": 176,
+          "total_tokens": 1016,
+          "cost_usd": 0.001376,
+          "latency_ms": 775.4,
+          "detail": "finding emitted"
+        },
+        {
+          "ts": "2026-10-02T17:16:43+00:00",
+          "case": "W6-004",
+          "hop": "orchestrator->synthesis",
+          "call": 1,
+          "status": 200,
+          "prompt_tokens": 869,
+          "completion_tokens": 57,
+          "total_tokens": 926,
+          "cost_usd": 0.000923,
+          "latency_ms": 648.6,
+          "detail": "manager re-sends claim facts + both worker findings"
+        }
+      ],
+      "model": "qwen/qwen3.8-27b",
+      "injected_failure": false,
+      "degraded": false,
+      "guardrail_fired": false,
+      "worker_attempts": {
+        "coverage_exclusions_worker": 1,
+        "adjuster_note_summary_worker": 1
+      },
+      "plan": [
+        {
+          "worker": "coverage_exclusions_worker",
+          "scope": "Determine if the policy excludes coverage for incidents involving drink-driving or refusal to submit to a breath test.",
+          "inputs": [
+            "claim_id",
+            "title"
+          ]
+        },
+        {
+          "worker": "adjuster_note_summary_worker",
+          "scope": "Summarize the adjuster's notes to extract key facts regarding the incident and the insured's actions.",
+          "inputs": [
+            "claim_id",
+            "adjuster_notes"
+          ]
+        }
+      ]
+    },
+    "orchestrator:W6-005": {
+      "claim_id": "W6-005",
+      "system": "orchestrator",
+      "iterations": 7,
+      "termination_reason": "completed",
+      "termination_detail": "The loss is covered under the Natural Disasters add-on and no exclusion clause applies.",
+      "tokens": 6392,
+      "prompt_tokens": 5656,
+      "completion_tokens": 736,
+      "cost": 0.007469,
+      "latency_ms": 73841.8,
+      "output": {
+        "claim_id": "W6-005",
+        "claim_number": "CLM-2026-00444",
+        "loss_date": null,
+        "status": "approved",
+        "excess": 2200,
+        "exclusion_clause": null,
+        "payout": 27800.0
+      },
+      "pass_result": true,
+      "failures": [],
+      "steps": [
+        {
+          "phase": "manager",
+          "name": "get_claim",
+          "status": "ok",
+          "tokens": 0
+        },
+        {
+          "phase": "dispatch",
+          "name": "coverage_exclusions_worker",
+          "attempt": 1,
+          "status": "ok",
+          "error": "",
+          "tools": [
+            "search_policy",
+            "retrieve_policy_exclusions"
+          ],
+          "finding": {
+            "coverage_question": "Does the policy cover this loss, and does a policy exclusion clause apply? Quote the clause id if one applies.",
+            "policy_evidence": [
+              {
+                "section": "3. Optional Add-ons Selected",
+                "page_number": 1,
+                "snippet": "Natural Disasters: Loss or damage caused by flood, cyclone, earthquake, landslide, storm, or other covered natural events."
+              },
+              {
+                "section": "2. What This Policy Covers",
+                "page_number": 1,
+                "snippet": "Own Damage: Accidental damage to the insured vehicle caused by collision, overturning, impact, or accidental external means."
+              },
+              {
+                "section": "5. Important Exclusions",
+                "page_number": 2,
+                "snippet": "Normal wear and tear, gradual deterioration, or depreciation except where an applicable add-on provides otherwise. Mechanical or electrical breakdown not directly caused by an insured accident. Damage occurring while the vehicle is driven by a person without a valid driving licence. Damage occurring while the driver is under the influence of alcohol or illegal drugs"
+              }
+            ],
+            "exclusion_clause": null,
+            "coverage_verdict": "covered",
+            "reasoning_summary": "The storm-caused tree branch damage to the parked car falls under the Natural Disasters add-on (storm) and Own Damage (accidental external means), and none of the listed exclusions apply to this event."
+          }
+        },
+        {
+          "phase": "dispatch",
+          "name": "adjuster_note_summary_worker",
+          "attempt": 1,
+          "status": "ok",
+          "error": "",
+          "tools": [
+            "get_claim"
+          ],
+          "finding": {
+            "claim_number": "CLM-2026-00444",
+            "loss_date": null,
+            "excess": 2200,
+            "key_facts": [
+              "Tree branch fell on parked car during a storm.",
+              "Damage includes roof dent and windshield crack.",
+              "Policyholder reports the event occurred during the second week of March.",
+              "Exact loss date is pending confirmation from the police FIR.",
+              "Claim amount is Rs 30,000.00."
+            ],
+            "denial_language": false,
+            "partial_approval": false,
+            "exclusion_mentioned": null,
+            "summary": "A tree branch fell on a parked car during a storm, causing roof dent and windshield crack damage. The exact loss date is currently unknown and is pending confirmation from the police FIR, with the policyholder reporting the event occurred in the second week of March."
+          }
+        },
+        {
+          "phase": "synthesis",
+          "name": "decision",
+          "status": "approved",
+          "exclusion_clause": null,
+          "decision_note": "The loss is covered under the Natural Disasters add-on and no exclusion clause applies.",
+          "guardrail_fired": false
+        },
+        {
+          "phase": "assemble",
+          "name": "compute_payout",
+          "status": "ok",
+          "status_decided": "approved",
+          "note": "'unclear' is not a payable status: no payout is computed and the claim is escalated in the answer"
+        }
+      ],
+      "handoffs": [
+        {
+          "ts": "2026-10-02T17:16:47+00:00",
+          "case": "W6-005",
+          "hop": "orchestrator->planner",
+          "call": 1,
+          "status": 200,
+          "prompt_tokens": 274,
+          "completion_tokens": 141,
+          "total_tokens": 415,
+          "cost_usd": 0.000783,
+          "latency_ms": 672.2,
+          "detail": "manager decomposes the claim question"
+        },
+        {
+          "ts": "2026-10-02T17:16:49+00:00",
+          "case": "W6-005",
+          "hop": "orchestrator->coverage_worker",
+          "call": 1,
+          "status": 200,
+          "prompt_tokens": 568,
+          "completion_tokens": 27,
+          "total_tokens": 595,
+          "cost_usd": 0.000562,
+          "latency_ms": 387.5,
+          "detail": "tool=search_policy status=ok"
+        },
+        {
+          "ts": "2026-10-02T17:17:47+00:00",
+          "case": "W6-005",
+          "hop": "orchestrator->coverage_worker",
+          "call": 2,
+          "status": 200,
+          "prompt_tokens": 1003,
+          "completion_tokens": 30,
+          "total_tokens": 1033,
+          "cost_usd": 0.000922,
+          "latency_ms": 55717.3,
+          "detail": "tool=retrieve_policy_exclusions status=ok"
+        },
+        {
+          "ts": "2026-10-02T17:17:50+00:00",
+          "case": "W6-005",
+          "hop": "orchestrator->coverage_worker",
+          "call": 3,
+          "status": 200,
+          "prompt_tokens": 1443,
+          "completion_tokens": 282,
+          "total_tokens": 1725,
+          "cost_usd": 0.002282,
+          "latency_ms": 1040.1,
+          "detail": "finding emitted"
+        },
+        {
+          "ts": "2026-10-02T17:17:53+00:00",
+          "case": "W6-005",
+          "hop": "orchestrator->summary_worker",
+          "call": 1,
+          "status": 200,
+          "prompt_tokens": 550,
+          "completion_tokens": 27,
+          "total_tokens": 577,
+          "cost_usd": 0.000548,
+          "latency_ms": 688.1,
+          "detail": "tool=get_claim status=ok"
+        },
+        {
+          "ts": "2026-10-02T17:17:56+00:00",
+          "case": "W6-005",
+          "hop": "orchestrator->summary_worker",
+          "call": 2,
+          "status": 200,
+          "prompt_tokens": 815,
+          "completion_tokens": 184,
+          "total_tokens": 999,
+          "cost_usd": 0.001388,
+          "latency_ms": 732.8,
+          "detail": "finding emitted"
+        },
+        {
+          "ts": "2026-10-02T17:17:58+00:00",
+          "case": "W6-005",
+          "hop": "orchestrator->synthesis",
+          "call": 1,
+          "status": 200,
+          "prompt_tokens": 1003,
+          "completion_tokens": 45,
+          "total_tokens": 1048,
+          "cost_usd": 0.000982,
+          "latency_ms": 584.0,
+          "detail": "manager re-sends claim facts + both worker findings"
+        }
+      ],
+      "model": "qwen/qwen3.8-27b",
+      "injected_failure": false,
+      "degraded": false,
+      "guardrail_fired": false,
+      "worker_attempts": {
+        "coverage_exclusions_worker": 1,
+        "adjuster_note_summary_worker": 1
+      },
+      "plan": [
+        {
+          "worker": "coverage_exclusions_worker",
+          "scope": "Determine if tree-branch storm damage is covered under the policy and identify any applicable exclusions.",
+          "inputs": [
+            "claim_id",
+            "title"
+          ]
+        },
+        {
+          "worker": "adjuster_note_summary_worker",
+          "scope": "Summarize the adjuster notes to extract key facts, damage details, and next steps.",
+          "inputs": [
+            "claim_id",
+            "adjuster_notes"
+          ]
+        }
+      ]
+    },
+    "orchestrator:W6-006": {
+      "claim_id": "W6-006",
+      "system": "orchestrator",
+      "iterations": 7,
+      "termination_reason": "completed",
+      "termination_detail": "The coverage finding is unclear with no specific exclusion clause identified, and the summary indicates a partial approval where the covered vehicle theft portion is payable.",
+      "tokens": 6578,
+      "prompt_tokens": 5835,
+      "completion_tokens": 743,
+      "cost": 0.00764,
+      "latency_ms": 71001.3,
+      "output": {
+        "claim_id": "W6-006",
+        "claim_number": "CLM-2026-00455",
+        "loss_date": "2026-04-02",
+        "status": "approved",
+        "excess": 1800,
+        "exclusion_clause": null,
+        "payout": 28200.0
+      },
+      "pass_result": true,
+      "failures": [],
+      "steps": [
+        {
+          "phase": "manager",
+          "name": "get_claim",
+          "status": "ok",
+          "tokens": 0
+        },
+        {
+          "phase": "dispatch",
+          "name": "coverage_exclusions_worker",
+          "attempt": 1,
+          "status": "ok",
+          "error": "",
+          "tools": [
+            "retrieve_policy_exclusions",
+            "search_policy"
+          ],
+          "finding": {
+            "coverage_question": "Does the policy cover the theft of an undeclared aftermarket stereo, and does a policy exclusion clause apply?",
+            "policy_evidence": [
+              {
+                "section": "3. Optional Add-ons Selected",
+                "page_number": 1,
+                "snippet": "ligibility and policy conditions.\n3. Optional Add-ons Selected\nAdd-on\nBenefit / Limit\nZero Depreciation\nEligible replacement parts may be settled without applying standard depreciation, subject to terms."
+              },
+              {
+                "section": "policy",
+                "page_number": 3,
+                "snippet": "6. Claims Procedure\nStep\nRequired Action\n1\nNotify SafeRide within 48 hours of an accident, theft, or covered loss."
+              }
+            ],
+            "exclusion_clause": null,
+            "coverage_verdict": "unclear",
+            "reasoning_summary": "The adjuster notes state undeclared non-OEM parts are not covered unless declared in advance, but no returned policy passage contains a specific exclusion clause id for undeclared aftermarket parts, so the exclusion cannot be confirmed from policy wording."
+          }
+        },
+        {
+          "phase": "dispatch",
+          "name": "adjuster_note_summary_worker",
+          "attempt": 1,
+          "status": "ok",
+          "error": "",
+          "tools": [
+            "get_claim"
+          ],
+          "finding": {
+            "claim_number": "CLM-2026-00455",
+            "loss_date": "2026-04-02",
+            "excess": 1800,
+            "key_facts": [
+              "Undeclared aftermarket stereo unit was stolen.",
+              "The vehicle itself was not otherwise damaged.",
+              "Adjuster notes state undeclared non-OEM parts such as stereos are not covered unless declared in advance.",
+              "Recommendation is partial: vehicle theft is covered, but the aftermarket item is excluded."
+            ],
+            "denial_language": false,
+            "partial_approval": true,
+            "exclusion_mentioned": null,
+            "summary": "Claim CLM-2026-00455 (loss date 2026-04-02, excess 1800) involves the theft of an undeclared aftermarket stereo from a vehicle that was not otherwise damaged. The adjuster recommends a partial approval: the vehicle theft is covered, while the undeclared non-OEM stereo is excluded because it was not declared in advance."
+          }
+        },
+        {
+          "phase": "synthesis",
+          "name": "decision",
+          "status": "approved",
+          "exclusion_clause": null,
+          "decision_note": "The coverage finding is unclear with no specific exclusion clause identified, and the summary indicates a partial approval where the covered vehicle theft portion is payable.",
+          "guardrail_fired": false
+        },
+        {
+          "phase": "assemble",
+          "name": "compute_payout",
+          "status": "ok",
+          "status_decided": "approved",
+          "note": "'unclear' is not a payable status: no payout is computed and the claim is escalated in the answer"
+        }
+      ],
+      "handoffs": [
+        {
+          "ts": "2026-10-02T17:18:02+00:00",
+          "case": "W6-006",
+          "hop": "orchestrator->planner",
+          "call": 1,
+          "status": 200,
+          "prompt_tokens": 274,
+          "completion_tokens": 147,
+          "total_tokens": 421,
+          "cost_usd": 0.000807,
+          "latency_ms": 870.7,
+          "detail": "manager decomposes the claim question"
+        },
+        {
+          "ts": "2026-10-02T17:18:05+00:00",
+          "case": "W6-006",
+          "hop": "orchestrator->coverage_worker",
+          "call": 1,
+          "status": 200,
+          "prompt_tokens": 582,
+          "completion_tokens": 32,
+          "total_tokens": 614,
+          "cost_usd": 0.000594,
+          "latency_ms": 458.7,
+          "detail": "tool=retrieve_policy_exclusions status=ok"
+        },
+        {
+          "ts": "2026-10-02T17:18:07+00:00",
+          "case": "W6-006",
+          "hop": "orchestrator->coverage_worker",
+          "call": 2,
+          "status": 200,
+          "prompt_tokens": 1046,
+          "completion_tokens": 34,
+          "total_tokens": 1080,
+          "cost_usd": 0.000973,
+          "latency_ms": 590.6,
+          "detail": "tool=search_policy status=ok"
+        },
+        {
+          "ts": "2026-10-02T17:18:10+00:00",
+          "case": "W6-006",
+          "hop": "orchestrator->coverage_worker",
+          "call": 3,
+          "status": 200,
+          "prompt_tokens": 1510,
+          "completion_tokens": 220,
+          "total_tokens": 1730,
+          "cost_usd": 0.002088,
+          "latency_ms": 1064.5,
+          "detail": "finding emitted"
+        },
+        {
+          "ts": "2026-10-02T17:18:13+00:00",
+          "case": "W6-006",
+          "hop": "orchestrator->summary_worker",
+          "call": 1,
+          "status": 200,
+          "prompt_tokens": 564,
+          "completion_tokens": 27,
+          "total_tokens": 591,
+          "cost_usd": 0.000559,
+          "latency_ms": 400.1,
+          "detail": "tool=get_claim status=ok"
+        },
+        {
+          "ts": "2026-10-02T17:18:15+00:00",
+          "case": "W6-006",
+          "hop": "orchestrator->summary_worker",
+          "call": 2,
+          "status": 200,
+          "prompt_tokens": 865,
+          "completion_tokens": 227,
+          "total_tokens": 1092,
+          "cost_usd": 0.0016,
+          "latency_ms": 793.5,
+          "detail": "finding emitted"
+        },
+        {
+          "ts": "2026-10-02T17:19:10+00:00",
+          "case": "W6-006",
+          "hop": "orchestrator->synthesis",
+          "call": 1,
+          "status": 200,
+          "prompt_tokens": 994,
+          "completion_tokens": 56,
+          "total_tokens": 1050,
+          "cost_usd": 0.001019,
+          "latency_ms": 52803.4,
+          "detail": "manager re-sends claim facts + both worker findings"
+        }
+      ],
+      "model": "qwen/qwen3.8-27b",
+      "injected_failure": false,
+      "degraded": false,
+      "guardrail_fired": false,
+      "worker_attempts": {
+        "coverage_exclusions_worker": 1,
+        "adjuster_note_summary_worker": 1
+      },
+      "plan": [
+        {
+          "worker": "coverage_exclusions_worker",
+          "scope": "Determine if the theft of an aftermarket stereo is covered under the policy and identify any relevant exclusions.",
+          "inputs": [
+            "claim_id",
+            "title"
+          ]
+        },
+        {
+          "worker": "adjuster_note_summary_worker",
+          "scope": "Summarize the adjuster notes to extract key details about the theft of the aftermarket stereo.",
+          "inputs": [
+            "claim_id",
+            "adjuster_notes"
+          ]
+        }
+      ]
+    },
+    "orchestrator:W6-008": {
+      "claim_id": "W6-008",
+      "system": "orchestrator",
+      "iterations": 7,
+      "termination_reason": "completed",
+      "termination_detail": "The claim is excluded because the vehicle was driven by an unlicensed individual, triggering exclusion clause Exc-2.2.",
+      "tokens": 6460,
+      "prompt_tokens": 5782,
+      "completion_tokens": 678,
+      "cost": 0.007338,
+      "latency_ms": 18928.8,
+      "output": {
+        "claim_id": "W6-008",
+        "claim_number": "CLM-2026-00471",
+        "loss_date": "2026-03-18",
+        "status": "excluded",
+        "excess": 2500,
+        "exclusion_clause": "Exc-2.2",
+        "payout": 0.0
+      },
+      "pass_result": true,
+      "failures": [],
+      "steps": [
+        {
+          "phase": "manager",
+          "name": "get_claim",
+          "status": "ok",
+          "tokens": 0
+        },
+        {
+          "phase": "dispatch",
+          "name": "coverage_exclusions_worker",
+          "attempt": 1,
+          "status": "ok",
+          "error": "",
+          "tools": [
+            "retrieve_policy_exclusions",
+            "search_policy"
+          ],
+          "finding": {
+            "coverage_question": "Does the policy cover this loss, and does a policy exclusion clause apply? Quote the clause id if one applies.",
+            "policy_evidence": [
+              {
+                "section": "8. Sample Claim Scenario B",
+                "page_number": 3,
+                "snippet": "On 20 November 2026, the vehicle suffered damage while being ridden by a person who did not possess a valid driving licence. The claim was rejected bec"
+              },
+              {
+                "section": "9. No Claim Bonus",
+                "page_number": 3,
+                "snippet": "ause driving without a valid licence is an exclusion under this sample policy."
+              }
+            ],
+            "exclusion_clause": "Exc-2.2",
+            "coverage_verdict": "excluded",
+            "reasoning_summary": "The adjuster notes confirm the driver lacked a valid licence and cite Exc-2.2, and policy passages confirm driving without a valid licence is an exclusion, so the loss is excluded."
+          }
+        },
+        {
+          "phase": "dispatch",
+          "name": "adjuster_note_summary_worker",
+          "attempt": 1,
+          "status": "ok",
+          "error": "",
+          "tools": [
+            "get_claim"
+          ],
+          "finding": {
+            "claim_number": "CLM-2026-00471",
+            "loss_date": "2026-03-18",
+            "excess": 2500,
+            "key_facts": [
+              "Accident occurred while the vehicle was driven by a person without a valid driving licence.",
+              "The driver was not named on the policy.",
+              "Adjuster notes cite exclusion clause Exc-2.2, which excludes claims arising from unlicensed drivers.",
+              "Adjuster recommends denial of the claim."
+            ],
+            "denial_language": true,
+            "partial_approval": false,
+            "exclusion_mentioned": "Exc-2.2",
+            "summary": "The claim involves an accident on 2026-03-18 where the vehicle was driven by an unlicensed individual not named on the policy. The adjuster cites exclusion clause Exc-2.2 and recommends denial of the claim."
+          }
+        },
+        {
+          "phase": "synthesis",
+          "name": "decision",
+          "status": "excluded",
+          "exclusion_clause": "Exc-2.2",
+          "decision_note": "The claim is excluded because the vehicle was driven by an unlicensed individual, triggering exclusion clause Exc-2.2.",
+          "guardrail_fired": false
+        },
+        {
+          "phase": "assemble",
+          "name": "compute_payout",
+          "status": "ok",
+          "status_decided": "excluded",
+          "note": "'unclear' is not a payable status: no payout is computed and the claim is escalated in the answer"
+        }
+      ],
+      "handoffs": [
+        {
+          "ts": "2026-10-02T17:19:14+00:00",
+          "case": "W6-008",
+          "hop": "orchestrator->planner",
+          "call": 1,
+          "status": 200,
+          "prompt_tokens": 273,
+          "completion_tokens": 144,
+          "total_tokens": 417,
+          "cost_usd": 0.000794,
+          "latency_ms": 842.3,
+          "detail": "manager decomposes the claim question"
+        },
+        {
+          "ts": "2026-10-02T17:19:16+00:00",
+          "case": "W6-008",
+          "hop": "orchestrator->coverage_worker",
+          "call": 1,
+          "status": 200,
+          "prompt_tokens": 578,
+          "completion_tokens": 26,
+          "total_tokens": 604,
+          "cost_usd": 0.000566,
+          "latency_ms": 470.2,
+          "detail": "tool=retrieve_policy_exclusions status=ok"
+        },
+        {
+          "ts": "2026-10-02T17:19:19+00:00",
+          "case": "W6-008",
+          "hop": "orchestrator->coverage_worker",
+          "call": 2,
+          "status": 200,
+          "prompt_tokens": 1052,
+          "completion_tokens": 30,
+          "total_tokens": 1082,
+          "cost_usd": 0.000962,
+          "latency_ms": 647.3,
+          "detail": "tool=search_policy status=ok"
+        },
+        {
+          "ts": "2026-10-02T17:19:22+00:00",
+          "case": "W6-008",
+          "hop": "orchestrator->coverage_worker",
+          "call": 3,
+          "status": 200,
+          "prompt_tokens": 1523,
+          "completion_tokens": 197,
+          "total_tokens": 1720,
+          "cost_usd": 0.002006,
+          "latency_ms": 982.7,
+          "detail": "finding emitted"
+        },
+        {
+          "ts": "2026-10-02T17:19:25+00:00",
+          "case": "W6-008",
+          "hop": "orchestrator->summary_worker",
+          "call": 1,
+          "status": 200,
+          "prompt_tokens": 560,
+          "completion_tokens": 27,
+          "total_tokens": 587,
+          "cost_usd": 0.000556,
+          "latency_ms": 408.2,
+          "detail": "tool=get_claim status=ok"
+        },
+        {
+          "ts": "2026-10-02T17:19:28+00:00",
+          "case": "W6-008",
+          "hop": "orchestrator->summary_worker",
+          "call": 2,
+          "status": 200,
+          "prompt_tokens": 856,
+          "completion_tokens": 196,
+          "total_tokens": 1052,
+          "cost_usd": 0.001469,
+          "latency_ms": 988.9,
+          "detail": "finding emitted"
+        },
+        {
+          "ts": "2026-10-02T17:19:30+00:00",
+          "case": "W6-008",
+          "hop": "orchestrator->synthesis",
+          "call": 1,
+          "status": 200,
+          "prompt_tokens": 940,
+          "completion_tokens": 58,
+          "total_tokens": 998,
+          "cost_usd": 0.000984,
+          "latency_ms": 567.5,
+          "detail": "manager re-sends claim facts + both worker findings"
+        }
+      ],
+      "model": "qwen/qwen3.8-27b",
+      "injected_failure": false,
+      "degraded": false,
+      "guardrail_fired": false,
+      "worker_attempts": {
+        "coverage_exclusions_worker": 1,
+        "adjuster_note_summary_worker": 1
+      },
+      "plan": [
+        {
+          "worker": "coverage_exclusions_worker",
+          "scope": "Determine if the unlicensed-driver status triggers a policy exclusion or voids coverage for the accident.",
+          "inputs": [
+            "claim_id",
+            "title"
+          ]
+        },
+        {
+          "worker": "adjuster_note_summary_worker",
+          "scope": "Summarize the adjuster's notes to extract key facts regarding the driver's license status and accident circumstances.",
+          "inputs": [
+            "claim_id",
+            "adjuster_notes"
+          ]
+        }
+      ]
+    },
+    "orchestrator:W6-009": {
+      "claim_id": "W6-009",
+      "system": "orchestrator",
+      "iterations": 7,
+      "termination_reason": "completed",
+      "termination_detail": "The loss is covered under own damage with no applicable exclusion clause, and the partial approval for the confirmed event results in an approved status.",
+      "tokens": 6445,
+      "prompt_tokens": 5766,
+      "completion_tokens": 679,
+      "cost": 0.007329,
+      "latency_ms": 74865.7,
+      "output": {
+        "claim_id": "W6-009",
+        "claim_number": "CLM-2026-00480",
+        "loss_date": "2026-02-08",
+        "status": "approved",
+        "excess": 2000,
+        "exclusion_clause": null,
+        "payout": 28000.0
+      },
+      "pass_result": true,
+      "failures": [],
+      "steps": [
+        {
+          "phase": "manager",
+          "name": "get_claim",
+          "status": "ok",
+          "tokens": 0
+        },
+        {
+          "phase": "dispatch",
+          "name": "coverage_exclusions_worker",
+          "attempt": 1,
+          "status": "ok",
+          "error": "",
+          "tools": [
+            "search_policy",
+            "retrieve_policy_exclusions"
+          ],
+          "finding": {
+            "coverage_question": "Does the policy cover this loss, and does a policy exclusion clause apply? Quote the clause id if one applies.",
+            "policy_evidence": [
+              {
+                "section": "2. What This Policy Covers",
+                "page_number": 1,
+                "snippet": "Own Damage: Accidental damage to the insured vehicle caused by collision, overturning, impact, or accidental external means."
+              }
+            ],
+            "exclusion_clause": null,
+            "coverage_verdict": "covered",
+            "reasoning_summary": "Both the parking scrape and bumper crack are accidental own-damage events falling under the policy's own-damage coverage, and no returned passage supports any applicable exclusion clause."
+          }
+        },
+        {
+          "phase": "dispatch",
+          "name": "adjuster_note_summary_worker",
+          "attempt": 1,
+          "status": "ok",
+          "error": "",
+          "tools": [
+            "get_claim"
+          ],
+          "finding": {
+            "claim_number": "CLM-2026-00480",
+            "loss_date": "2026-02-08",
+            "excess": 2000,
+            "key_facts": [
+              "Two separate events claimed under one policy: a parking scrape (own damage) and a later bumper crack.",
+              "Excess Rs 2000 applies per event.",
+              "First event is covered; second event is under investigation pending assessor photos.",
+              "Any payout is subject to both events being confirmed."
+            ],
+            "denial_language": false,
+            "partial_approval": true,
+            "exclusion_mentioned": null,
+            "summary": "The claim covers two separate events: a parking scrape and a bumper crack, with an excess of Rs 2000 per event. The first event is covered, while the second is under investigation pending assessor photos. Any payout is conditional on both events being confirmed."
+          }
+        },
+        {
+          "phase": "synthesis",
+          "name": "decision",
+          "status": "approved",
+          "exclusion_clause": null,
+          "decision_note": "The loss is covered under own damage with no applicable exclusion clause, and the partial approval for the confirmed event results in an approved status.",
+          "guardrail_fired": false
+        },
+        {
+          "phase": "assemble",
+          "name": "compute_payout",
+          "status": "ok",
+          "status_decided": "approved",
+          "note": "'unclear' is not a payable status: no payout is computed and the claim is escalated in the answer"
+        }
+      ],
+      "handoffs": [
+        {
+          "ts": "2026-10-02T17:19:34+00:00",
+          "case": "W6-009",
+          "hop": "orchestrator->planner",
+          "call": 1,
+          "status": 200,
+          "prompt_tokens": 273,
+          "completion_tokens": 163,
+          "total_tokens": 436,
+          "cost_usd": 0.00087,
+          "latency_ms": 733.0,
+          "detail": "manager decomposes the claim question"
+        },
+        {
+          "ts": "2026-10-02T17:19:36+00:00",
+          "case": "W6-009",
+          "hop": "orchestrator->coverage_worker",
+          "call": 1,
+          "status": 200,
+          "prompt_tokens": 592,
+          "completion_tokens": 68,
+          "total_tokens": 660,
+          "cost_usd": 0.000746,
+          "latency_ms": 551.7,
+          "detail": "tool=search_policy status=ok"
+        },
+        {
+          "ts": "2026-10-02T17:19:39+00:00",
+          "case": "W6-009",
+          "hop": "orchestrator->coverage_worker",
+          "call": 2,
+          "status": 200,
+          "prompt_tokens": 1049,
+          "completion_tokens": 29,
+          "total_tokens": 1078,
+          "cost_usd": 0.000955,
+          "latency_ms": 422.3,
+          "detail": "tool=retrieve_policy_exclusions status=ok"
+        },
+        {
+          "ts": "2026-10-02T17:19:42+00:00",
+          "case": "W6-009",
+          "hop": "orchestrator->coverage_worker",
+          "call": 3,
+          "status": 200,
+          "prompt_tokens": 1509,
+          "completion_tokens": 139,
+          "total_tokens": 1648,
+          "cost_usd": 0.001763,
+          "latency_ms": 684.2,
+          "detail": "finding emitted"
+        },
+        {
+          "ts": "2026-10-02T17:19:44+00:00",
+          "case": "W6-009",
+          "hop": "orchestrator->summary_worker",
+          "call": 1,
+          "status": 200,
+          "prompt_tokens": 574,
+          "completion_tokens": 27,
+          "total_tokens": 601,
+          "cost_usd": 0.000567,
+          "latency_ms": 500.9,
+          "detail": "tool=get_claim status=ok"
+        },
+        {
+          "ts": "2026-10-02T17:20:43+00:00",
+          "case": "W6-009",
+          "hop": "orchestrator->summary_worker",
+          "call": 2,
+          "status": 200,
+          "prompt_tokens": 885,
+          "completion_tokens": 198,
+          "total_tokens": 1083,
+          "cost_usd": 0.0015,
+          "latency_ms": 57284.6,
+          "detail": "finding emitted"
+        },
+        {
+          "ts": "2026-10-02T17:20:46+00:00",
+          "case": "W6-009",
+          "hop": "orchestrator->synthesis",
+          "call": 1,
+          "status": 200,
+          "prompt_tokens": 884,
+          "completion_tokens": 55,
+          "total_tokens": 939,
+          "cost_usd": 0.000927,
+          "latency_ms": 666.0,
+          "detail": "manager re-sends claim facts + both worker findings"
+        }
+      ],
+      "model": "qwen/qwen3.8-27b",
+      "injected_failure": false,
+      "degraded": false,
+      "guardrail_fired": false,
+      "worker_attempts": {
+        "coverage_exclusions_worker": 1,
+        "adjuster_note_summary_worker": 1
+      },
+      "plan": [
+        {
+          "worker": "coverage_exclusions_worker",
+          "scope": "Determine if the multi-claim dispute falls within policy coverage limits or is excluded based on the claim title and adjuster notes.",
+          "inputs": [
+            "claim_id",
+            "title",
+            "adjuster_notes"
+          ]
+        },
+        {
+          "worker": "adjuster_note_summary_worker",
+          "scope": "Summarize the key facts, timeline, and adjuster observations from the notes to support the dispute triage.",
+          "inputs": [
+            "claim_id",
+            "title",
+            "adjuster_notes"
+          ]
+        }
+      ]
+    },
+    "orchestrator:W6-010": {
+      "claim_id": "W6-010",
+      "system": "orchestrator",
+      "iterations": 7,
+      "termination_reason": "completed",
+      "termination_detail": "The loss is covered under comprehensive glass cover with no applicable exclusion clauses or denial language.",
+      "tokens": 6146,
+      "prompt_tokens": 5564,
+      "completion_tokens": 582,
+      "cost": 0.006779,
+      "latency_ms": 18433.8,
+      "output": {
+        "claim_id": "W6-010",
+        "claim_number": "CLM-2026-00493",
+        "loss_date": "2026-04-11",
+        "status": "approved",
+        "excess": 1500,
+        "exclusion_clause": null,
+        "payout": 28500.0
+      },
+      "pass_result": true,
+      "failures": [],
+      "steps": [
+        {
+          "phase": "manager",
+          "name": "get_claim",
+          "status": "ok",
+          "tokens": 0
+        },
+        {
+          "phase": "dispatch",
+          "name": "coverage_exclusions_worker",
+          "attempt": 1,
+          "status": "ok",
+          "error": "",
+          "tools": [
+            "search_policy",
+            "retrieve_policy_exclusions"
+          ],
+          "finding": {
+            "coverage_question": "Does the policy cover this loss, and does a policy exclusion clause apply? Quote the clause id if one applies.",
+            "policy_evidence": [
+              {
+                "section": "2. What This Policy Covers",
+                "page_number": 1,
+                "snippet": "Own Damage: Accidental damage to the insured vehicle caused by collision, overturning, impact, or accidental external means."
+              }
+            ],
+            "exclusion_clause": null,
+            "coverage_verdict": "covered",
+            "reasoning_summary": "The adjuster notes state the windshield replacement was approved under comprehensive glass cover with no exclusions, and no returned exclusion passage applies to a stone-chip windshield loss."
+          }
+        },
+        {
+          "phase": "dispatch",
+          "name": "adjuster_note_summary_worker",
+          "attempt": 1,
+          "status": "ok",
+          "error": "",
+          "tools": [
+            "get_claim"
+          ],
+          "finding": {
+            "claim_number": "CLM-2026-00493",
+            "loss_date": "2026-04-11",
+            "excess": 1500,
+            "key_facts": [
+              "Stone chip cracked windshield",
+              "Windshield replacement approved under comprehensive glass cover",
+              "No exclusions",
+              "Excess Rs 1500"
+            ],
+            "denial_language": false,
+            "partial_approval": false,
+            "exclusion_mentioned": null,
+            "summary": "Claim CLM-2026-00493 for a stone-chip cracked windshield on 2026-04-11. The adjuster approved windshield replacement under comprehensive glass cover with an excess of Rs 1500 and noted no exclusions."
+          }
+        },
+        {
+          "phase": "synthesis",
+          "name": "decision",
+          "status": "approved",
+          "exclusion_clause": null,
+          "decision_note": "The loss is covered under comprehensive glass cover with no applicable exclusion clauses or denial language.",
+          "guardrail_fired": false
+        },
+        {
+          "phase": "assemble",
+          "name": "compute_payout",
+          "status": "ok",
+          "status_decided": "approved",
+          "note": "'unclear' is not a payable status: no payout is computed and the claim is escalated in the answer"
+        }
+      ],
+      "handoffs": [
+        {
+          "ts": "2026-10-02T17:20:50+00:00",
+          "case": "W6-010",
+          "hop": "orchestrator->planner",
+          "call": 1,
+          "status": 200,
+          "prompt_tokens": 272,
+          "completion_tokens": 144,
+          "total_tokens": 416,
+          "cost_usd": 0.000794,
+          "latency_ms": 666.8,
+          "detail": "manager decomposes the claim question"
+        },
+        {
+          "ts": "2026-10-02T17:20:52+00:00",
+          "case": "W6-010",
+          "hop": "orchestrator->coverage_worker",
+          "call": 1,
+          "status": 200,
+          "prompt_tokens": 563,
+          "completion_tokens": 28,
+          "total_tokens": 591,
+          "cost_usd": 0.000562,
+          "latency_ms": 437.4,
+          "detail": "tool=search_policy status=ok"
+        },
+        {
+          "ts": "2026-10-02T17:20:55+00:00",
+          "case": "W6-010",
+          "hop": "orchestrator->coverage_worker",
+          "call": 2,
+          "status": 200,
+          "prompt_tokens": 1015,
+          "completion_tokens": 28,
+          "total_tokens": 1043,
+          "cost_usd": 0.000924,
+          "latency_ms": 428.3,
+          "detail": "tool=retrieve_policy_exclusions status=ok"
+        },
+        {
+          "ts": "2026-10-02T17:20:57+00:00",
+          "case": "W6-010",
+          "hop": "orchestrator->coverage_worker",
+          "call": 3,
+          "status": 200,
+          "prompt_tokens": 1486,
+          "completion_tokens": 139,
+          "total_tokens": 1625,
+          "cost_usd": 0.001745,
+          "latency_ms": 731.9,
+          "detail": "finding emitted"
+        },
+        {
+          "ts": "2026-10-02T17:21:00+00:00",
+          "case": "W6-010",
+          "hop": "orchestrator->summary_worker",
+          "call": 1,
+          "status": 200,
+          "prompt_tokens": 545,
+          "completion_tokens": 27,
+          "total_tokens": 572,
+          "cost_usd": 0.000544,
+          "latency_ms": 621.5,
+          "detail": "tool=get_claim status=ok"
+        },
+        {
+          "ts": "2026-10-02T17:21:03+00:00",
+          "case": "W6-010",
+          "hop": "orchestrator->summary_worker",
+          "call": 2,
+          "status": 200,
+          "prompt_tokens": 826,
+          "completion_tokens": 171,
+          "total_tokens": 997,
+          "cost_usd": 0.001345,
+          "latency_ms": 775.0,
+          "detail": "finding emitted"
+        },
+        {
+          "ts": "2026-10-02T17:21:05+00:00",
+          "case": "W6-010",
+          "hop": "orchestrator->synthesis",
+          "call": 1,
+          "status": 200,
+          "prompt_tokens": 857,
+          "completion_tokens": 45,
+          "total_tokens": 902,
+          "cost_usd": 0.000866,
+          "latency_ms": 749.5,
+          "detail": "manager re-sends claim facts + both worker findings"
+        }
+      ],
+      "model": "qwen/qwen3.8-27b",
+      "injected_failure": false,
+      "degraded": false,
+      "guardrail_fired": false,
+      "worker_attempts": {
+        "coverage_exclusions_worker": 1,
+        "adjuster_note_summary_worker": 1
+      },
+      "plan": [
+        {
+          "worker": "coverage_exclusions_worker",
+          "scope": "Determine if windshield replacement is covered under the policy and identify any applicable exclusions or deductibles.",
+          "inputs": [
+            "claim_id",
+            "title"
+          ]
+        },
+        {
+          "worker": "adjuster_note_summary_worker",
+          "scope": "Summarize the adjuster notes to extract key facts, damage details, and any noted issues or recommendations.",
+          "inputs": [
+            "claim_id",
+            "adjuster_notes"
+          ]
+        }
+      ]
+    },
+    "orchestrator:W6-011": {
+      "claim_id": "W6-011",
+      "system": "orchestrator",
+      "iterations": 4,
+      "termination_reason": "worker_failure",
+      "termination_detail": "adjuster-note summary worker produced no finding",
+      "tokens": 3701,
+      "prompt_tokens": 3312,
+      "completion_tokens": 389,
+      "cost": 0.004206,
+      "latency_ms": 176633.8,
+      "output": {
+        "claim_id": "W6-011",
+        "claim_number": "CLM-2026-00504",
+        "loss_date": "2026-05-29",
+        "status": null,
+        "excess": 2000,
+        "exclusion_clause": null,
+        "payout": null,
+        "degraded": true,
+        "degraded_reason": "adjuster-note summary worker produced no finding"
+      },
+      "pass_result": false,
+      "failures": [
+        "status: expected 'excluded', got None",
+        "exclusion_clause: expected 'EXC-8.1', got None",
+        "payout: not numeric: None"
+      ],
+      "steps": [
+        {
+          "phase": "manager",
+          "name": "get_claim",
+          "status": "ok",
+          "tokens": 0
+        },
+        {
+          "phase": "dispatch",
+          "name": "coverage_exclusions_worker",
+          "attempt": 1,
+          "status": "ok",
+          "error": "",
+          "tools": [
+            "retrieve_policy_exclusions",
+            "search_policy"
+          ],
+          "finding": {
+            "coverage_question": "Does the policy cover this loss, and does a policy exclusion clause apply? Quote the clause id if one applies.",
+            "policy_evidence": [
+              {
+                "section": "policy",
+                "page_number": 2,
+                "snippet": "5. Important Exclusions\n Normal wear and tear, gradual deterioration, or depreciation except where an applicable add-on provides otherwise.\n Mechanical or electrical breakdown not directly caused by an insured accident."
+              }
+            ],
+            "exclusion_clause": "Exc-8.1",
+            "coverage_verdict": "excluded",
+            "reasoning_summary": "The adjuster notes state the tyres/tubes failed in normal use (not concurrent with a vehicle accident) and cite exclusion Exc-8.1, which excludes tyre/tube damage not concurrent with a vehicle accident, so the loss is excluded."
+          }
+        },
+        {
+          "phase": "dispatch",
+          "name": "adjuster_note_summary_worker",
+          "attempt": 1,
+          "status": "budget",
+          "error": "wall-clock budget exhausted before call could start (-0.4s left)",
+          "tools": [],
+          "finding": null
+        }
+      ],
+      "handoffs": [
+        {
+          "ts": "2026-10-02T17:21:09+00:00",
+          "case": "W6-011",
+          "hop": "orchestrator->planner",
+          "call": 1,
+          "status": 200,
+          "prompt_tokens": 274,
+          "completion_tokens": 150,
+          "total_tokens": 424,
+          "cost_usd": 0.000819,
+          "latency_ms": 675.4,
+          "detail": "manager decomposes the claim question"
+        },
+        {
+          "ts": "2026-10-02T17:21:12+00:00",
+          "case": "W6-011",
+          "hop": "orchestrator->coverage_worker",
+          "call": 1,
+          "status": 200,
+          "prompt_tokens": 598,
+          "completion_tokens": 33,
+          "total_tokens": 631,
+          "cost_usd": 0.00061,
+          "latency_ms": 452.8,
+          "detail": "tool=retrieve_policy_exclusions status=ok"
+        },
+        {
+          "ts": "2026-10-02T17:21:14+00:00",
+          "case": "W6-011",
+          "hop": "orchestrator->coverage_worker",
+          "call": 2,
+          "status": 200,
+          "prompt_tokens": 1006,
+          "completion_tokens": 36,
+          "total_tokens": 1042,
+          "cost_usd": 0.000949,
+          "latency_ms": 660.0,
+          "detail": "tool=search_policy status=ok"
+        },
+        {
+          "ts": "2026-10-02T17:22:03+00:00",
+          "case": "W6-011",
+          "hop": "orchestrator->coverage_worker",
+          "call": 3,
+          "status": 200,
+          "prompt_tokens": 1434,
+          "completion_tokens": 170,
+          "total_tokens": 1604,
+          "cost_usd": 0.001827,
+          "latency_ms": 46434.7,
+          "detail": "finding emitted"
+        }
+      ],
+      "model": "qwen/qwen3.8-27b",
+      "injected_failure": false,
+      "degraded": true,
+      "guardrail_fired": false,
+      "worker_attempts": {
+        "coverage_exclusions_worker": 1,
+        "adjuster_note_summary_worker": 1
+      },
+      "plan": [
+        {
+          "worker": "coverage_exclusions_worker",
+          "scope": "Determine if tyre and tube damage is covered under the policy terms or excluded based on standard wear and tear or specific exclusions.",
+          "inputs": [
+            "claim_id",
+            "title"
+          ]
+        },
+        {
+          "worker": "adjuster_note_summary_worker",
+          "scope": "Summarize the adjuster's notes to extract key facts regarding the cause of damage and any relevant observations.",
+          "inputs": [
+            "claim_id",
+            "adjuster_notes"
+          ]
+        }
+      ]
+    }
+  }
+}
