@@ -1,0 +1,42 @@
+{"id": "Q01", "kind": "coverage", "question": "Is theft of the insured vehicle covered under this policy?"}
+{"id": "Q02", "kind": "coverage", "question": "Are flood damages to the Honda Activa covered?"}
+{"id": "Q03", "kind": "coverage", "question": "Does this policy cover engine damage caused by water ingress?"}
+{"id": "Q04", "kind": "coverage", "question": "Is third-party injury liability covered under this policy?"}
+{"id": "Q05", "kind": "coverage", "question": "Does the policy cover earthquake damage to the vehicle?"}
+{"id": "Q06", "kind": "coverage", "question": "Does the policy include personal accident cover for the owner-driver?"}
+{"id": "Q07", "kind": "coverage", "question": "Is damage caused during racing or speed testing covered?"}
+{"id": "Q08", "kind": "coverage", "question": "Does the policy cover normal wear and tear of the tyres?"}
+{"id": "Q09", "kind": "coverage", "question": "Is damage caused while riding without a valid driving licence covered?"}
+{"id": "Q10", "kind": "coverage", "question": "Is a mechanical breakdown covered under this policy?"}
+{"id": "Q11", "kind": "coverage", "question": "Is loss or damage from war or invasion covered?"}
+{"id": "Q12", "kind": "coverage", "question": "Is damage while the driver was under the influence of alcohol covered?"}
+{"id": "Q13", "kind": "coverage", "question": "Is loss of income caused by delay in claim processing covered?"}
+{"id": "Q14", "kind": "coverage", "question": "Is the vehicle covered anywhere in the world?"}
+{"id": "Q15", "kind": "coverage", "question": "Is theft covered if the keys were left in the ignition?"}
+{"id": "Q16", "kind": "coverage", "question": "Is cosmetic damage to the body panels from a minor parking scrape covered?"}
+{"id": "Q17", "kind": "payout", "question": "The policyholder claims Rs 7,000 for scratches and cosmetic damage. How much will be paid?"}
+{"id": "Q18", "kind": "payout", "question": "If the repair estimate is Rs 18,000 and the claim is approved, how much will be paid?"}
+{"id": "Q19", "kind": "payout", "question": "How much does the policy holder pay out of pocket for each own-damage claim?"}
+{"id": "Q20", "kind": "payout", "question": "A claim of Rs 40,000 for fire damage is approved. What net amount will be paid after deductibles?"}
+{"id": "Q21", "kind": "payout", "question": "The policyholder claims Rs 5,000 for a broken mirror and headlight. How much will be paid?"}
+{"id": "Q22", "kind": "payout", "question": "A claim for Rs 12,000 for water ingress engine damage is filed. How much is payable?"}
+{"id": "Q23", "kind": "payout", "question": "What deductible is applied to an approved own-damage claim?"}
+{"id": "Q24", "kind": "payout", "question": "The policyholder claims Rs 3,500 for a scratched rear mudguard. How much will be paid?"}
+{"id": "Q25", "kind": "policy-term", "question": "What is the policy number?"}
+{"id": "Q26", "kind": "policy-term", "question": "When does the policy period start and end?"}
+{"id": "Q27", "kind": "policy-term", "question": "What is the Insured Declared Value of the vehicle?"}
+{"id": "Q28", "kind": "policy-term", "question": "How much premium was paid for this policy?"}
+{"id": "Q29", "kind": "policy-term", "question": "What add-ons are selected on this policy?"}
+{"id": "Q30", "kind": "policy-term", "question": "What No Claim Bonus applies at renewal?"}
+{"id": "Q31", "kind": "policy-term", "question": "What is the free-look period for cancellation?"}
+{"id": "Q32", "kind": "policy-term", "question": "How many roadside assistance events are included?"}
+{"id": "Q33", "kind": "claim-procedure", "question": "How quickly must I notify SafeRide after an accident?"}
+{"id": "Q34", "kind": "claim-procedure", "question": "What documents must I submit with a claim?"}
+{"id": "Q35", "kind": "claim-procedure", "question": "Can I repair the vehicle before the surveyor inspects it?"}
+{"id": "Q36", "kind": "claim-procedure", "question": "What is the claims helpline number?"}
+{"id": "Q37", "kind": "claim-procedure", "question": "Do I need to file a police report for a theft claim?"}
+{"id": "Q38", "kind": "claim-procedure", "question": "Who inspects the loss before claim approval?"}
+{"id": "Q39", "kind": "general", "question": "Summarize this policy in two sentences."}
+{"id": "Q40", "kind": "general", "question": "Who is the insurer under this policy?"}
+{"id": "Q41", "kind": "general", "question": "Which vehicle is listed on the policy schedule?"}
+{"id": "Q42", "kind": "general", "question": "What geographical area does this policy apply to?"}

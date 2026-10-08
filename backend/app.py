@@ -21,6 +21,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import trace_log
 from pdf_reader import extract_pdf_chunks, embed_chunks, get_embedding_model
 from retrieval import hybrid_search_per_doc
+from pricing import token_cost, zero_usage
 
 # ---------------------------------------------------------------------------
 # Environment / configuration
@@ -245,8 +246,12 @@ def _recent_llm_messages(history: dict, max_turns: int = 6) -> List[dict]:
     return out
 
 
-def _groq_stream(messages: List[dict]) -> Iterator[str]:
-    """Yield answer tokens from Groq's streaming chat completions."""
+def _groq_stream(messages: List[dict], usage_out: Optional[dict] = None) -> Iterator[str]:
+    """Yield answer tokens from Groq's streaming chat completions.
+
+    usage_out (when given) receives the model-reported token usage once the
+    stream finishes, so cost can be attributed to this request.
+    """
     if not GROQ_API_KEY or GROQ_API_KEY == "paste_your_groq_api_key_here":
         raise RuntimeError(
             "Groq API key is not configured. Add GROQ_API_KEY to the .env file."
@@ -262,6 +267,7 @@ def _groq_stream(messages: List[dict]) -> Iterator[str]:
             "messages": messages,
             "temperature": 0.5,
             "stream": True,
+            "stream_options": {"include_usage": True},
         },
         timeout=GROQ_TIMEOUT,
         stream=True,
@@ -275,16 +281,24 @@ def _groq_stream(messages: List[dict]) -> Iterator[str]:
             break
         try:
             chunk = json.loads(payload)
-            delta = chunk["choices"][0].get("delta", {})
-            token = delta.get("content")
-            if token:
-                yield token
-        except (json.JSONDecodeError, KeyError, IndexError):
+        except json.JSONDecodeError:
             continue
+        if usage_out is not None and chunk.get("usage"):
+            usage_out.update(chunk["usage"])
+        try:
+            delta = chunk["choices"][0].get("delta", {})
+        except (KeyError, IndexError):
+            continue
+        token = delta.get("content")
+        if token:
+            yield token
 
 
-def _groq_complete(messages: List[dict]) -> str:
-    """Non-streaming completion used by the classic /chat endpoint."""
+def _groq_complete(messages: List[dict]) -> tuple:
+    """Non-streaming completion used by the classic /chat endpoint.
+
+    Returns (content, usage) -- usage is what the bill is calculated from.
+    """
     if not GROQ_API_KEY or GROQ_API_KEY == "paste_your_groq_api_key_here":
         raise RuntimeError(
             "Groq API key is not configured. Add GROQ_API_KEY to the .env file."
@@ -303,16 +317,63 @@ def _groq_complete(messages: List[dict]) -> str:
         timeout=GROQ_TIMEOUT,
     )
     response.raise_for_status()
-    return response.json()["choices"][0]["message"]["content"]
+    data = response.json()
+    return data["choices"][0]["message"]["content"], data.get("usage") or {}
+
+
+def _stage_costs(usage: dict) -> dict:
+    """Cost of one request by stage.
+
+    retrieval/tools run on this machine (embed + FAISS + BM25 + cross-encoder;
+    no tool calls in this pipeline), so their USD cost is 0.000000 and their
+    price is paid in latency -- which is why spans carry duration as well.
+    """
+    return {
+        "retrieval": 0.0,
+        "generation": token_cost(GROQ_MODEL, usage),
+        "tools": 0.0,
+    }
 
 
 def _sse(event_type: str, data) -> str:
     return f"data: {json.dumps({'type': event_type, **data}, ensure_ascii=False)}\n\n"
 
 
+def _retrieve_with_spans(question, index, chunks, metadata, page_texts, started_at=None):
+    """Run retrieval + context assembly, timed per step.
+
+    Returns (results, context, spans, done_at).  Offsets are measured from
+    started_at (request entry), so spans line up on one timeline.
+    """
+    t0 = time.perf_counter()
+    results = _search_database(question, index, chunks, metadata)
+    t1 = time.perf_counter()
+    context = _build_context(results, page_texts)
+    t2 = time.perf_counter()
+    base = started_at if started_at is not None else t0
+    spans = [
+        {
+            "name": "retrieval",
+            "start_ms": (t0 - base) * 1000.0,
+            "duration_ms": (t1 - t0) * 1000.0,
+            "cost_usd": 0.0,
+            "detail": {"top_k": len(results), "stage": "embed+faiss+bm25+rrf+rerank"},
+        },
+        {
+            "name": "context_build",
+            "start_ms": (t1 - base) * 1000.0,
+            "duration_ms": (t2 - t1) * 1000.0,
+            "cost_usd": 0.0,
+            "detail": None,
+        },
+    ]
+    return results, context, spans, t2
+
+
 def _record_chat_trace(*, endpoint, session_id, doc_id, question,
                        llm_messages, results, raw_output, started_at,
-                       error=None):
+                       error=None, spans=None, usage=None, cost=None,
+                       created_at=None):
     """Write one complete, redacted-before-write trace to disk."""
     try:
         trace = trace_log.build_trace(
@@ -329,13 +390,19 @@ def _record_chat_trace(*, endpoint, session_id, doc_id, question,
             raw_output=raw_output,
             latency_ms=(time.perf_counter() - started_at) * 1000.0,
             error=error,
+            spans=spans,
+            usage=usage,
+            cost=cost,
+            created_at=created_at,
         )
         path = trace_log.save_trace(trace)
         trace_log.save_trace_jsonl(trace)
         logger.info("Trace %s written to %s + trace.jsonl", trace["trace_id"], path.name)
+        return trace
     except Exception:
         # Tracing must never break answering.
         logger.exception("Failed to write trace")
+        return None
 
 
 # ---------------------------------------------------------------------------
@@ -636,8 +703,9 @@ async def chat_stream(request: ChatRequest):
     if not history.get("doc_id"):
         history["doc_id"] = doc_id
 
-    results = _search_database(question, index, chunks, metadata)
-    context = _build_context(results, page_texts)
+    results, context, spans, _ = _retrieve_with_spans(
+        question, index, chunks, metadata, page_texts, started_at
+    )
 
     llm_messages = [{"role": "system", "content": SYSTEM_PROMPT + "\n\n" + context}]
     llm_messages += _recent_llm_messages(history)
@@ -648,6 +716,8 @@ async def chat_stream(request: ChatRequest):
     def event_stream() -> Iterator[str]:
         nonlocal stream_error
         answer_parts = []
+        usage_out: dict = {}
+        generation = None  # {"started_at": ..., "duration_ms": ...}
         try:
             yield _sse("meta", {"session_id": session_id, "doc_id": doc_id})
             yield _sse("sources", {
@@ -661,9 +731,12 @@ async def chat_stream(request: ChatRequest):
                     for r in results
                 ]
             })
-            for token in _groq_stream(llm_messages):
+            gen_start = time.perf_counter()
+            generation = {"started_at": gen_start, "duration_ms": 0.0}
+            for token in _groq_stream(llm_messages, usage_out):
                 answer_parts.append(token)
                 yield _sse("token", {"content": token})
+            generation["duration_ms"] = (time.perf_counter() - gen_start) * 1000.0
             yield _sse("done", {})
         except requests.exceptions.ConnectionError:
             stream_error = "Could not reach the Groq API. Check your connection."
@@ -693,6 +766,30 @@ async def chat_stream(request: ChatRequest):
                     history["title"] = question[:60] + ("..." if len(question) > 60 else "")
                 history["updated_at"] = now
                 _save_history(history)
+            usage = dict(usage_out) or zero_usage()
+            cost = _stage_costs(usage)
+            request_spans = list(spans)
+            if generation is not None:
+                request_spans.append({
+                    "name": "generation",
+                    "start_ms": (generation["started_at"] - started_at) * 1000.0,
+                    "duration_ms": generation["duration_ms"],
+                    "tokens": {
+                        "prompt_tokens": usage.get("prompt_tokens", 0),
+                        "completion_tokens": usage.get("completion_tokens", 0),
+                        "total_tokens": usage.get("total_tokens", 0),
+                    },
+                    "cost_usd": cost["generation"],
+                    "detail": {"model": GROQ_MODEL, "stream": True},
+                })
+            request_spans.append({
+                "name": "tools",
+                "start_ms": 0.0,
+                "duration_ms": 0.0,
+                "tokens": None,
+                "cost_usd": cost["tools"],
+                "detail": {"calls": 0, "note": "this pipeline calls no tools"},
+            })
             _record_chat_trace(
                 endpoint="/chat/stream",
                 session_id=session_id,
@@ -703,6 +800,9 @@ async def chat_stream(request: ChatRequest):
                 raw_output=answer,
                 started_at=started_at,
                 error={"detail": stream_error} if stream_error else None,
+                spans=request_spans,
+                usage=usage,
+                cost=cost,
             )
 
     return StreamingResponse(
@@ -737,30 +837,66 @@ async def chat(request: ChatRequest):
     if not history.get("doc_id"):
         history["doc_id"] = doc_id
 
-    results = _search_database(question, index, chunks, metadata)
-    context = _build_context(results, page_texts)
+    results, context, spans, _ = _retrieve_with_spans(
+        question, index, chunks, metadata, page_texts, started_at
+    )
 
     llm_messages = [{"role": "system", "content": SYSTEM_PROMPT + "\n\n" + context}]
     llm_messages += _recent_llm_messages(history)
     llm_messages.append({"role": "user", "content": question})
 
+    usage: dict = {}
+    gen_start = time.perf_counter()
+    gen_status = "ok"
+
+    def _spans_for(status):
+        request_spans = list(spans)
+        request_spans.append({
+            "name": "generation",
+            "start_ms": (gen_start - started_at) * 1000.0,
+            "duration_ms": (time.perf_counter() - gen_start) * 1000.0,
+            "tokens": {
+                "prompt_tokens": usage.get("prompt_tokens", 0),
+                "completion_tokens": usage.get("completion_tokens", 0),
+                "total_tokens": usage.get("total_tokens", 0),
+            },
+            "cost_usd": token_cost(GROQ_MODEL, usage),
+            "status": status,
+            "detail": {"model": GROQ_MODEL, "stream": False},
+        })
+        request_spans.append({
+            "name": "tools",
+            "start_ms": 0.0,
+            "duration_ms": 0.0,
+            "tokens": None,
+            "cost_usd": 0.0,
+            "detail": {"calls": 0, "note": "this pipeline calls no tools"},
+        })
+        return request_spans
+
     try:
-        answer = _groq_complete(llm_messages)
+        answer, usage = _groq_complete(llm_messages)
     except RuntimeError as exc:
+        gen_status = "error"
         _record_chat_trace(
             endpoint="/chat", session_id=session_id, doc_id=doc_id,
             question=question, llm_messages=llm_messages, results=results,
             raw_output="", started_at=started_at,
             error={"detail": str(exc)},
+            spans=_spans_for(gen_status), usage=usage,
+            cost=_stage_costs(usage),
         )
         raise HTTPException(status_code=503, detail=str(exc)) from exc
     except requests.exceptions.RequestException as exc:
         logger.exception("Groq request failed")
+        gen_status = "error"
         _record_chat_trace(
             endpoint="/chat", session_id=session_id, doc_id=doc_id,
             question=question, llm_messages=llm_messages, results=results,
             raw_output="", started_at=started_at,
             error={"detail": f"Groq request failed: {exc}"},
+            spans=_spans_for(gen_status), usage=usage,
+            cost=_stage_costs(usage),
         )
         raise HTTPException(status_code=502, detail=f"Groq request failed: {exc}") from exc
 
@@ -776,6 +912,8 @@ async def chat(request: ChatRequest):
         endpoint="/chat", session_id=session_id, doc_id=doc_id,
         question=question, llm_messages=llm_messages, results=results,
         raw_output=answer, started_at=started_at,
+        spans=_spans_for(gen_status), usage=usage,
+        cost=_stage_costs(usage),
     )
 
     return {

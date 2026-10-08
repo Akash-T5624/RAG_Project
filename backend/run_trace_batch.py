@@ -51,20 +51,33 @@ def main():
             started_at = time.perf_counter()
             llm_messages = [{"role": "system", "content": app.SYSTEM_PROMPT},
                             {"role": "user", "content": q}]
+            usage = {}
+            spans = []
             try:
-                results = app._search_database(q, index, chunks, metadata)
-                context = app._build_context(results, page_texts)
+                results, context, spans, _ = app._retrieve_with_spans(
+                    q, index, chunks, metadata, page_texts, started_at
+                )
                 payload = [{
                     "role": "system",
                     "content": app.SYSTEM_PROMPT + "\n\n" + context,
                 }, {"role": "user", "content": q}]
-                answer = app._groq_complete(payload)
+                gen_start = time.perf_counter()
+                answer, usage = app._groq_complete(payload)
+                spans.append({
+                    "name": "generation",
+                    "start_ms": (gen_start - started_at) * 1000.0,
+                    "duration_ms": (time.perf_counter() - gen_start) * 1000.0,
+                    "tokens": usage,
+                    "cost_usd": app.token_cost(app.GROQ_MODEL, usage),
+                    "detail": {"model": app.GROQ_MODEL, "stream": False},
+                })
                 error = None
             except Exception as exc:
                 results, payload, answer = [], llm_messages, ""
                 error = {"detail": str(exc)}
 
             latency_ms = (time.perf_counter() - started_at) * 1000.0
+            cost = app._stage_costs(usage)
             trace = build_trace(
                 endpoint="batch",
                 session_id=None,
@@ -79,6 +92,9 @@ def main():
                 raw_output=answer,
                 latency_ms=latency_ms,
                 error=error,
+                spans=spans,
+                usage=usage,
+                cost=cost,
             )
             save_trace(trace, target)
             done += 1
