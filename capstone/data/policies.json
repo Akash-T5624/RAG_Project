@@ -1,0 +1,247 @@
+{
+ "_note": "SYNTHETIC policies.",
+ "policies": {
+  "MOT-1001": {
+   "product": "motor",
+   "in_force_from": "2024-01-01",
+   "in_force_to": "2024-12-31",
+   "deductible": 2500,
+   "sub_limits": {
+    "flood": 50000,
+    "theft_accessories": 12000
+   },
+   "policy_limit": 400000
+  },
+  "MOT-1002": {
+   "product": "motor",
+   "in_force_from": "2025-01-01",
+   "in_force_to": "2025-12-31",
+   "deductible": 2000,
+   "sub_limits": {
+    "flood": 45000,
+    "theft_accessories": 15000
+   },
+   "policy_limit": 350000
+  },
+  "MOT-1003": {
+   "product": "motor",
+   "in_force_from": "2023-06-01",
+   "in_force_to": "2024-05-31",
+   "deductible": 1500,
+   "sub_limits": {
+    "flood": 30000,
+    "theft_accessories": 10000
+   },
+   "policy_limit": 250000
+  },
+  "MOT-1004": {
+   "product": "motor",
+   "in_force_from": "2024-07-01",
+   "in_force_to": "2026-06-30",
+   "deductible": 3000,
+   "sub_limits": {
+    "flood": 60000,
+    "theft_accessories": 20000
+   },
+   "policy_limit": 500000
+  },
+  "HOU-3001": {
+   "product": "household",
+   "in_force_from": "2024-02-01",
+   "in_force_to": "2025-01-31",
+   "deductible": 5000,
+   "sub_limits": {
+    "flood": 150000,
+    "theft": 80000
+   },
+   "policy_limit": 2500000
+  },
+  "HOU-3002": {
+   "product": "household",
+   "in_force_from": "2025-06-01",
+   "in_force_to": "2026-05-31",
+   "deductible": 7500,
+   "sub_limits": {
+    "flood": 200000,
+    "theft": 90000
+   },
+   "policy_limit": 3000000
+  },
+  "HOU-3003": {
+   "product": "household",
+   "in_force_from": "2022-01-01",
+   "in_force_to": "2022-12-31",
+   "deductible": 5000,
+   "sub_limits": {
+    "flood": 100000,
+    "theft": 60000
+   },
+   "policy_limit": 2000000
+  },
+  "MOT-W6-001": {
+   "product": "motor",
+   "in_force_from": "2025-09-01",
+   "in_force_to": "2026-12-31",
+   "deductible": 1500,
+   "sub_limits": {
+    "flood": 35000,
+    "theft_accessories": 10000
+   },
+   "policy_limit": 300000
+  },
+  "MOT-W6-002": {
+   "product": "motor",
+   "in_force_from": "2025-09-01",
+   "in_force_to": "2026-12-31",
+   "deductible": 2500,
+   "sub_limits": {
+    "flood": 40000,
+    "theft_accessories": 12000
+   },
+   "policy_limit": 325000
+  },
+  "MOT-W6-003": {
+   "product": "motor",
+   "in_force_from": "2025-09-01",
+   "in_force_to": "2026-12-31",
+   "deductible": 1800,
+   "sub_limits": {
+    "flood": 45000,
+    "theft_accessories": 14000
+   },
+   "policy_limit": 350000
+  },
+  "MOT-W6-004": {
+   "product": "motor",
+   "in_force_from": "2025-09-01",
+   "in_force_to": "2026-12-31",
+   "deductible": 2000,
+   "sub_limits": {
+    "flood": 50000,
+    "theft_accessories": 16000
+   },
+   "policy_limit": 375000
+  },
+  "MOT-W6-005": {
+   "product": "motor",
+   "in_force_from": "2025-09-01",
+   "in_force_to": "2026-12-31",
+   "deductible": 2200,
+   "sub_limits": {
+    "flood": 55000,
+    "theft_accessories": 10000
+   },
+   "policy_limit": 400000
+  },
+  "MOT-W6-007": {
+   "product": "motor",
+   "in_force_from": "2025-09-01",
+   "in_force_to": "2026-12-31",
+   "deductible": 2000,
+   "sub_limits": {
+    "flood": 35000,
+    "theft_accessories": 12000
+   },
+   "policy_limit": 425000
+  },
+  "MOT-W6-008": {
+   "product": "motor",
+   "in_force_from": "2025-09-01",
+   "in_force_to": "2026-12-31",
+   "deductible": 2500,
+   "sub_limits": {
+    "flood": 40000,
+    "theft_accessories": 14000
+   },
+   "policy_limit": 300000
+  },
+  "MOT-W6-011": {
+   "product": "motor",
+   "in_force_from": "2025-09-01",
+   "in_force_to": "2026-12-31",
+   "deductible": 2000,
+   "sub_limits": {
+    "flood": 45000,
+    "theft_accessories": 16000
+   },
+   "policy_limit": 325000
+  },
+  "MOT-W6-012": {
+   "product": "motor",
+   "in_force_from": "2025-09-01",
+   "in_force_to": "2026-12-31",
+   "deductible": 2200,
+   "sub_limits": {
+    "flood": 50000,
+    "theft_accessories": 10000
+   },
+   "policy_limit": 350000
+  },
+  "MOT-W6-013": {
+   "product": "motor",
+   "in_force_from": "2025-09-01",
+   "in_force_to": "2026-12-31",
+   "deductible": 2000,
+   "sub_limits": {
+    "flood": 55000,
+    "theft_accessories": 12000
+   },
+   "policy_limit": 375000
+  },
+  "MOT-W6-017": {
+   "product": "motor",
+   "in_force_from": "2025-09-01",
+   "in_force_to": "2026-04-27",
+   "deductible": 2000,
+   "sub_limits": {
+    "flood": 35000,
+    "theft_accessories": 14000
+   },
+   "policy_limit": 400000
+  },
+  "MOT-W6-018": {
+   "product": "motor",
+   "in_force_from": "2025-09-01",
+   "in_force_to": "2026-12-31",
+   "deductible": 2500,
+   "sub_limits": {
+    "flood": 40000,
+    "theft_accessories": 16000
+   },
+   "policy_limit": 425000
+  },
+  "MOT-W6-020": {
+   "product": "motor",
+   "in_force_from": "2025-09-01",
+   "in_force_to": "2026-12-31",
+   "deductible": 2000,
+   "sub_limits": {
+    "flood": 45000,
+    "theft_accessories": 10000
+   },
+   "policy_limit": 300000
+  },
+  "MOT-W6-022": {
+   "product": "motor",
+   "in_force_from": "2025-09-01",
+   "in_force_to": "2026-12-31",
+   "deductible": 2200,
+   "sub_limits": {
+    "flood": 50000,
+    "theft_accessories": 12000
+   },
+   "policy_limit": 325000
+  },
+  "MOT-W6-026": {
+   "product": "motor",
+   "in_force_from": "2025-09-01",
+   "in_force_to": "2026-12-31",
+   "deductible": 2000,
+   "sub_limits": {
+    "flood": 55000,
+    "theft_accessories": 14000
+   },
+   "policy_limit": 350000
+  }
+ }
+}

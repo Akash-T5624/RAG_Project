@@ -1,0 +1,9 @@
+# Week 12 capstone. Pins match backend/requirements.txt and week9_mcp/requirements-week9.txt.
+# Without faiss/torch/sentence-transformers the retriever falls back to BM25 and says so (`ranker` field).
+faiss-cpu==1.15.0
+numpy==2.5.1
+requests==2.34.2
+sentence-transformers==5.7.0
+torch>=2.0.0
+transformers>=4.30.0
+fastmcp==4.0.5

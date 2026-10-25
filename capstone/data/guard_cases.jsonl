@@ -1,0 +1,6 @@
+{"case_id": "C-S1", "from_trace": null, "loss_date": "2024-08-11", "expect": ["Exc-7.4", "2023"], "guards": "wording in force on the loss date, never a later endorsement"}
+{"case_id": "C-S2", "from_trace": null, "loss_date": "2024-12-31", "expect": ["Exc-7.4", "2023"], "guards": "wording in force on the loss date, never a later endorsement"}
+{"case_id": "C-S3", "from_trace": null, "loss_date": "2025-01-01", "expect": ["Exc-7.4", "2025"], "guards": "wording in force on the loss date, never a later endorsement"}
+{"case_id": "C-S5", "from_trace": null, "loss_date": "2024-11-20", "expect": ["H-Exc-4.2", "2023"], "guards": "wording in force on the loss date, never a later endorsement"}
+{"case_id": "C-S6", "from_trace": null, "loss_date": "2024-12-30", "expect": ["H-Exc-4.8", "2023"], "guards": "wording in force on the loss date, never a later endorsement"}
+{"case_id": "C-S7", "from_trace": null, "loss_date": "2024-10-05", "expect": ["Exc-3.3", "2023"], "guards": "wording in force on the loss date, never a later endorsement"}
